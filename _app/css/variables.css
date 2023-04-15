@@ -1,0 +1,27 @@
+:root {
+	--color-01: #f69;
+	--color-02: #11A0DF;
+	--color-03: #FCDC00;
+	--color-hover: #FF8CB2;
+
+	--margin-small: 0.5rem;
+	--margin-medium: 1rem;
+	--margin-large: 2rem;
+	--margin-x-large: 2.5rem;
+	--margin-xx-large: 3rem;
+
+
+	--font-size-h1: 3rem;
+	--font-size-large: 2rem;
+	--font-size-medium: 1rem;
+	--font-size-text: 1rem;
+
+
+	--font-weight-400: 400;
+	--font-weight-700: 700;
+
+
+	--font-family-secondary: 'Bebas Neue', cursive;
+	--font-family-tertiary: 'Press Start 2P', cursive;
+	--font-family-text: 'Montserrat', sans-serif;
+}

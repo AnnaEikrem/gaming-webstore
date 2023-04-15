@@ -1,4 +1,6 @@
-.header {
+.header__headline {
+	font-size: var(--font-size-h1);
+	font-family: var(--font-family-secondary);
 }
 
 .header__navigation {

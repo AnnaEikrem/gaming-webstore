@@ -1,0 +1,7 @@
+.section__headline {
+	font-family: var(--font-family-tertiary);
+}
+
+.section__text {
+	font-family: var(--font-family-text);
+}
