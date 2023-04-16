@@ -13,11 +13,83 @@ export default {
 			name: 'image',
 			type: 'image'
 		},
-		// {
-		// 	title: 'Images',
-		// 	name: 'images',
-		// 	type: 'array',
-		// 	t
-		// }
+		{
+			title: 'Product Images',
+			name:'productImages',
+			type: 'array',
+			of: [
+				{
+					title: 'Image',
+					name: 'image',
+					type: 'image'
+				}
+			]
+		},
+		{
+			title: 'Producer',
+			name: 'producer',
+			type: 'reference',
+			to: {
+				type: 'producer'
+			}
+		},
+		{
+			title: 'Price',
+			name: 'price',
+			type: 'number'
+		},
+		{
+			title: 'Colors',
+			name: 'colors',
+			type: 'array',
+			of: [
+				{
+				type: 'reference',
+				to:
+					{
+						type: 'color'
+					}
+				}
+			]
+		},
+		{
+			title: 'Description',
+			name: 'description',
+			type: 'text'
+		},
+		{
+			title: 'Category',
+			name: 'category',
+			type: 'reference',
+			to: {
+				type: 'category'
+			}
+		},
+		{
+			title: 'Sub categories',
+			name: 'subCategories',
+			type: 'array',
+			of: [ 
+				{
+					type: 'reference',
+					to: {
+						type: 'subCategory'
+					}
+				}
+			]
+		},
+		{
+			title: 'Availability',
+			name: 'availability',
+			type: 'number',
+		},
+		{
+			title: 'Slug',
+			name: 'slug',
+			type: 'slug',
+			options: {
+				source: 'name'
+			}
+		},
 	]
 }
