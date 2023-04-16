@@ -1,0 +1,22 @@
+.products__cards {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.product__card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.product__image {
+	width: 200px;
+}
+
+
+@media screen and (min-width: 615px) {
+	.products__cards {
+		display: grid;
+	}
+}

@@ -1,4 +1,5 @@
 .section__headline {
+	margin: 1rem;
 	font-family: var(--font-family-tertiary);
 }
 

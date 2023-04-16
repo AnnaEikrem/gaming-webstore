@@ -1,0 +1,12 @@
+footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 6rem;
+	background: var(--color-01);
+}
+
+.footer__headline {
+	font-family: var(--font-family-secondary);
+}
+

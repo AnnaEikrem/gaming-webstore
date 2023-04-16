@@ -1,10 +1,23 @@
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 6rem;
+	background: var(--color-01);
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: var(--color-02);
+	height: 35rem;
+}
+
 .header__headline {
 	font-size: var(--font-size-h1);
 	font-family: var(--font-family-secondary);
 }
 
-.header__navigation {
-}
 
-.header__navigation--visible {
-}
