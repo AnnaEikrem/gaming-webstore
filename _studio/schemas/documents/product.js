@@ -66,14 +66,14 @@ export default {
 			}
 		},
 		{
-			title: 'Sub categories',
-			name: 'subCategories',
+			title: 'Tags',
+			name: 'tags',
 			type: 'array',
 			of: [ 
 				{
 					type: 'reference',
 					to: {
-						type: 'subCategory'
+						type: 'tag'
 					}
 				}
 			]

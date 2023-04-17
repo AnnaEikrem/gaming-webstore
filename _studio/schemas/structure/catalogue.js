@@ -12,6 +12,6 @@ export default Structure => {
 					documentTypeListItem('producer'),
 					documentTypeListItem('color'),
 					documentTypeListItem('category'),
-					documentTypeListItem('subCategory'),
+					documentTypeListItem('tag'),
 				])
 }

@@ -1,6 +1,6 @@
 export default {
-	title: 'Sub Category',
-	name: 'subCategory',
+	title: 'Tag',
+	name: 'tag',
 	type: 'document',
 	fields: [
 		{
