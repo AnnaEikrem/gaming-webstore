@@ -1,3 +1,6 @@
-import toggleNavigation from "./modules/toggleNavigation.js";
+import fetchProductsData from "./modules/fetchProductsData.js";
+// import toggleNavigation from "./modules/toggleNavigation.js";
 
-toggleNavigation();
+
+fetchProductsData();
+// toggleNavigation();
