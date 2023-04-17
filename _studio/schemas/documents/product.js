@@ -26,12 +26,14 @@ export default {
 			]
 		},
 		{
-			title: 'Producer',
-			name: 'producer',
+			title: 'Brand',
+			name: 'brand',
 			type: 'reference',
-			to: {
-				type: 'producer'
-			}
+			to: [
+				{
+					type: 'brand'
+				}
+			]		
 		},
 		{
 			title: 'Price',

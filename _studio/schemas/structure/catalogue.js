@@ -9,7 +9,7 @@ export default Structure => {
 
 					divider(),
 
-					documentTypeListItem('producer'),
+					documentTypeListItem('brand'),
 					documentTypeListItem('color'),
 					documentTypeListItem('category'),
 					documentTypeListItem('tag'),

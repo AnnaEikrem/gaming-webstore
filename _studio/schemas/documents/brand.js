@@ -1,6 +1,6 @@
 export default {
-	title: 'Producer',
-	name: 'producer',
+	title: 'Brand',
+	name: 'brand',
 	type: 'document',
 	fields: [
 		{
@@ -21,7 +21,5 @@ export default {
 				source: 'name'
 			}
 		},
-		
-
 	]
 }
