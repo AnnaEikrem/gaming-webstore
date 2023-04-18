@@ -6,7 +6,7 @@ import catalogue from './schemas/structure/catalogue.js';
 import settings from './schemas/structure/settings.js';
 
 export default {
-	title: 'Nostalgic Zone',
+	title: 'Nostalgic Gaming',
 
 	projectId: '40dnjnyw',
 	dataset: 'production',

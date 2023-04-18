@@ -1,6 +1,8 @@
-import fetchProductsData from "./modules/fetchProductsData.js";
+import fetchProductsData from "./modules/fetch-products-data.js";
 // import toggleNavigation from "./modules/toggleNavigation.js";
+import productsStore from "./modules/products-store.js";
 
+const fetchedData = await fetchProductsData();
 
-fetchProductsData();
+productsStore(fetchedData);
 // toggleNavigation();
