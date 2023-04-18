@@ -14,8 +14,9 @@ export default async function fetchProductsData() {
 		'price': price,
 		'colors': colors[] -> {
 		  'color': name,
-		  'colorHex': hexColor
+		  'colorCode': hexColor
 		},
+		'description': description,
 		'category': category -> {
 		  name,
 		},
@@ -29,8 +30,27 @@ export default async function fetchProductsData() {
   }`;
 
   const params = {};
-  const productsData = await sanity.fetch(query, params);
-  
+  const productsData = await sanity.fetch(query, params)
 
   return productsData;
 }
+/**
+ * Er det bedre å fetche data med query i hver function? eller hente all dataen en gang også sende informasjonen videre??
+ */
+
+// try {
+	// 	return await handleResponse(response);
+	// } catch (error) {
+	// 	handleError(error);
+	// };
+
+// async function handleResponse(response) {
+// 	if (response.ok) {
+// 		const productResults = await response.json();
+// 		return productResults;
+// 	}
+// }
+
+// function handleError() {
+// 	console.log('Something went wrong')
+// }

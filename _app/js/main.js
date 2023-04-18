@@ -2,11 +2,7 @@ import fetchProductsData from "./modules/fetch-products-data.js";
 // import toggleNavigation from "./modules/toggleNavigation.js";
 import productsStore from "./modules/products-store.js";
 
+const fetchedData = await fetchProductsData();
 
-
-const productsData = await fetchProductsData();
-
-productsStore(productsData);
-
-// fetchProductsData();
+productsStore(fetchedData);
 // toggleNavigation();
