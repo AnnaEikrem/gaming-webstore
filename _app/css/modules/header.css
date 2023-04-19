@@ -53,19 +53,33 @@
 
 .menu__buttons {
 	display: flex;
-	justify-content: space-between;
-	margin: var(--margin-large);
+	padding: 10px 30px 10px 10px;
 }
 
 .menu__input--field {
+	
 	border: 2px solid var(--color-03);
 	border-radius: 5rem;
 	width: 15rem;
 }
 
+.menu__input--icon {
+	position: absolute; 
+	top: 50%;
+	right: 0.65rem;
+	transform: translateY(-50%);
+}
+
+.menu__input--button {
+	position: relative;
+	/* display: inline-block; */
+	margin-left: -2rem; 
+	width: 2rem;
+	height: var(--margin-x-large);
+}
+
 .menu__input--search { 
 	display: flex;
-	margin: 0 auto;
 }
 
 .menu__cart--desktop {
@@ -75,7 +89,6 @@
 @media screen and (min-width: 610px){
 	.header__container {
 		display: flex;
-		justify-content: space-between;
 		flex-direction: row; 
 		border: solid #000 2px;
 	}
