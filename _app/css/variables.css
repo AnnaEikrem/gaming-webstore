@@ -1,15 +1,15 @@
 :root {
-	/* --color-01: #008080; */
-	--color-05: #FFDB58;
 	--color-01: #E5a632;
 	--color-02: #f5f5dc;
 	--color-03: #000;
-
 	--color-04: #36454F;
-	/* --color-04: #D3D3D3; */
+	--color-05: #FFDB58;
+	--color-06: #fff;
+	/* --color-06: #008080; */
 	/* --color-06: #4c2215; */
 	/* --color-hover: #FF8CB2; */
 
+	--padding-button: 0.4rem;
 	--padding-small: 0.5rem;
 	--padding-medium: 1rem;
 	--padding-large: 2rem;
