@@ -1,8 +1,11 @@
-.section__headline {
-	margin: 1rem;
-	font-family: var(--font-family-tertiary);
+.hero__section--container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 15rem;
 }
 
-.section__text {
-	font-family: var(--font-family-text);
+.hero__gif {
+	width: 5rem;
 }
