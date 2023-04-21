@@ -1,0 +1,146 @@
+	.products__list--section {
+		background: rgb(233, 233, 233);
+		color: var(--font-color-text);
+	}
+
+	.products__section--top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: var(--padding-large) var(--padding-large) 0 var(--padding-large);
+	}
+
+	.products__section--headline {
+		font-family: var(--font-family-secondary);
+		font-size: var(--font-size-small);
+	}
+
+	.products__more--button {
+		padding: var(--padding-button);
+		width: 8rem;
+		border: 2px solid #36454F;
+		border-radius: 5rem;
+		font-family: var(--font-family-primary);
+		font-size: var(--font-size-small);
+	}
+
+	.product__cards--container {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.product__card {
+		margin: var(--margin-x-large);
+		padding-top: var(--padding-medium);
+		width: 80%;
+		border: 2px solid #000;
+		background: var(--color-06);
+	}
+
+	.product__image {
+		text-align: center;
+		/* height: 20rem; */
+		height: 20%; /*Hvordan fikse bilde???*/
+	}
+
+	.product__image--source {
+		max-width: 60%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.product__information {
+		padding: var(--padding-large);
+	}
+
+	.product__information--brand {
+		margin: var(--margin-medium);
+		font-family: var(--font-family-primary);
+		font-size: var(--font-size-medium);
+	}
+
+	.product__information--name {
+		margin: var(--margin-medium);
+		font-family: var(--font-family-secondary);
+		font-size: var(--font-size-text);
+	}
+
+	.product__information--price {
+		margin: var(--margin-medium);
+		font-family: var(--font-family-text);
+		font-size: var(--font-size-small);
+	}
+
+	.product__more--button {
+		padding: var(--padding-button);
+		margin: var(--margin-medium);
+		border: 2px solid #36454F;
+		border-radius: 5rem;
+		width: 10rem;
+		font-family: var(--font-family-primary);
+		font-size: var(--font-size-small);
+	}
+
+
+@media screen and (min-width: 768px) {
+	.product__cards--container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		justify-items: center;
+		
+	}
+
+	.products__section--top {
+		margin-bottom: var(--margin-medium);
+	}
+
+	.product__card {
+		align-self: start;
+		margin: var(--margin-small);
+		width: 90%;
+	}
+
+	.product__information {
+		padding: var(--padding-small);
+	}
+
+	.product__information--brand {
+		margin: var(--margin-medium);
+		font-family: var(--font-family-primary);
+		font-size: var(--font-size-small);
+	}
+
+	.product__information--name {
+		margin: var(--margin-medium);
+		font-family: var(--font-family-secondary);
+		font-size: var(--font-size-x-small);
+	}
+
+	.product__information--price {
+		margin: var(--margin-medium);
+		font-family: var(--font-family-text);
+		font-size: var(--font-size-text);
+	}
+
+	.product__more--button {
+		padding: var(--padding-button);
+		margin: 1rem 20%;
+		width: 60%;
+		border: 2px solid #36454F;
+		border-radius: 5rem;
+		font-family: var(--font-family-primary);
+		font-size: var(--font-size-text);
+	}
+} 
+
+@media screen and (min-width: 1066px) {
+	.product__cards--container {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	.products__section--top {
+		margin-bottom: var(--margin-x-large);
+	}
+
+}
