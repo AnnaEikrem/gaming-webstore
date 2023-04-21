@@ -2,9 +2,9 @@
 	--color-01: #E5a632;
 	--color-02: #f5f5dc;
 	--color-03: #000;
-	--color-04: #36454F;
 	--color-05: #FFDB58;
 	--color-06: #fff;
+	--font-color-text: #36454F;
 	/* --color-06: #008080; */
 	/* --color-06: #4c2215; */
 	/* --color-hover: #FF8CB2; */
@@ -27,6 +27,8 @@
 	--font-size-h1: 3rem;
 	--font-size-large: 2rem;
 	--font-size-medium: 1.5rem;
+	--font-size-small: 1.2rem;
+	--font-size-x-small: 0.9rem;
 	--font-size-text: 1rem;
 
 
