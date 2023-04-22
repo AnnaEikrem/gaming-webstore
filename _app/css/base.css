@@ -11,20 +11,24 @@ a {
 	text-decoration: none;
 }
 
-a:hover {
-	cursor: pointer;
-	transition: 0.2s;
-	transform-origin: 0.2s;
-	transform: scale(1.05);
-}
-
-button:hover {
-	transition: 0.2s;
-	transform: scale(1.05);
-	cursor: pointer;
-	transform-origin: 0.2s;
-}
-
 img {
 	width: 100%;
+}
+
+
+/* Adds hover effect to tablet and desktop version */
+@media screen and (min-width: 768px) {
+	button:hover {
+		transition: 0.2s;
+		transform: scale(1.05);
+		cursor: pointer;
+		transform-origin: 0.2s;
+	}
+
+	a:hover {
+		cursor: pointer;
+		transition: 0.2s;
+		transform-origin: 0.2s;
+		transform: scale(1.05);
+	}
 }
