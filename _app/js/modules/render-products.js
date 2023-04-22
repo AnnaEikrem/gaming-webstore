@@ -7,7 +7,7 @@ export default function renderProductCards(products) {
 
 	function returnProductDOMElement(product) {
 		const itemName = product.name;
-		const showcaseImage = product.showcaseImage;
+		// const showcaseImage = product.showcaseImage;
 		const itemBrand = product.brand.brandName;
 		const itemPrice = product.price;
 
@@ -16,9 +16,8 @@ export default function renderProductCards(products) {
 
 		const productImage = document.createElement('div');
 		productImage.classList.add('product__image');
-		const imageUrl = document.createElement('img');
-		imageUrl.classList.add('product__image--source');
-		imageUrl.setAttribute('src', showcaseImage);
+		// const imageUrl = document.createElement('img');
+		// imageUrl.setAttribute('src', showcaseImage);
 
 		const productInformation = document.createElement('div');
 		productInformation.classList.add('product__information');
@@ -41,7 +40,7 @@ export default function renderProductCards(products) {
 		
 		cardLinkElement.appendChild(productImage);
 		cardLinkElement.appendChild(productInformation);
-		productImage.appendChild(imageUrl);
+		// productImage.appendChild(imageUrl);
 		productInformation.appendChild(productBrand);
 		productInformation.appendChild(productName);
 		productInformation.appendChild(productPrice);
