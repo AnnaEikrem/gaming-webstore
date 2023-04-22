@@ -1,9 +1,7 @@
 import fetchProductsData from "./modules/fetch-products-data.js";
 
-import toggleNavigation from "./modules/toggle-navigation.js";
-import renderProductCards from "./modules/render-products.js";
-
-
+import toggleNavigation from "./modules/toggleNavigation.js";
+import productsStore from "./modules/products-store.js";
 
 const fetchedData = await fetchProductsData();
 
