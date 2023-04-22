@@ -17,7 +17,7 @@ img {
 
 
 /* Adds hover effect to tablet and desktop version */
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
 	button:hover {
 		transition: 0.2s;
 		transform: scale(1.05);
