@@ -7,40 +7,39 @@ export default function renderProductCards(products) {
 
 	function returnProductDOMElement(product) {
 		const itemName = product.name;
-		// const showcaseImage = product.showcaseImage;
+		const imageUrl = product.productImage;
 		const itemBrand = product.brand.brandName;
 		const itemPrice = product.price;
 
+		console.log(imageUrl)
+
 		const cardLinkElement = document.createElement('a');
-		cardLinkElement.classList.add('product__card--link');
-
 		const productImage = document.createElement('div');
-		productImage.classList.add('product__image');
-		// const imageUrl = document.createElement('img');
-		// imageUrl.setAttribute('src', showcaseImage);
-
+		const imageElement = document.createElement('img');
 		const productInformation = document.createElement('div');
-		productInformation.classList.add('product__information');
-
 		const productBrand = document.createElement('div');
-		productBrand.classList.add('product__information--brand');
-		productBrand.textContent = itemBrand;
-
 		const productName = document.createElement('div');
-		productName.classList.add('product__information--name');
-		productName.textContent = itemName;
-
 		const productPrice = document.createElement('div');
-		productPrice.classList.add('product__information--price');
-		productPrice.textContent = itemPrice;
-
 		const exploreButton = document.createElement('button');
-		exploreButton.classList.add('product__explore--button');
-		exploreButton.textContent = 'Explore';
 		
+		cardLinkElement.classList.add('product__card--link');
+		productImage.classList.add('product__image');
+		imageElement.classList.add('product__image--source');
+		productInformation.classList.add('product__information');
+		productBrand.classList.add('product__information--brand');
+		productName.classList.add('product__information--name');
+		productPrice.classList.add('product__information--price');
+		exploreButton.classList.add('product__explore--button');
+		
+		imageElement.setAttribute('src', imageUrl);
+		productBrand.textContent = itemBrand;
+		productName.textContent = itemName;
+		productPrice.textContent = itemPrice;
+		exploreButton.textContent = 'Explore';
+
 		cardLinkElement.appendChild(productImage);
 		cardLinkElement.appendChild(productInformation);
-		// productImage.appendChild(imageUrl);
+		productImage.appendChild(imageElement);
 		productInformation.appendChild(productBrand);
 		productInformation.appendChild(productName);
 		productInformation.appendChild(productPrice);
@@ -48,7 +47,6 @@ export default function renderProductCards(products) {
 
 		return cardLinkElement
 	}
-
 
 	function renderProductCardsHTML() {
 		products.forEach(product => {
