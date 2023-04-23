@@ -4,8 +4,8 @@ export default async function fetchProductsData() {
 	const query = `*[_type == 'product'] {
 		'id': _id,
 		'name': name,
-		'showcaseImage': image.asset._ref,
-		'productImages': productImages[].asset._ref,
+		'productImage': images[0].asset -> url,
+  		'images': images[].asset -> url,
 		'brand': brand -> {
 		  'brandName': name,
 		  'brandDescription': description,

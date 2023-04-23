@@ -9,18 +9,12 @@ export default {
 			type: 'string'
 		},
 		{
-			title: 'Image',
-			name: 'image',
-			type: 'image'
-		},
-		{
-			title: 'Product Images',
-			name:'productImages',
+			title: 'Images',
+			name: 'images',
 			type: 'array',
+			description: 'The first image be the Main Product Image',
 			of: [
 				{
-					title: 'Image',
-					name: 'image',
 					type: 'image'
 				}
 			]
