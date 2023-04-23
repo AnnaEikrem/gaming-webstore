@@ -31,7 +31,7 @@ export default function renderProductCards(products) {
 		productImage.classList.add('product__image');
 		imageElement.classList.add('product__image--source');
 		productInformation.classList.add('product__information');
-		// productBrand.classList.add('product__information--brand');
+		productBrand.classList.add('product__information--brand');
 		productName.classList.add('product__information--name');
 		productPrice.classList.add('product__information--price');
 		exploreButton.classList.add('product__explore--button');
