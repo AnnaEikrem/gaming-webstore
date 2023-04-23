@@ -32,7 +32,7 @@
 
 	.product__card--link {
 		margin: var(--margin-medium);
-		padding-top: var(--padding-medium);
+		padding-top: var(--padding-large);
 		width: 90%;
 		height: 95%;
 		border: 2px solid #000;
@@ -41,12 +41,10 @@
 
 	.product__image {
 		text-align: center;
-		/* height: 20rem; */
-		/* height: 20%; Hvordan fikse bilde??? */
 	}
 
 	.product__image--source {
-		max-width: 60%;
+		max-width: 80%;
 		height: 100%;
 		object-fit: cover;
 	}
