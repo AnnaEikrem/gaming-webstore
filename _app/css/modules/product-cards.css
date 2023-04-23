@@ -32,9 +32,9 @@
 
 	.product__card--link {
 		margin: var(--margin-medium);
-		padding-top: var(--padding-large);
-		width: 90%;
 		height: 95%;
+		padding-top: var(--padding-medium);
+		width: 80%;
 		border: 2px solid #000;
 		background: var(--color-06);
 	}
@@ -45,6 +45,10 @@
 
 	.product__image--source {
 		max-width: 80%;
+	}
+
+	.product__image--source {
+		max-width: 60%;
 		height: 100%;
 		object-fit: cover;
 	}
