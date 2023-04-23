@@ -34,7 +34,7 @@ export default function renderProductCards(products) {
 		imageElement.setAttribute('src', imageUrl);
 		productBrand.textContent = itemBrand;
 		productName.textContent = itemName;
-		productPrice.textContent = itemPrice;
+		productPrice.textContent = `${itemPrice} $`;
 		exploreButton.textContent = 'Explore';
 
 		cardLinkElement.appendChild(productImage);
