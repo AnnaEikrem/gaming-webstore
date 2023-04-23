@@ -1,8 +1,15 @@
 export default function renderProductCards(products) {
-	const productsContainer = document.querySelector('.product__cards--container');
+	const allProductsContainer = document.querySelector('.list__products--all');
+	const chosenProductsContainer = document.querySelector('.list__products--chosen');
+	const allProductsArray = products;
+	let randomProductsArray = [];
 
-	if (productsContainer) {
+	if (allProductsContainer) {
 		renderProductCardsHTML();
+	}
+
+	if (chosenProductsContainer) {
+		renderChosenCardsHTML();
 	}
 
 	function returnProductDOMElement(product) {
@@ -24,7 +31,7 @@ export default function renderProductCards(products) {
 		productImage.classList.add('product__image');
 		imageElement.classList.add('product__image--source');
 		productInformation.classList.add('product__information');
-		productBrand.classList.add('product__information--brand');
+		// productBrand.classList.add('product__information--brand');
 		productName.classList.add('product__information--name');
 		productPrice.classList.add('product__information--price');
 		exploreButton.classList.add('product__explore--button');
@@ -48,9 +55,20 @@ export default function renderProductCards(products) {
 
 	function renderProductCardsHTML() {
 		products.forEach(product => {
-			const productCardElement = returnProductDOMElement(product);
-
-			productsContainer.appendChild(productCardElement);
+			if (allProductsContainer) {
+				const productCardElement = returnProductDOMElement(product);
+				allProductsContainer.appendChild(productCardElement);
+			}
 		})
+	}
+
+	function renderChosenCardsHTML() {
+		allProductsArray.sort(() => Math.random() - 0.5);
+		randomProductsArray = allProductsArray.slice(0, 6);
+			
+		randomProductsArray.forEach(product => {
+			const productCardElement = returnProductDOMElement(product)
+			chosenProductsContainer.appendChild(productCardElement)
+		});
 	}
 }
