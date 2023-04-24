@@ -1,6 +1,6 @@
 	.products__list--section {
 		background: rgb(233, 233, 233);
-		color: var(--font-color-text);
+		color: var(--color-03);
 	}
 
 	.products__section--top {
