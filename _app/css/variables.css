@@ -1,13 +1,15 @@
 :root {
+	--color-background: #d3d3d3;
+	--color-foreground: #ffffff;
 	--color-01: #E5a632;
-	--color-02: #f5f5dc;
-	--color-03: #000;
+	--color-02: #000;	
+	--color-03: #fff;
 	--color-04: #36454F;
-	--color-05: #FFDB58;
-	--color-06: #fff;
-	/* --color-06: #008080; */
-	/* --color-06: #4c2215; */
-	/* --color-hover: #FF8CB2; */
+
+	--margin-normal: 1rem;
+	--padding-normal: 1rem;
+	--gap-column: 1rem;
+	--gap-row: 1rem;
 
 	--padding-button: 0.4rem;
 	--padding-small: 0.5rem;
@@ -16,20 +18,26 @@
 	--padding-x-large: 2.5rem;
 	--padding-xx-large: 3rem;
 
-
+	
 	--margin-small: 0.5rem;
-	--margin-medium: 1rem;
 	--margin-large: 2rem;
 	--margin-x-large: 2.5rem;
 	--margin-xx-large: 3rem;
+	
+	--button-border: 0;
+	--button-width-normal: 8rem;
+	--button-width-large: 10rem;
+	
+	--icon-width: 2rem;
 
-
-	--font-size-h1: 3rem;
-	--font-size-large: 2rem;
-	--font-size-medium: 1.5rem;
-	--font-size-small: 1.2rem;
-	--font-size-x-small: 0.9rem;
+	--font-size-headline: 2rem;
 	--font-size-text: 1rem;
+
+	--font-size-x-small: 0.9rem;
+	--font-size-small: 1.2rem;
+	--font-size-medium: 1.5rem;
+	--font-size-large: 2rem;
+	--font-size-h1: 3rem;
 
 
 	--font-weight-400: 400;
