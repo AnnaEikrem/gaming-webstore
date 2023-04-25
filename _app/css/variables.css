@@ -25,11 +25,16 @@
 	--margin-xx-large: 3rem;
 	
 	--button-border: 0;
+	--button-width-normal: 8rem;
+	--button-width-large: 10rem;
+	
 	--icon-width: 2rem;
+
+	--font-size-headline: 2rem;
+	--font-size-text: 1rem;
 
 	--font-size-x-small: 0.9rem;
 	--font-size-small: 1.2rem;
-	--font-size-text: 1rem;
 	--font-size-medium: 1.5rem;
 	--font-size-large: 2rem;
 	--font-size-h1: 3rem;

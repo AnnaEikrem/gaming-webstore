@@ -55,7 +55,7 @@
 	display: flex;
 	justify-content: center;
 	padding-top: var(--margin-x-large);
-	font-size: var(--font-size-large);
+	font-size: var(--font-size-headline);
 	color: var(--color-02);
 }
 
