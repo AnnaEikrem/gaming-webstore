@@ -1,6 +1,15 @@
+body {
+	font-family: var(--font-family-primary);
+	font-size: 2vw;
+	background: var(--color-background);
+	color: var(--color-foreground);
+	-webkit-font-smoothing: antialiased;
+}
+
 button {
-	border: none;
+	font-family: var(--font-family-secondary);
 	background: inherit;
+	border: none;
 }
 
 li {
@@ -11,13 +20,18 @@ a {
 	text-decoration: none;
 }
 
-img {
-	width: 100%;
+a:hover {
+	text-decoration: underline;
 }
 
 
 /* Adds hover effect to tablet and desktop version */
 @media screen and (min-width: 768px) {
+	body {
+		font-size: 2.5vw;
+	}
+
+
 	button:hover {
 		transition: 0.2s;
 		transform: scale(1.05);
@@ -27,8 +41,17 @@ img {
 
 	a:hover {
 		cursor: pointer;
+		text-decoration: underline;
 		/* transition: 0.2s;
 		transform-origin: 0.2s;
 		transform: scale(1.05); */
+	}
+}
+
+@media screen and (min-width: 1066px) {
+	body {
+		font-size: 5vw;
+		max-width: 1920px;
+		margin: 0 auto;
 	}
 }
