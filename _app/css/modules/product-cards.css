@@ -77,6 +77,7 @@
 	.product__explore--button {
 		margin: var(--margin-normal);
 		padding: var(--padding-small);
+
 		border: 2px solid var(--color-02);
 		width: 10rem;
 		font-family: var(--font-family-secondary);

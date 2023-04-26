@@ -29,7 +29,6 @@
 
 .navigation__open--button {
 	width: var(--icon-width);
-	/* margin: ; */
 }
 
 .navigation__close--button {
@@ -45,6 +44,7 @@
 .header__navigation--visible {
 	display: block;
 	border-top: none;
+	/* border: solid #000 2px; */
 }
 
 .no-scroll {
@@ -119,6 +119,7 @@
 
 	.header__home--button {
 		padding: var(--padding-medium);
+		/* margin-left: var(--margin-normal); */
 		margin: 0;
 		width: 9rem;
 	}
@@ -138,6 +139,7 @@
 
 	.header__menu--item {
 		font-size: var(--font-size-large);
+		/* justify-content: center; */
 	}
 
 	.header__menu--item:hover {
@@ -182,7 +184,7 @@
 @media screen and (min-width: 1066px) {
 	.header__navigation {
 		display: flex;
-		justify-content: center;
+		justify-content: end;
 		width: 100%;
 	}
 }
