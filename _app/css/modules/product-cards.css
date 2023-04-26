@@ -151,7 +151,6 @@
 
 	.product__explore--button {
 		margin: 1rem 20%;
-		padding: var(--padding-large);
 		width: 60%;
 		font-family: var(--font-family-secondary);
 	}
