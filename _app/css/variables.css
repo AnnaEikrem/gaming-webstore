@@ -13,12 +13,10 @@
 
 	--padding-button: 0.4rem;
 	--padding-small: 0.5rem;
-	--padding-medium: 1rem;
-	--padding-large: 2rem;
-	--padding-x-large: 2.5rem;
-	--padding-xx-large: 3rem;
+	--padding-medium: 0.8rem;
+	--padding-large: 1.2rem;
+	--padding-x-large: 2rem;
 
-	
 	--margin-small: 0.5rem;
 	--margin-large: 2rem;
 	--margin-x-large: 2.5rem;
@@ -39,10 +37,8 @@
 	--font-size-large: 2rem;
 	--font-size-h1: 3rem;
 
-
 	--font-weight-400: 400;
 	--font-weight-700: 700;
-
 
 	--font-family-primary: 'Bebas Neue', cursive;
 	--font-family-secondary: 'Press Start 2P', cursive;
