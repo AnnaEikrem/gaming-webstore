@@ -36,9 +36,17 @@ a {
 
 	a:hover {
 		cursor: pointer;
-		/* transition: 0.2s;
+		transition: 0.2s;
 		transform-origin: 0.2s;
-		transform: scale(1.05); */
+		transform: scale(1.05);
+	}
+}
+
+@media screen and (min-width: 1066px) {
+	body {
+		font-size: 5vw;
+		/* max-width: 1920px; */
+		margin: 0 auto;
 	}
 }
 
