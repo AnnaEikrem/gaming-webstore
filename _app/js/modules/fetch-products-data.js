@@ -26,7 +26,7 @@ export default async function fetchProductsData() {
 		},
 	  
 		'availability': availability,
-		'productSlug': slug.current
+		'slug': slug.current
   }`;
 
   const params = {};
@@ -34,23 +34,3 @@ export default async function fetchProductsData() {
 
   return productsData;
 }
-/**
- * Er det bedre å fetche data med query i hver function? eller hente all dataen en gang også sende informasjonen videre??
- */
-
-// try {
-	// 	return await handleResponse(response);
-	// } catch (error) {
-	// 	handleError(error);
-	// };
-
-// async function handleResponse(response) {
-// 	if (response.ok) {
-// 		const productResults = await response.json();
-// 		return productResults;
-// 	}
-// }
-
-// function handleError() {
-// 	console.log('Something went wrong')
-// }
