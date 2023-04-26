@@ -1,0 +1,132 @@
+.product__preview--information {
+	padding: var(--padding-normal);
+	font-size: var(--font-size-medium);
+	color: var(--color-02);
+}
+
+.product__preview--card {
+	padding: var(--padding-large);
+	border: 2px solid var(--color-02);
+	background: var(--color-foreground);
+}
+
+.product__card--top {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.product__detail--name {
+	margin: var(--margin-normal);
+	font-family: var(--font-family-secondary);
+}
+
+.product__details--content {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.product__detail {
+	display: flex;
+}
+
+.product__detail--text {
+	width:20%;
+}
+
+.product__detail--value {
+	display: flex;
+	flex-direction: row;
+	font-size: var(--font-size-small);
+	font-family: var(--font-family-text);
+}
+
+.product__detail--colors {
+	padding: var(--padding-normal);
+}
+
+.product__detail--color--code {
+	margin-right: var(--margin-small);
+	width: 1.8rem;
+	height: 1.8rem;
+	border-radius: 50%;
+}
+
+
+/* Styling buttons for mobile */
+.product__card--buttons {
+	margin: var(--margin-normal) 0;
+}
+
+.card__button--quantity, .card__button--add-to-cart {
+	display: flex;
+	justify-content: center;
+	width: var(--button-width-large);
+	margin: var(--margin-normal) 0;
+	border: 2px solid var(--color-02);
+	border-radius: 2rem;
+	font-family: var(--font-family-primary);
+	font-size: var(--font-size-medium);
+
+	background: var(--color-button);
+}
+
+.button__quantity--subtract, .button__quantity--add {
+	border: 2px solid var(--color-02);
+}
+
+.button__quantity--number {
+	background: var(--color-03 );
+}
+
+.product__card--description {
+	font-size: var(--font-size-small);
+}
+.card__description--headline {
+	margin: var(--margin-normal) 0;
+	font-family: var(--font-family-secondary);
+}
+
+.card__description--text {
+	margin: var(--margin-normal) 0;
+	font-family: var(--font-family-text);
+}
+
+
+
+@media screen and (min-width: 880px) {
+	/*
+	.product__preview--card {
+		max-width: 80%;
+	} */
+	
+	.product__preview--card {
+		display: flex;
+		padding: var(--padding-x-large);
+	}
+
+	.product__card--top {
+		margin: var(--margin-normal);
+		width: 50%;
+	}
+
+	.product__card--bottom {
+		margin: var(--margin-normal);
+		width: 50%;
+	}
+
+
+}
+
+@media screen and (min-width: 1066px) {
+	.product__preview--information {
+		display: flex;
+		justify-content: center;
+	}
+
+
+	/* .product__preview--card {
+		max-width: 80%;
+	} */
+}

@@ -1,23 +1,24 @@
 :root {
 	--color-background: #d3d3d3;
 	--color-foreground: #ffffff;
+	--color-button: #d3d3d3;
 	--color-01: #E5a632;
 	--color-02: #000;	
 	--color-03: #fff;
 	--color-04: #36454F;
 
-	--margin-normal: 1rem;
-	--padding-normal: 1rem;
 	--gap-column: 1rem;
 	--gap-row: 1rem;
-
+	
 	--padding-button: 0.4rem;
 	--padding-small: 0.5rem;
 	--padding-medium: 0.8rem;
+	--padding-normal: 1rem;
 	--padding-large: 1.2rem;
 	--padding-x-large: 2rem;
 	
 	--margin-small: 0.5rem;
+	--margin-normal: 1rem;
 	--margin-large: 2rem;
 	--margin-x-large: 2.5rem;
 	--margin-xx-large: 3rem;
