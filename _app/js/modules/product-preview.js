@@ -9,6 +9,10 @@ export default function previewProduct(products) {
 
 
 	function returnDOMElement(product) {
+		const productImages = product.images;
+		const productPrice = product.price;
+		const productBrand = product.brand.brandName;
+		const productColors = product.colors;
 		const previewCardElement = document.createElement('div');
 		previewCardElement.classList.add('product__preview--card');
 
