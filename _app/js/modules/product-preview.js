@@ -84,8 +84,18 @@ export default function previewProduct(products) {
 		previewCardElement.appendChild(cardDescriptionContainer);
 
 		cardTopContainer.appendChild(cardTopHeadline);
-		cardTopContainer.appendChild(cardtopImage);
-		cardtopImage.appendChild(imageElementSource);
+		productImages.forEach(image => {
+			const cardtopImage = document.createElement('div');
+			const imageElementSource = document.createElement('img');
+
+			cardtopImage.classList.add('product__detail--image');
+			imageElementSource.classList.add('product__detail--image--source');
+
+			imageElementSource.setAttribute('src', image);
+
+			cardTopContainer.appendChild(cardtopImage);
+			cardtopImage.appendChild(imageElementSource);
+		})
 
 		cardBottomContainer.appendChild(cardBottomContent);
 		cardBottomContent.appendChild(cardBottomDetail);
