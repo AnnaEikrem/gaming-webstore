@@ -133,6 +133,14 @@
 		border: 2px solid #36454F;
 		font-family: var(--font-family-secondary);
 	}
+
+	.product__explore--button:hover {
+		cursor: pointer;
+		transition: 0.2s;
+		transform-origin: 0.2s;
+		transform: scale(1.05);
+	}
+
 } 
 
 @media screen and (min-width: 1066px) {
