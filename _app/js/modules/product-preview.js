@@ -1,93 +1,100 @@
 export default function previewProduct(products) {
 	const productContainer = document.querySelector('.product__preview--information');
 	const currentSearchParams = new URLSearchParams(window.location.search);
-	const productSlug = currentSearchParams.get('id');
+	const productSlug = currentSearchParams.get('product');
 
 	if (productContainer) {
 		renderPreviewHTML(productSlug);
 	}
-
 
 	function returnDOMElement(product) {
 		const productImages = product.images;
 		const productPrice = product.price;
 		const productBrand = product.brand.brandName;
 		const productColors = product.colors;
+
 		const previewCardElement = document.createElement('div');
-		previewCardElement.classList.add('product__preview--card');
-
 		const cardTopContainer = document.createElement('div');
-		cardTopContainer.classList.add('product__card--top');
-
 		const cardTopHeadline = document.createElement('h3');
-		cardTopHeadline.classList.add('product__detail--name');
-		cardTopHeadline.textContent = product.name;
-
-		const cardtopImage = document.createElement('div');
-		cardtopImage.classList.add('product__detail--image');
-		const imageElementSource = document.createElement('img');
-		imageElementSource.classList.add('product__detail--image--source');
-
 		const cardBottomContainer = document.createElement('div');
-		cardBottomContainer.classList.add('product__card--bottom');
-
 		const cardBottomContent = document.createElement('div');
-		cardBottomContent.classList.add('product__details--content');
 
-		// Three divs with three contents. Need another solution.
 		const cardBottomDetail = document.createElement('div');
-		cardBottomDetail.classList.add('product__detail');
+		const cardBottomDetailPrice = document.createElement('div');
+		const cardBottomDetailBrand = document.createElement('div');
+		const cardBottomDetailColors = document.createElement('div');
+		const cardBottomValuePrice = document.createElement('div');
+		const cardBottomValueBrand = document.createElement('div');
 
-		const cardBottomDetailText = document.createElement('div');
-		cardBottomDetailText.classList.add('product__detail--text');
-		cardBottomDetailText.textContent = 'Price';
-
-		const cardBottomDetailValue = document.createElement('div');
-		cardBottomDetailValue.classList.add('product__detail--value');
-
-
-		// Buttons
 		const cardButtonsContainer = document.createElement('div');
-		cardButtonsContainer.classList.add('product__card--buttons');
-
 		const buttonQuantity = document.createElement('div');
-		buttonQuantity.classList.add('card__button--quantity');
 		const buttonSubtract = document.createElement('button');
-		buttonSubtract.classList.add('button__quantity--subtract');
-		buttonSubtract.textContent = '-'
-
 		const buttonNumber = document.createElement('div');
-		buttonNumber.classList.add('button__quantity--number');
-		// buttonNumber.textContent = product.
-
 		const buttonAdd = document.createElement('button');
-		buttonAdd.classList.add('button__quantity--add');
-		buttonAdd.textContent = '+'
 
 		const buttonAddToCart = document.createElement('button');
-		buttonAddToCart.classList.add('card__button--add-to-cart');
-		buttonAddToCart.textContent = 'Add to cart';
-
 		const cardDescriptionContainer = document.createElement('div');
-		cardDescriptionContainer.classList.add('product__card--description');
-
 		const descriptionHeadline = document.createElement('h4');
-		descriptionHeadline.classList.add('card__description--headline');
-		descriptionHeadline.textContent = 'Description';
-
 		const descriptionText = document.createElement('article');
-		descriptionText.classList.add('card__description--text');
-		descriptionText.textContent = product.description;
 
-		console.log(product.slug)
+		previewCardElement.classList.add('product__preview--card');
+		cardTopContainer.classList.add('product__card--top');
+		cardTopHeadline.classList.add('product__detail--name');
+		cardBottomContainer.classList.add('product__card--bottom');
+		cardBottomContent.classList.add('product__details--content');
+
+		cardBottomDetail.classList.add('product__detail');
+		cardBottomDetailPrice.classList.add('product__detail--text');
+		cardBottomDetailPrice.classList.add('price');
+		cardBottomDetailBrand.classList.add('product__detail--text');
+		cardBottomDetailBrand.classList.add('brand');
+		cardBottomDetailColors.classList.add('product__detail--text');
+		cardBottomDetailColors.classList.add('colors');
+		cardBottomValuePrice.classList.add('product__detail--value');
+		cardBottomValueBrand.classList.add('product__detail--value');
+
+		cardButtonsContainer.classList.add('product__card--buttons');
+		buttonQuantity.classList.add('card__button--quantity');
+		buttonSubtract.classList.add('button__quantity--subtract');
+		buttonNumber.classList.add('button__quantity--number');
+		buttonAdd.classList.add('button__quantity--add');
+
+		buttonAddToCart.classList.add('card__button--add-to-cart');
+		cardDescriptionContainer.classList.add('product__card--description');
+		descriptionHeadline.classList.add('card__description--headline');
+		descriptionText.classList.add('card__description--text');
+
+		cardTopHeadline.textContent = product.name;
+		cardBottomDetailPrice.textContent = 'Price:';
+		cardBottomDetailBrand.textContent = 'Brand:';
+		cardBottomDetailColors.textContent = 'Colors:';
+		cardBottomValuePrice.textContent = productPrice;
+		cardBottomValueBrand.textContent = productBrand;
+
+		productColors.forEach(color => {
+			const cardBottomValueColors = document.createElement('div');
+			const colorCode = color.colorCode;
+
+			cardBottomValueColors.classList.add('product__detail--color--code');
+			cardBottomValueColors.classList.add('product__detail--value');
+			cardBottomValueColors.style.background = colorCode;
+
+			cardBottomDetailColors.appendChild(cardBottomValueColors);
+		})
+		
+		buttonSubtract.textContent = '-'
+		buttonNumber.textContent = '3';
+		buttonAdd.textContent = '+'
+
+		buttonAddToCart.textContent = 'Add to cart';
+		descriptionHeadline.textContent = 'Description';
+		descriptionText.textContent = product.description;
 
 		// AppendChild to create HTML structure
 		previewCardElement.appendChild(cardTopContainer);
 		previewCardElement.appendChild(cardBottomContainer);
-		previewCardElement.appendChild(cardButtonsContainer);
-		previewCardElement.appendChild(cardDescriptionContainer);
-
 		cardTopContainer.appendChild(cardTopHeadline);
+
 		productImages.forEach(image => {
 			const cardtopImage = document.createElement('div');
 			const imageElementSource = document.createElement('img');
@@ -102,14 +109,18 @@ export default function previewProduct(products) {
 		})
 
 		cardBottomContainer.appendChild(cardBottomContent);
+		cardBottomContainer.appendChild(cardButtonsContainer);
+		cardBottomContainer.appendChild(cardDescriptionContainer);
 		cardBottomContent.appendChild(cardBottomDetail);
 
-		cardBottomDetail.appendChild(cardBottomDetailText);
-		cardBottomDetail.appendChild(cardBottomDetailValue);
-		// What to do about color?
+		cardBottomDetail.appendChild(cardBottomDetailPrice);
+		cardBottomDetail.appendChild(cardBottomDetailBrand);
+		cardBottomDetail.appendChild(cardBottomDetailColors);
+		cardBottomDetailPrice.appendChild(cardBottomValuePrice);
+		cardBottomDetailBrand.appendChild(cardBottomValueBrand);
 
 		cardButtonsContainer.appendChild(buttonQuantity);
-		cardBottomContainer.appendChild(buttonAddToCart);
+		cardButtonsContainer.appendChild(buttonAddToCart);
 
 		buttonQuantity.appendChild(buttonSubtract);
 		buttonQuantity.appendChild(buttonNumber);
@@ -121,15 +132,10 @@ export default function previewProduct(products) {
 		return previewCardElement
 	}
 
-
 	function renderPreviewHTML(slug) {
 		const currentProduct = products.find(product => product.slug === slug);
 		const currentProductClicked = returnDOMElement(currentProduct);
 
 		productContainer.appendChild(currentProductClicked)
 	};
-
-
-
-	// console.log(products);
 }
