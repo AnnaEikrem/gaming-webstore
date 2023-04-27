@@ -77,12 +77,13 @@
 	.product__explore--button {
 		margin: var(--margin-normal);
 		padding: var(--padding-small);
-
+		font-family: var(--font-family-secondary);
 		border: 2px solid var(--color-02);
 		width: 10rem;
-		font-family: var(--font-family-secondary);
 		background: var(--color-button);
 	}
+
+
 
 
 @media screen and (min-width: 618px) {
@@ -133,6 +134,14 @@
 		border: 2px solid #36454F;
 		font-family: var(--font-family-secondary);
 	}
+
+	.product__explore--button:hover {
+		cursor: pointer;
+		transition: 0.2s;
+		transform-origin: 0.2s;
+		transform: scale(1.05);
+	}
+
 } 
 
 @media screen and (min-width: 1066px) {
