@@ -24,15 +24,17 @@
 .product__details--content {
 	display: flex;
 	flex-direction: column;
-	width: 100%;
 }
 
 .product__detail {
 	display: flex;
+	flex-direction: column;
 }
 
 .product__detail--text {
-	width:20%;
+	display: flex;
+	padding: var(--padding-small);
+	width: 40%;
 }
 
 .product__detail--value {
@@ -53,31 +55,41 @@
 	border-radius: 50%;
 }
 
-
-/* Styling buttons for mobile */
 .product__card--buttons {
 	margin: var(--margin-normal) 0;
 }
 
-.card__button--quantity, .card__button--add-to-cart {
+.card__button--add-to-cart {
 	display: flex;
 	justify-content: center;
-	width: var(--button-width-large);
 	margin: var(--margin-normal) 0;
+	width: var(--button-width-large);
 	border: 2px solid var(--color-02);
-	border-radius: 2rem;
+	/* border-radius: 2rem; */
 	font-family: var(--font-family-primary);
 	font-size: var(--font-size-medium);
 
 	background: var(--color-button);
 }
 
+.card__button--quantity {
+	display: flex;
+	justify-content:space-around ;
+	width: var(--button-width-large);
+	/* border-radius: 2rem; */
+	font-family: var(--font-family-primary);
+	font-size: var(--font-size-medium);
+}
+
 .button__quantity--subtract, .button__quantity--add {
+	padding: 0 var(--padding-small);
 	border: 2px solid var(--color-02);
+	background: var(--color-05);
 }
 
 .button__quantity--number {
-	background: var(--color-03 );
+	padding: 0 var(--padding-x-large);
+	border: 2px solid var(--color-02);
 }
 
 .product__card--description {
@@ -94,7 +106,6 @@
 }
 
 
-
 @media screen and (min-width: 880px) {
 	/*
 	.product__preview--card {
@@ -103,6 +114,7 @@
 	
 	.product__preview--card {
 		display: flex;
+		justify-content: center;
 		padding: var(--padding-x-large);
 	}
 
