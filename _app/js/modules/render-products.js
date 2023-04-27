@@ -36,6 +36,9 @@ export default function renderProductCards(products) {
 		productPrice.classList.add('product__information--price');
 		exploreButton.classList.add('product__explore--button');
 		
+
+
+		cardLinkElement.setAttribute('href', `/_app/product-preview/index.html?product=${product.slug}`)
 		imageElement.setAttribute('src', imageUrl);
 		productBrand.textContent = itemBrand;
 		productName.textContent = itemName;
