@@ -39,6 +39,10 @@
 		background: var(--color-foreground);
 	}
 
+	.product__card--link:focus {
+		border: 0.3rem solid #000;
+	}
+
 	.product__image {
 		text-align: center;
 	}
