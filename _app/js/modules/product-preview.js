@@ -40,6 +40,7 @@ export default function previewProduct(products) {
 		previewCardElement.classList.add('product__preview--card');
 		cardTopContainer.classList.add('product__card--top');
 		cardTopHeadline.classList.add('product__detail--name');
+		cardImagesContainer.classList.add('product__images--slides');
 		cardBottomContainer.classList.add('product__card--bottom');
 		cardBottomContent.classList.add('product__details--content');
 
@@ -99,10 +100,12 @@ export default function previewProduct(products) {
 			const cardtopImage = document.createElement('div');
 			const imageElementSource = document.createElement('img');
 
-			cardtopImage.classList.add('product__detail--image');
-			imageElementSource.classList.add('product__detail--image--source');
+			cardtopImage.classList.add('product__image--slide');
+			imageElementSource.classList.add('product__image--source');
 
 			imageElementSource.setAttribute('src', image);
+			cardTopContainer.appendChild(cardImagesContainer);
+			cardImagesContainer.appendChild(cardtopImage);
 
 			cardTopContainer.appendChild(cardtopImage);
 			cardtopImage.appendChild(imageElementSource);
