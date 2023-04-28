@@ -10,12 +10,6 @@
 	background: var(--color-foreground);
 }
 
-.product__card--top {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
 .product__detail--name {
 	margin: var(--margin-normal);
 	font-family: var(--font-family-secondary);
@@ -28,7 +22,6 @@
 
 .product__detail {
 	display: flex;
-
 	flex-direction: column;
 }
 
