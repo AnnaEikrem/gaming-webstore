@@ -2,7 +2,6 @@
 	padding: var(--padding-normal);
 	background: var(--color-01);
 	border: solid #000 2px;
-	/* height: 9rem; */
 }
 
 .header__content--mobile {
@@ -13,7 +12,7 @@
 }
 
 .header__home--button {
-	padding-left: var(--padding-normal); /*Lik padding fra burger og logo*/
+	padding-left: var(--padding-normal);
 	width: 8rem;
 }
 
@@ -110,17 +109,21 @@
 	display: none;
 }
 
-@media screen and (min-width: 880px){
+@media screen and (min-width: 940px){
 	.header__container {
 		display: flex;
+		justify-content: center;
 		flex-direction: row; 
-		/* align-items: center; */
 		border: solid #000 2px;
+		padding: 0;
+	}
+
+	.header__content--mobile {
+		padding: 0;
 	}
 
 	.header__home--button {
-		padding: var(--padding-medium);
-		/* margin-left: var(--margin-normal); */
+		padding-left: var(--padding-large);
 		margin: 0;
 		width: 9rem;
 	}
@@ -139,7 +142,6 @@
 
 	.header__menu--item {
 		font-size: var(--font-size-large);
-		/* justify-content: center; */
 	}
 
 	.header__menu--item:hover {
@@ -181,11 +183,10 @@
 	}
 }
 
-@media screen and (min-width: 1066px) {
+/* @media screen and (min-width: 1066px) {
 	.header__navigation {
 		display: flex;
-		justify-content: end;
 		width: 100%;
 	}
-}
+} */
 

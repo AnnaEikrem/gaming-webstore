@@ -10,12 +10,6 @@
 	background: var(--color-foreground);
 }
 
-.product__card--top {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
 .product__detail--name {
 	margin: var(--margin-normal);
 	font-family: var(--font-family-secondary);
@@ -28,22 +22,19 @@
 
 .product__detail {
 	display: flex;
-
 	flex-direction: column;
 }
 
 .product__detail--text {
 	display: flex;
 	padding: var(--padding-small);
-}
-
-.product__detail--text {
-	width:20%;
+	width: 100%;
 }
 
 .product__detail--value {
 	display: flex;
 	flex-direction: row;
+	/* justify-content: flex-end; */
 	font-size: var(--font-size-small);
 	font-family: var(--font-family-text);
 }
@@ -57,6 +48,7 @@
 	width: 1.8rem;
 	height: 1.8rem;
 	border-radius: 50%;
+	border: 1px solid var(--color-02);
 }
 
 .product__card--buttons {
@@ -69,27 +61,16 @@
 	margin: var(--margin-normal) 0;
 	width: var(--button-width-large);
 	border: 2px solid var(--color-02);
-	/* border-radius: 2rem; */
-
-.card__button--quantity, .card__button--add-to-cart {
-	display: flex;
-	justify-content: center;
-	width: var(--button-width-large);
-	margin: var(--margin-normal) 0;
-	border: 2px solid var(--color-02);
-	border-radius: 2rem;
-
-	font-family: var(--font-family-primary);
 	font-size: var(--font-size-medium);
-
-	background: var(--color-button);
+	font-family: var(--font-family-primary);
+	
+	background: var(--color-05);
 }
 
 .card__button--quantity {
 	display: flex;
 	justify-content:space-around ;
 	width: var(--button-width-large);
-	/* border-radius: 2rem; */
 	font-family: var(--font-family-primary);
 	font-size: var(--font-size-medium);
 }
@@ -103,14 +84,14 @@
 .button__quantity--number {
 	padding: 0 var(--padding-x-large);
 	border: 2px solid var(--color-02);
-  
+}  
+
 .button__quantity--subtract, .button__quantity--add {
 	border: 2px solid var(--color-02);
 }
 
 .button__quantity--number {
 	background: var(--color-03 );
-
 }
 
 .product__card--description {
@@ -127,11 +108,6 @@
 }
 
 @media screen and (min-width: 880px) {
-	/*
-	.product__preview--card {
-		max-width: 80%;
-	} */
-	
 	.product__preview--card {
 		display: flex;
 		justify-content: center;
@@ -148,8 +124,6 @@
 		margin: var(--margin-normal);
 		width: 50%;
 	}
-
-
 }
 
 @media screen and (min-width: 1066px) {
@@ -157,9 +131,4 @@
 		display: flex;
 		justify-content: center;
 	}
-
-
-	/* .product__preview--card {
-		max-width: 80%;
-	} */
 }

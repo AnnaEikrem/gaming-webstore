@@ -14,11 +14,18 @@ export default function previewProduct(products) {
 		const productColors = product.colors;
 
 		const previewCardElement = document.createElement('div');
+
 		const cardTopContainer = document.createElement('div');
 		const cardTopHeadline = document.createElement('h3');
+		const cardImagesButtonsContainer = document.createElement('div');
+		const cardButtonPrevious = document.createElement('button');
+		const cardButtonNextIcon = document.createElement('img');
+		const cardButtonPreviousIcon = document.createElement('img');
+		const cardButtonNext = document.createElement('button');
+		const cardImagesContainer = document.createElement('div');
+
 		const cardBottomContainer = document.createElement('div');
 		const cardBottomContent = document.createElement('div');
-
 		const cardBottomDetail = document.createElement('div');
 		const cardBottomDetailPrice = document.createElement('div');
 		const cardBottomDetailBrand = document.createElement('div');
@@ -31,7 +38,6 @@ export default function previewProduct(products) {
 		const buttonSubtract = document.createElement('button');
 		const buttonNumber = document.createElement('div');
 		const buttonAdd = document.createElement('button');
-
 		const buttonAddToCart = document.createElement('button');
 		const cardDescriptionContainer = document.createElement('div');
 		const descriptionHeadline = document.createElement('h4');
@@ -40,6 +46,11 @@ export default function previewProduct(products) {
 		previewCardElement.classList.add('product__preview--card');
 		cardTopContainer.classList.add('product__card--top');
 		cardTopHeadline.classList.add('product__detail--name');
+		cardImagesButtonsContainer.classList.add('product__images--buttons');
+		cardButtonPrevious.classList.add('image__button--previous');
+		cardButtonNext.classList.add('image__button--next');
+		
+		cardImagesContainer.classList.add('product__images--slides');
 		cardBottomContainer.classList.add('product__card--bottom');
 		cardBottomContent.classList.add('product__details--content');
 
@@ -65,6 +76,8 @@ export default function previewProduct(products) {
 		descriptionText.classList.add('card__description--text');
 
 		cardTopHeadline.textContent = product.name;
+		cardButtonPreviousIcon.setAttribute('src', '/_app/assets/icons/previous-arrow.svg');
+		cardButtonNextIcon.setAttribute('src', '/_app/assets/icons/next-arrow.svg');
 		cardBottomDetailPrice.textContent = 'Price:';
 		cardBottomDetailBrand.textContent = 'Brand:';
 		cardBottomDetailColors.textContent = 'Colors:';
@@ -94,19 +107,27 @@ export default function previewProduct(products) {
 		previewCardElement.appendChild(cardTopContainer);
 		previewCardElement.appendChild(cardBottomContainer);
 		cardTopContainer.appendChild(cardTopHeadline);
+		cardTopContainer.appendChild(cardImagesButtonsContainer);
+		cardTopContainer.appendChild(cardImagesContainer);
+
+		cardImagesButtonsContainer.appendChild(cardButtonPrevious);
+		cardButtonPrevious.appendChild(cardButtonPreviousIcon);
+		cardImagesButtonsContainer.appendChild(cardButtonNext);
+		cardButtonNext.appendChild(cardButtonNextIcon);
 
 		productImages.forEach(image => {
 			const cardtopImage = document.createElement('div');
 			const imageElementSource = document.createElement('img');
 
-			cardtopImage.classList.add('product__detail--image');
-			imageElementSource.classList.add('product__detail--image--source');
+			cardtopImage.classList.add('product__image--slide');
+			imageElementSource.classList.add('product__image--source');
 
 			imageElementSource.setAttribute('src', image);
+			cardTopContainer.appendChild(cardImagesContainer);
+			cardImagesContainer.appendChild(cardtopImage);
 
-			cardTopContainer.appendChild(cardtopImage);
 			cardtopImage.appendChild(imageElementSource);
-		})
+		});
 
 		cardBottomContainer.appendChild(cardBottomContent);
 		cardBottomContainer.appendChild(cardButtonsContainer);

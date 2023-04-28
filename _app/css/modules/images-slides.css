@@ -1,0 +1,42 @@
+.product__images--slides {
+	position: relative;
+}
+
+.product__image--slide {
+	display: flex;
+	justify-content: center;
+	background: grey;
+}
+
+.product__images--buttons {
+	position: absolute;
+	top: 10rem;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 10;
+}
+
+.image__button--previous {
+	position: absolute;
+	left: -10rem;
+	width: 2rem;
+	transform: translateY(16rem);
+	border: 2px solid var(--color-01)
+}
+
+.image__button--next {
+	position: absolute;
+	right: 2rem;
+	width: 2rem;
+	transform: translateY(16rem);
+	border: 2px solid var(--color-01)
+}
+
+
+@media screen and (min-width: 880px) {
+
+}
+
+@media screen and (min-width: 1066px) {
+	
+}
