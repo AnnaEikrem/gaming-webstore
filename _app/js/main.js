@@ -2,7 +2,7 @@ import fetchProductsData from "./modules/fetch-products-data.js";
 import toggleNavigation from "./modules/toggle-navigation.js";
 import renderProductCards from "./modules/render-products.js";
 import previewProduct from "./modules/product-preview.js";
-import imageSlides from "./modules/imageSlides.js";
+import imageSlides from "./modules/image-slides.js";
 
 const fetchedData = await fetchProductsData();
 
