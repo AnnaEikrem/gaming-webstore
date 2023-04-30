@@ -1,0 +1,8 @@
+.filtered__products--active {
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.filtered__products--active:hover {
+	font-weight: bold;
+}
