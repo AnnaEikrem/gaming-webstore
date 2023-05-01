@@ -1,3 +1,25 @@
+.products__filter--buttons {
+	display: flex;
+	justify-content: space-evenly;
+	padding: var(--padding-normal);
+}
+
+.products__filter--sub--buttons {
+	display: flex;
+	justify-content: space-evenly;
+	padding: var(--padding-button);
+}
+
+.category__button {
+	width: var(	--button-width-normal);
+	padding: var(--padding-button);
+	border: 2px solid var(--color-02);
+}
+
+/* .category__button:focus {
+	border: 3px solid var(--color-focus-02);
+} */
+
 .filtered__products--active {
 	text-decoration: underline;
 	font-weight: bold;
