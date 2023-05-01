@@ -13,5 +13,6 @@ export default Structure => {
 					documentTypeListItem('color'),
 					documentTypeListItem('category'),
 					documentTypeListItem('tag'),
+					documentTypeListItem('pages'),
 				])
 }
