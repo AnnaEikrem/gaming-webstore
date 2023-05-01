@@ -1,3 +1,11 @@
+		/* Focus styling  */
+ 	.product__card--link:focus, .product__explore--button:focus {
+		border: 0.3rem solid var(--color-focus);
+	} 
+	 
+
+
+
 	.products__section--top {
 		display: flex;
 		align-items: center;

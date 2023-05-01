@@ -8,6 +8,9 @@
 	--color-04: #36454F;
 	--color-05: #d3d3d3;
 
+	--color-focus: blue;
+	--color-focus-02: rgb(0, 0, 0);
+
 	--gap-column: 1rem;
 	--gap-row: 1rem;
 	
