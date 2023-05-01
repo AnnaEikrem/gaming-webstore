@@ -70,6 +70,7 @@ export default function filterProducts(products) {
 		allCategoryButtons.forEach(button => {
 			button.classList.remove('filtered__products--active');
 		});
+	}
 
 	function filterProducts(currentProduct) {
 		let filteredProducts = [];
@@ -153,6 +154,7 @@ export default function filterProducts(products) {
 
 			filterButtonsContainer.appendChild(buttonElement);
 		}
+	}
     
 	function renderBrandSubButtons() {
 		for (let i = 0; i < brandSubButtons.length; i++) {
