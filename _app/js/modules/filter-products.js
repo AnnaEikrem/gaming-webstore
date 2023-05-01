@@ -5,6 +5,7 @@ export default function filterProducts(products) {
 	const filterButtonsContainer = document.querySelector('.products__filter--buttons');
 	const subButtonsContainer = document.querySelector('.products__filte--sub--buttons');
 
+
 	const categoryButtons = [
 		{
 			category: 'All'
@@ -69,9 +70,6 @@ export default function filterProducts(products) {
 		allCategoryButtons.forEach(button => {
 			button.classList.remove('filtered__products--active');
 		});
-
-		clickedbutton.classList.add('filtered__products--active');
-	};
 
 	function filterProducts(currentProduct) {
 		let filteredProducts = [];
@@ -155,8 +153,7 @@ export default function filterProducts(products) {
 
 			filterButtonsContainer.appendChild(buttonElement);
 		}
-	};
-
+    
 	function renderBrandSubButtons() {
 		for (let i = 0; i < brandSubButtons.length; i++) {
 			const buttonElement = subButtonDOMElement(brandSubButtons[i]);
