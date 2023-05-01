@@ -3,7 +3,7 @@ import renderProductCards from "./render-products.js";
 export default function filterProducts(products) {
 	const productsListContainer = document.querySelector('.list__products--all');
 	const filterButtonsContainer = document.querySelector('.products__filter--buttons');
-	const subButtonsContainer = document.querySelector('.products__filte--sub--buttons');
+	const subButtonsContainer = document.querySelector('.products__filter--sub--buttons');
 
 
 	const categoryButtons = [
@@ -66,10 +66,12 @@ export default function filterProducts(products) {
 		subButtonsContainer.textContent = '';
 	};
 
-	function toggleClass(allCategoryButtons, clickedbutton) {
+	function toggleClass(allCategoryButtons, clickedButton) {
 		allCategoryButtons.forEach(button => {
 			button.classList.remove('filtered__products--active');
 		});
+
+		// clickedButton.classlist.add('filtered__products--active');
 	}
 
 	function filterProducts(currentProduct) {
