@@ -6,13 +6,14 @@ import imageSlides from "./modules/image-slides.js";
 import filterProducts from "./modules/filter-products.js";
 
 import aboutPage from "./modules/fetch-about-page.js";
+import renderAboutPage from "./modules/render-about-page.js";
 
 const fetchedData = await fetchProductsData();
+const aboutData = await aboutPage();
 
 renderProductCards(fetchedData);
 toggleNavigation();
 previewProduct(fetchedData);
 imageSlides();
 filterProducts(fetchedData);
-
-aboutPage();
+renderAboutPage(aboutData);
