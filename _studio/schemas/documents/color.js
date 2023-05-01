@@ -11,7 +11,8 @@ export default {
 		{
 			title: 'Hex Color Code',
 			name: 'hexColor',
-			type: 'string'
+			type: 'string',
+			description: 'Add the color code you would like to use'
 		}
 	]
 }
