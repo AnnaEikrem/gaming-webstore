@@ -1,7 +1,6 @@
 import renderProductCards from "./render-products.js";
 
 export default function filterProducts(products) {
-	let filteredProducts = [];
 	const productsListContainer = document.querySelector('.list__products--all');
 	const filterButtonsContainer = document.querySelector('.products__filter--buttons');
 	const subButtonsContainer = document.querySelector('.products__filte--sub--buttons');
@@ -54,15 +53,16 @@ export default function filterProducts(products) {
 	}
 
 	function handleSubBrandButtonClick(event) {
-		let currentBrandProduct = event.target.innerText;
-		const clickedSubButton = event.target;
-		const allBrandButtons = event.target.parentElement.querySelectorAll('button');
+		let currentProduct = event.target.innerText;
+		const clickedButton = event.target;
+		const allCategoryButtons = event.target.parentElement.querySelectorAll('button');
 
-		toggleClass(allBrandButtons, clickedSubButton);
-		filterBrandProducts(currentBrandProduct)
+		toggleClass(allCategoryButtons, clickedButton);
+		filterBrandProducts(currentProduct)
 	}
+
 	function clearButtonsContainer() {
-		productsListContainer.textContent = '';
+		subButtonsContainer.textContent = '';
 	};
 
 	function toggleClass(allCategoryButtons, clickedbutton) {
@@ -70,7 +70,7 @@ export default function filterProducts(products) {
 			button.classList.remove('filtered__products--active');
 		});
 
-		clickedbutton.classList.add('filtered__socks--active');
+		clickedbutton.classList.add('filtered__products--active');
 	};
 
 	function filterProducts(currentProduct) {
@@ -79,21 +79,19 @@ export default function filterProducts(products) {
 		switch (currentProduct) {
 			case 'All':
 				filteredProducts = products;
-				break;
+					break;
 
 			case 'Brand':
 				renderBrandSubButtons();
-				break;
-
-				// product.brand.brandName
+					break;
 
 			case 'Consoles':
 				filteredProducts = products.filter(product => product.category.name === 'Consoles');
-				break;
+					break;
 
 			case 'Games':
 				filteredProducts = products.filter(product => product.category.name === 'Games');
-				break;
+					break;
 		}
 
 		productsListContainer.innerHTML = '';
@@ -106,28 +104,29 @@ export default function filterProducts(products) {
 		switch (currentBrandProduct) {
 			case 'Atari':
 				filteredBrandProducts = products.filter(product => product.brand.brandName === 'Atari');
-				break;
+					break;
 
 			case 'Bandai':
 				filteredBrandProducts = products.filter(product => product.brand.brandName === 'Bandai');
-				break;
+					break;
 
 			case 'Nintendo':
 				filteredBrandProducts = products.filter(product => product.brand.brandName === 'Nintendo');
-				break;
+					break;
 
 			case 'Sega':
 				filteredBrandProducts = products.filter(product => product.brand.brandName === 'Sega');
-				break;
+					break;
 
 			case 'Sony':
 				filteredBrandProducts = products.filter(product => product.brand.brandName === 'Sony');
-				break;
+					break;
 		}
 
 		productsListContainer.innerHTML = '';
 		renderProductCards(filteredBrandProducts);
 	};
+
 	function buttonDOMElement(button) {
 		const categoryButton = document.createElement('button');
 		categoryButton.classList.add('category__button');
@@ -157,6 +156,7 @@ export default function filterProducts(products) {
 			filterButtonsContainer.appendChild(buttonElement);
 		}
 	};
+
 	function renderBrandSubButtons() {
 		for (let i = 0; i < brandSubButtons.length; i++) {
 			const buttonElement = subButtonDOMElement(brandSubButtons[i]);
