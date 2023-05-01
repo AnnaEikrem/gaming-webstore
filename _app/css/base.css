@@ -20,6 +20,10 @@ a {
 	text-decoration: none;
 }
 
+a:focus, button:focus {
+	border: 0.3rem solid #7babff;
+}
+
 /* Adds hover effect to tablet and desktop version */
 @media screen and (min-width: 768px) {
 	body {
