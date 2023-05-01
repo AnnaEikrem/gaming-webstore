@@ -4,7 +4,7 @@ export default function filterProducts(products) {
 	let filteredProducts = [];
 	const productsListContainer = document.querySelector('.list__products--all');
 	const filterButtonsContainer = document.querySelector('.products__filter--buttons');
-	const subButtonsContainer = document.querySelector('products__filte--sub--buttons');
+	const subButtonsContainer = document.querySelector('.products__filte--sub--buttons');
 
 	const categoryButtons = [
 		{
@@ -53,6 +53,14 @@ export default function filterProducts(products) {
 		filterProducts(currentProduct);
 	}
 
+	function handleSubBrandButtonClick(event) {
+		let currentBrandProduct = event.target.innerText;
+		const clickedSubButton = event.target;
+		const allBrandButtons = event.target.parentElement.querySelectorAll('button');
+
+		toggleClass(allBrandButtons, clickedSubButton);
+		filterBrandProducts(currentBrandProduct)
+	}
 	function clearButtonsContainer() {
 		productsListContainer.textContent = '';
 	};
@@ -92,10 +100,34 @@ export default function filterProducts(products) {
 		renderProductCards(filteredProducts);
 	};
 
-	function renderBrandSubButtons() {
-		console.log('hei')
-	}
+	function filterBrandProducts(currentBrandProduct) {
+		let filteredBrandProducts = [];
 
+		switch (currentBrandProduct) {
+			case 'Atari':
+				filteredBrandProducts = products.filter(product => product.brand.brandName === 'Atari');
+				break;
+
+			case 'Bandai':
+				filteredBrandProducts = products.filter(product => product.brand.brandName === 'Bandai');
+				break;
+
+			case 'Nintendo':
+				filteredBrandProducts = products.filter(product => product.brand.brandName === 'Nintendo');
+				break;
+
+			case 'Sega':
+				filteredBrandProducts = products.filter(product => product.brand.brandName === 'Sega');
+				break;
+
+			case 'Sony':
+				filteredBrandProducts = products.filter(product => product.brand.brandName === 'Sony');
+				break;
+		}
+
+		productsListContainer.innerHTML = '';
+		renderProductCards(filteredBrandProducts);
+	};
 	function buttonDOMElement(button) {
 		const categoryButton = document.createElement('button');
 		categoryButton.classList.add('category__button');
@@ -107,6 +139,16 @@ export default function filterProducts(products) {
 		return categoryButton;
 	}
 
+	function subButtonDOMElement(button) {
+		const subBrandButton = document.createElement('button');
+		subBrandButton.classList.add('category__button');
+		subBrandButton.textContent = button.brand;
+		subBrandButton.dataset.filterCategory = button.brand;
+
+		subBrandButton.addEventListener('click', handleSubBrandButtonClick);
+
+		return subBrandButton;
+	}
 
 	function renderCategoryButtons() {
 		for (let i = 0; i < categoryButtons.length; i++) {
@@ -115,4 +157,10 @@ export default function filterProducts(products) {
 			filterButtonsContainer.appendChild(buttonElement);
 		}
 	};
+	function renderBrandSubButtons() {
+		for (let i = 0; i < brandSubButtons.length; i++) {
+			const buttonElement = subButtonDOMElement(brandSubButtons[i]);
+			subButtonsContainer.appendChild(buttonElement);
+		}
+	}
 };
