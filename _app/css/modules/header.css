@@ -11,10 +11,11 @@
 	align-items: center;
 }
 
-.header__home--button {
+.header__home--link {
 	padding-left: var(--padding-normal);
 	width: 8rem;
 }
+
 
 .header__navigation--buttons {
 	display: flex;
