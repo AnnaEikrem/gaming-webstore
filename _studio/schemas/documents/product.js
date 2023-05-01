@@ -15,7 +15,16 @@ export default {
 			description: 'The first image be the Main Product Image',
 			of: [
 				{
-					type: 'image'
+					name: 'image',
+					type: 'image',
+					fields: [
+						{
+							name: 'alt',
+							type: 'string',
+							description: 'A "why" description of the image. The ALT text is read out to users by screen reader software.'
+							// validation: Rule => Rule.required().min(10).max(80)
+						}
+					]
 				}
 			]
 		},
