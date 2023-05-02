@@ -1,19 +1,20 @@
 .products__filter--buttons {
 	display: flex;
 	justify-content: space-evenly;
-	padding: var(--padding-normal);
+	padding: 0 var(--padding-normal);
 }
 
 .products__filter--sub--buttons {
 	display: flex;
 	justify-content: space-evenly;
-	padding: var(--padding-button);
+	padding: 1rem var(--padding-button);
 }
 
 .category__button {
 	width: var(	--button-width-normal);
-	padding: var(--padding-button);
+	padding: var(--padding-small);
 	border: 2px solid var(--color-02);
+	border-radius: 2rem;
 }
 
 /* .category__button:focus {
@@ -21,10 +22,26 @@
 } */
 
 .filtered__products--active {
-	text-decoration: underline;
+	color: var(--color-focus);
 	font-weight: bold;
 }
 
 .filtered__products--active:hover {
 	font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+	.products__filter--buttons {
+		display: flex;
+		justify-content: flex-start;
+	}
+
+	.products__filter--sub--buttons {
+		display: flex;
+		justify-content: flex-start;
+	}
+
+	.category__button {
+		margin: 0 1rem;
+	}
 }
