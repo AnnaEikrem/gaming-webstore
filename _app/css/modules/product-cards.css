@@ -2,9 +2,6 @@
  	.product__card--link:focus, .product__explore--button:focus {
 		border: 0.3rem solid var(--color-focus);
 	} 
-	 
-
-
 
 	.products__section--top {
 		display: flex;
@@ -164,9 +161,7 @@
 		grid-template-columns: repeat(4, 1fr);
 	}
 
-	.products__section--top {
-		margin-bottom: var(--margin-x-large);
-	}
+	
 
 	.product__explore--button {
 		margin: 1rem 20%;

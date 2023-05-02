@@ -45,11 +45,11 @@ export default function filterProducts(products) {
 
 	function handleCategoryButtonClick(event) {
 		let currentProduct = event.target.innerText;
-		const clickedbutton = event.target;
+		const clickedButton = event.target;
 		const allCategoryButtons = event.target.parentElement.querySelectorAll('button');
 		
 		clearButtonsContainer();
-		toggleClass(allCategoryButtons, clickedbutton);
+		toggleClass(allCategoryButtons, clickedButton);
 		filterProducts(currentProduct);
 	}
 
@@ -71,7 +71,7 @@ export default function filterProducts(products) {
 			button.classList.remove('filtered__products--active');
 		});
 
-		// clickedButton.classlist.add('filtered__products--active');
+		clickedButton.classList.add('filtered__products--active');
 	}
 
 	function filterProducts(currentProduct) {
