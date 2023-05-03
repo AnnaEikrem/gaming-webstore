@@ -6,6 +6,7 @@ export default async function fetchProductsData() {
 		'name': name,
 		'productImage': images[0].asset -> url,
   		'images': images[].asset -> url,
+		'altText': images[].alt,
 		'brand': brand -> {
 		  'brandName': name,
 		  'brandDescription': description,

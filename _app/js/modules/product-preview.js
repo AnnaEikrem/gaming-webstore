@@ -130,12 +130,13 @@ export default function previewProduct(products) {
 			imageElementSource.classList.add('product__image--source');
 
 			imageElementSource.setAttribute('src', image);
+			imageElementSource.setAttribute('alt', product.altText);
 			cardTopContainer.appendChild(cardImagesContainer);
 			cardImagesContainer.appendChild(cardtopImage);
 
 			cardtopImage.appendChild(imageElementSource);
 		});
-
+		
 		cardBottomContainer.appendChild(cardBottomContent);
 		cardBottomContainer.appendChild(cardButtonsContainer);
 		cardBottomContainer.appendChild(cardDescriptionContainer);
