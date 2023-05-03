@@ -46,10 +46,9 @@ export default function previewProduct(products) {
 		previewCardElement.classList.add('product__preview--card');
 		cardTopContainer.classList.add('product__card--top');
 		cardTopHeadline.classList.add('product__detail--name');
-		cardImagesButtonsContainer.classList.add('product__images--buttons');
-		cardButtonPrevious.classList.add('image__button--previous');
-		cardButtonNext.classList.add('image__button--next');
-		
+		cardImagesButtonsContainer.classList.add('product__slide--buttons');
+		cardButtonPrevious.classList.add('image__slide--previous');
+		cardButtonNext.classList.add('image__slide--next');
 		cardImagesContainer.classList.add('product__images--slides');
 		cardBottomContainer.classList.add('product__card--bottom');
 		cardBottomContent.classList.add('product__details--content');
