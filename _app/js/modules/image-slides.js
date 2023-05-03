@@ -2,8 +2,8 @@ export default function imageSlides() {
 	let currentSlideIndex = 0;
 	const slidesContainer = document.querySelector('.product__images--slides')
 	const slides = document.querySelectorAll('.product__image--slide');
-	const previousButton = document.querySelector('.image__button--previous');
-	const nextButton = document.querySelector('.image__button--next');
+	const previousButton = document.querySelector('.image__slide--previous');
+	const nextButton = document.querySelector('.image__slide--next');
 
 	if (slidesContainer) {
 		displaySlide(currentSlideIndex);

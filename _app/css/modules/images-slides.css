@@ -8,7 +8,7 @@
 	background: grey;
 }
 
-.product__images--buttons {
+.product__slide--buttons {
 	position: absolute;
 	top: 10rem;
 	left: 50%;
@@ -16,7 +16,7 @@
 	z-index: 10;
 }
 
-.image__button--previous {
+.image__slide--previous {
 	position: absolute;
 	left: -10rem;
 	width: 2rem;
@@ -24,7 +24,7 @@
 	border: 2px solid var(--color-01)
 }
 
-.image__button--next {
+.image__slide--next {
 	position: absolute;
 	right: 2rem;
 	width: 2rem;
