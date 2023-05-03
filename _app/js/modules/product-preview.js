@@ -27,6 +27,10 @@ export default function previewProduct(products) {
 		const cardBottomContainer = document.createElement('div');
 		const cardBottomContent = document.createElement('div');
 		const cardBottomDetail = document.createElement('div');
+		const cardBottomPriceContainer = document.createElement('div');
+		const cardBottomBrandContainer = document.createElement('div');
+		const cardBottomColorsContainer = document.createElement('div');
+		cardBottomColorsContainer.classList.add('detail__brand--container');
 		const cardBottomDetailPrice = document.createElement('div');
 		const cardBottomDetailBrand = document.createElement('div');
 		const cardBottomDetailColors = document.createElement('div');
@@ -54,10 +58,13 @@ export default function previewProduct(products) {
 		cardBottomContent.classList.add('product__details--content');
 
 		cardBottomDetail.classList.add('product__detail');
+		cardBottomPriceContainer.classList.add('detail__price--container');
 		cardBottomDetailPrice.classList.add('product__detail--text');
 		cardBottomDetailPrice.classList.add('price');
+		cardBottomBrandContainer.classList.add('detail__brand--container');
 		cardBottomDetailBrand.classList.add('product__detail--text');
 		cardBottomDetailBrand.classList.add('brand');
+		cardBottomColorsContainer.classList.add('detail__brand--container');
 		cardBottomDetailColors.classList.add('product__detail--text');
 		cardBottomDetailColors.classList.add('colors');
 		cardBottomValuePrice.classList.add('product__detail--value');
@@ -80,7 +87,7 @@ export default function previewProduct(products) {
 		cardBottomDetailPrice.textContent = 'Price:';
 		cardBottomDetailBrand.textContent = 'Brand:';
 		cardBottomDetailColors.textContent = 'Colors:';
-		cardBottomValuePrice.textContent = productPrice;
+		cardBottomValuePrice.textContent = `${productPrice} $`;
 		cardBottomValueBrand.textContent = productBrand;
 
 		productColors.forEach(color => {
@@ -91,11 +98,12 @@ export default function previewProduct(products) {
 			cardBottomValueColors.classList.add('product__detail--value');
 			cardBottomValueColors.style.background = colorCode;
 
-			cardBottomDetailColors.appendChild(cardBottomValueColors);
+			cardBottomColorsContainer.append(cardBottomDetailColors);
+			cardBottomColorsContainer.append(cardBottomValueColors);
 		})
 		
 		buttonSubtract.textContent = '-'
-		buttonNumber.textContent = '3';
+		buttonNumber.textContent = '1';
 		buttonAdd.textContent = '+'
 
 		buttonAddToCart.textContent = 'Add to cart';
@@ -132,12 +140,14 @@ export default function previewProduct(products) {
 		cardBottomContainer.appendChild(cardButtonsContainer);
 		cardBottomContainer.appendChild(cardDescriptionContainer);
 		cardBottomContent.appendChild(cardBottomDetail);
+		cardBottomDetail.appendChild(cardBottomPriceContainer);
+		cardBottomDetail.appendChild(cardBottomBrandContainer);
+		cardBottomDetail.appendChild(cardBottomColorsContainer);
 
-		cardBottomDetail.appendChild(cardBottomDetailPrice);
-		cardBottomDetail.appendChild(cardBottomDetailBrand);
-		cardBottomDetail.appendChild(cardBottomDetailColors);
-		cardBottomDetailPrice.appendChild(cardBottomValuePrice);
-		cardBottomDetailBrand.appendChild(cardBottomValueBrand);
+		cardBottomPriceContainer.appendChild(cardBottomDetailPrice);
+		cardBottomPriceContainer.appendChild(cardBottomValuePrice);
+		cardBottomBrandContainer.appendChild(cardBottomDetailBrand);
+		cardBottomBrandContainer.appendChild(cardBottomValueBrand);
 
 		cardButtonsContainer.appendChild(buttonQuantity);
 		cardButtonsContainer.appendChild(buttonAddToCart);
