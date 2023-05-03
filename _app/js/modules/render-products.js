@@ -17,6 +17,9 @@ export default function renderProductCards(products) {
 		const imageUrl = product.productImage;
 		const itemBrand = product.brand.brandName;
 		const itemPrice = product.price;
+		const imageAltText = product.altText;
+
+		console.log(product.altText);
 
 		const cardLinkElement = document.createElement('a');
 		const productImage = document.createElement('div');
@@ -36,10 +39,9 @@ export default function renderProductCards(products) {
 		productPrice.classList.add('product__information--price');
 		exploreButton.classList.add('product__explore--button');
 		
-
-
 		cardLinkElement.setAttribute('href', `/_app/product-preview/index.html?product=${product.slug}`)
 		imageElement.setAttribute('src', imageUrl);
+		imageElement.setAttribute('alt', imageAltText);
 		productBrand.textContent = itemBrand;
 		productName.textContent = itemName;
 		productPrice.textContent = `${itemPrice} $`;
