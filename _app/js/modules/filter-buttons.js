@@ -1,6 +1,6 @@
 import renderProductCards from "./render-products.js";
 
-export default function filterProducts(products) {
+export default function filterButtons(products) {
 	const productsListContainer = document.querySelector('.list__products--all');
 	const filterButtonsContainer = document.querySelector('.products__filter--buttons');
 	const subButtonsContainer = document.querySelector('.products__filter--sub--buttons');

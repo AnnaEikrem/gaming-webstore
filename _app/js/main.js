@@ -3,7 +3,8 @@ import toggleNavigation from "./modules/toggle-navigation.js";
 import renderProductCards from "./modules/render-products.js";
 import previewProduct from "./modules/product-preview.js";
 import imageSlides from "./modules/image-slides.js";
-import filterProducts from "./modules/filter-products.js";
+import filterButtons from "./modules/filter-buttons.js";
+import filterSearch from "./modules/filter-search.js";
 
 import aboutPage from "./modules/fetch-about-page.js";
 import renderAboutPage from "./modules/render-about-page.js";
@@ -15,5 +16,6 @@ renderProductCards(fetchedData);
 toggleNavigation();
 previewProduct(fetchedData);
 imageSlides();
-filterProducts(fetchedData);
+filterButtons(fetchedData);
+filterSearch(fetchedData);
 renderAboutPage(aboutData);

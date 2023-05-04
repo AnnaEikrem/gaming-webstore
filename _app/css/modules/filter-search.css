@@ -1,0 +1,22 @@
+.menu__input--results {
+	padding: var(--padding-medium);
+}
+
+.result__item--info {
+	color: var(--color-02);
+	font-size: var(--font-size-small);
+	font-family: var(--font-family-text);
+}
+
+.input__result--item:hover {
+	cursor: pointer;
+}
+
+
+
+@media screen and (min-width: 940px) {
+	/* .input__result--item:hover {
+		transition: 0.4s;
+		background: var(--color-02);
+	} */
+}
