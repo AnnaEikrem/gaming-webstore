@@ -17,6 +17,5 @@ toggleNavigation();
 previewProduct(fetchedData);
 imageSlides();
 filterButtons(fetchedData);
-filterSearch();
-// filterSearch(fetchedData);
+filterSearch(fetchedData);
 renderAboutPage(aboutData);
