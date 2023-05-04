@@ -4,7 +4,7 @@
 	border: solid #000 2px;
 }
 
-.header__content--mobile {
+.header__left {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -70,7 +70,7 @@
 	white-space: nowrap;
 }
 
-.menu__buttons {
+.header__right {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -126,7 +126,7 @@
 		padding: 0;
 	}
 
-	.header__content--mobile {
+	.header__left {
 		padding: 0;
 	}
 
@@ -174,7 +174,7 @@
 		display: flex;
 	}
 
-	.header__content--mobile {
+	.header__left {
 		border: none;
 	}
 
