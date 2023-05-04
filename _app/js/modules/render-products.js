@@ -19,8 +19,6 @@ export default function renderProductCards(products) {
 		const itemPrice = product.price;
 		const imageAltText = product.altText;
 
-		console.log(product.altText);
-
 		const cardLinkElement = document.createElement('a');
 		const productImage = document.createElement('div');
 		const imageElement = document.createElement('img');
