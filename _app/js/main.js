@@ -4,6 +4,7 @@ import renderProductCards from "./modules/render-products.js";
 import previewProduct from "./modules/product-preview.js";
 import imageSlides from "./modules/image-slides.js";
 import filterButtons from "./modules/filter-buttons.js";
+import filterSearch from "./modules/filter-search.js";
 
 import aboutPage from "./modules/fetch-about-page.js";
 import renderAboutPage from "./modules/render-about-page.js";
@@ -16,4 +17,6 @@ toggleNavigation();
 previewProduct(fetchedData);
 imageSlides();
 filterButtons(fetchedData);
+filterSearch();
+// filterSearch(fetchedData);
 renderAboutPage(aboutData);
