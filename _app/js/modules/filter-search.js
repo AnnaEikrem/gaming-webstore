@@ -2,9 +2,10 @@ export default function filterSearch(products) {
 	let filterString = '';
 	let caseSensitive = false;
 
-	const searchResultsAnchor = document.querySelector('.header__container');
-	const searchResultsContainer = document.createElement('ul');
-	const searchInput = document.querySelector('.menu__input--field'); 
+	const searchResultsAnchor = document.querySelector('.main__container');
+	const searchInput = document.querySelector('.menu__input--field');
+	const resultsSectionElement = document.createElement('section');
+	const searchResultsContainer = document.createElement('ul'); 
 
 	const productsData = products.map(product => {
 		return {
@@ -48,7 +49,7 @@ export default function filterSearch(products) {
 	}
 
 	function renderResultsHTML() {
-		searchResultsContainer.innerHTML = '';
+		searchResultsAnchor.innerHTML = '';
 
 		for (const string of productsDataAsString) {
 			const stringToCompare = caseSensitive ? string : string.toLowerCase();
@@ -56,22 +57,25 @@ export default function filterSearch(products) {
 			const indexOfMatch = stringToCompare.indexOf(filterToCompare);
 
 			if (indexOfMatch > -1) {
+				
 				const productLink = document.createElement('a');
 				const productInfo = document.createElement('div');
-
-				productLink.classList.add('input__result--item');
-				productInfo.classList.add('result__item--info');
 
 				const beforeMatch = string.slice(0, indexOfMatch);
 				const match = string.slice(indexOfMatch, indexOfMatch + filterString.length);
 				const afterMatch = string.slice(indexOfMatch + filterString.length);
 
+				resultsSectionElement.classList.add('menu__input--results');
+				productLink.classList.add('input__result--item');
+				productInfo.classList.add('result__item--info');
+
 				productInfo.innerHTML = `${beforeMatch} <mark>${match}</mark>${afterMatch}`;
 
 				productLink.appendChild(productInfo);
 				searchResultsContainer.appendChild(productLink);
+				resultsSectionElement.appendChild(searchResultsContainer);
+				searchResultsAnchor.appendChild(resultsSectionElement);
 			}
 		}
-		searchResultsAnchor.appendChild(searchResultsContainer);
 	}
 }
