@@ -3,7 +3,7 @@ export default function filterSearch(products) {
 	let caseSensitive = false;
 
 	const searchInput = document.querySelector('.menu__input--field');
-	const searchResultsContainer = document.querySelector('.filter__search--results');
+	const searchResultsContainer = document.querySelector('.filter__search--resultss');
 	const searchResultsList = document.createElement('ul'); 
 
 	const productsData = products.map(product => {
