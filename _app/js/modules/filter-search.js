@@ -3,7 +3,7 @@ export default function filterSearch(products) {
 	let caseSensitive = false;
 
 	const searchInput = document.querySelector('.menu__input--field');
-	const searchResultsContainer = document.querySelector('.filter__search--resultss');
+	const searchResultsContainer = document.querySelector('.filter__search--results');
 	const searchResultsList = document.createElement('ul'); 
 
 	const productsData = products.map(product => {
@@ -13,7 +13,7 @@ export default function filterSearch(products) {
 		}
 	});
 
-	const productsDataAsString = productsData.map(data => `${data.name} ${data.brand}`);
+	const productsDataAsString = productsData.map(data => `${data.name} - ${data.brand}`);
 
 	// function debounce(fn, delay) {
 	// 	let timerId;
@@ -36,6 +36,16 @@ export default function filterSearch(products) {
 	// 	searchInput.addEventListener('input', debounceSearchButtonInput);
 	// }
 
+	const closeFilterButton = document.createElement('button');
+		closeFilterButton.classList.add('filter__search--results--close');
+		closeFilterButton.textContent = 'Close';
+		closeFilterButton.addEventListener('click', handleCloseFilterButtonClick);
+
+	function handleCloseFilterButtonClick() {
+		searchResultsContainer.removeChild(searchResultsList);
+		closeFilterButton.remove('filter__search--results--close');
+	}
+
 	function handleSearchButtonInput(event) {
 		let currentValue = event.currentTarget.value;
 		
@@ -56,9 +66,8 @@ export default function filterSearch(products) {
 			const indexOfMatch = stringToCompare.indexOf(filterToCompare);
 
 			if (indexOfMatch > -1) {
-				const productLink = document.createElement('a');
-				const productInfo = document.createElement('div');
-
+				const productLink = document.createElement('div');
+				const productInfo = document.createElement('a');
 				const beforeMatch = string.slice(0, indexOfMatch);
 				const match = string.slice(indexOfMatch, indexOfMatch + filterString.length);
 				const afterMatch = string.slice(indexOfMatch + filterString.length);
@@ -66,8 +75,9 @@ export default function filterSearch(products) {
 				productLink.classList.add('input__result--item');
 				productInfo.classList.add('result__item--info');
 
-				productInfo.innerHTML = `${beforeMatch} <mark>${match}</mark>${afterMatch}`;
+				productInfo.innerHTML = `${beforeMatch}<mark>${match}</mark>${afterMatch}`;
 
+				searchResultsContainer.appendChild(closeFilterButton);
 				searchResultsContainer.appendChild(searchResultsList);
 				searchResultsList.appendChild(productLink);
 				productLink.appendChild(productInfo);
