@@ -1,4 +1,4 @@
-export default function previewProduct(products) {
+export default function productPreview(products) {
 	const productContainer = document.querySelector('.product__preview--information');
 	const currentSearchParams = new URLSearchParams(window.location.search);
 	const productSlug = currentSearchParams.get('product');
