@@ -1,7 +1,7 @@
 import fetchProductsData from "./modules/fetch-products-data.js";
 import toggleNavigation from "./modules/toggle-navigation.js";
 import renderProductCards from "./modules/render-products.js";
-import previewProduct from "./modules/product-preview.js";
+import productPreview from "./modules/product-preview.js";
 import imageSlides from "./modules/image-slides.js";
 import filterButtons from "./modules/filter-buttons.js";
 import filterSearch from "./modules/filter-search.js";
@@ -14,7 +14,7 @@ const aboutData = await aboutPage();
 
 renderProductCards(fetchedData);
 toggleNavigation();
-previewProduct(fetchedData);
+productPreview(fetchedData);
 imageSlides();
 filterButtons(fetchedData);
 filterSearch(fetchedData);

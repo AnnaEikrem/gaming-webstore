@@ -8,15 +8,34 @@
 	font-family: var(--font-family-text);
 }
 
-.input__result--item:hover {
-	cursor: pointer;
+.input__results--list {
+	display: flex;
+	flex-direction: column;
+}
+
+.input__result--item {
+	display: flex;
+	padding: var(--padding-medium);
+	border: 1px solid var(--color-02);
 }
 
 
+.filter__search--results--close {
+	display: block;
+	padding: var(--padding-small);
+	width: var(--button-width-small);
+	border: 2px solid var(--color-02);
+	background: var(--color-button);
+}
 
 @media screen and (min-width: 940px) {
 	/* .input__result--item:hover {
 		transition: 0.4s;
 		background: var(--color-02);
 	} */
+
+	.input__result--item:hover {
+		cursor: pointer;
+		background: var(--color-03);
+	}
 }
