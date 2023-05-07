@@ -5,13 +5,13 @@
 
 @import '/_app/css/modules/header.css';
 @import '/_app/css/modules/hero.css';
-@import '/_app/css/modules/product-cards.css';
+@import '/_app/css/modules/about-page.css';
 
+@import '/_app/css/modules/product-cards.css';
 @import '/_app/css/modules/product-preview.css';
 @import '/_app/css/modules/images-slides.css';
 @import '/_app/css/modules/filter-buttons.css';
 @import '/_app/css/modules/filter-search.css';
 
-@import '/_app/css/modules/about-page.css';
-
+@import '/_app/css/modules/game-arcade.css';
 @import '/_app/css/modules/footer.css';
