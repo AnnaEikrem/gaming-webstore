@@ -94,6 +94,7 @@
 		width: var(--button-width-large);
 		font-family: var(--font-family-secondary);
 		border: 2px solid var(--color-02);
+		/* border-radius: 2rem; */
 		background: var(--color-button);
 	}
 
