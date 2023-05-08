@@ -11,10 +11,12 @@
 	--color-focus: blue;
 	--color-focus-02: rgb(0, 0, 0);
 
+	--hover-background: #d3d3d3;
+
 	--gap-column: 1rem;
 	--gap-row: 1rem;
 	
-	--padding-button: 0.4rem;
+	--padding-button: 0.5rem;
 	--padding-small: 0.5rem;
 	--padding-medium: 0.8rem;
 	--padding-normal: 1rem;
@@ -37,12 +39,6 @@
 
 	--font-size-headline: 2rem;
 	--font-size-text: 1rem;
-
-	--font-size-x-small: 0.9rem;
-	--font-size-small: 1.2rem;
-	--font-size-medium: 1.5rem;
-	--font-size-large: 2rem;
-	--font-size-h1: 3rem;
 
 	--font-size-x-small: 0.9rem;
 	--font-size-small: 1.2rem;
