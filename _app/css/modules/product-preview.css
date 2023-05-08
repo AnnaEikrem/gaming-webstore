@@ -6,7 +6,7 @@
 
 .product__preview--card {
 	padding: var(--padding-large);
-	border: 2px solid var(--color-02);
+	border: 1px solid var(--color-02);
 	background: var(--color-foreground);
 }
 
@@ -54,49 +54,16 @@
 	border: 1px solid var(--color-02);
 }
 
-.product__card--buttons {
-	margin: var(--margin-normal) 0;
-}
-
 .card__button--add-to-cart {
 	display: flex;
 	justify-content: center;
 	margin: var(--margin-normal) 0;
 	width: var(--button-width-large);
-	border: 2px solid var(--color-02);
+	border: 1px solid var(--color-02);
 	font-size: var(--font-size-medium);
 	font-family: var(--font-family-primary);
 	
 	background: var(--color-05);
-}
-
-.card__button--quantity {
-	display: flex;
-	justify-content:space-around ;
-	width: var(--button-width-large);
-	font-family: var(--font-family-primary);
-	font-size: var(--font-size-medium);
-}
-
-.button__quantity--subtract, 
-.button__quantity--add {
-	padding: 0 var(--padding-small);
-	border: 2px solid var(--color-02);
-	background: var(--color-05);
-}
-
-.button__quantity--number {
-	padding: 0 var(--padding-x-large);
-	border: 2px solid var(--color-02);
-}  
-
-.button__quantity--subtract, 
-.button__quantity--add {
-	border: 2px solid var(--color-02);
-}
-
-.button__quantity--number {
-	background: var(--color-03 );
 }
 
 .product__card--description {
