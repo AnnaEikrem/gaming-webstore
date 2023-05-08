@@ -1,0 +1,53 @@
+.arcade--hero__section {
+	padding: var(--padding-large);
+	text-align: center;
+	color: var(--color-02);
+	background: var(--color-03);
+}
+
+.arcade--hero__headline {
+	font-size: var(--font-size-large);
+}
+
+.arcade--hero__text {
+	padding: var(--padding-medium);
+	font-family: var(--font-family-text);
+	font-size: var(--font-size-medium);
+}
+
+/* The Arcade Games section */
+.arcade__games--section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: var(--padding-normal);
+	color: var(--color-02);
+	background: var(--color-background);
+}
+
+.game__card {
+	padding: var(--padding-medium);
+	text-align: center;
+	border: 1px solid var(--color-02);
+	background: var(--color-03);
+}
+
+.game__card--headline {
+	padding: var(--padding-normal);
+	font-size: var(--font-size-small);
+	font-family: var(--font-family-secondary);
+}
+
+.game__card--description {
+	font-size: var(--font-size-medium);
+}
+
+.game__card--visual {
+	background: var(--color-background);
+}
+
+.game__card--visual--source {
+	margin: var(--margin-small);
+	width: 35%;
+}
