@@ -5,7 +5,7 @@
 		<meta name="description" content="Step back in time with our retro gaming website! Discover classic games from the past and relive your childhood memories. From arcade classics to console favorites, join our community of gamers and experience the nostalgia today.">
 		<meta name="keywords" content="retro, gaming, classic, webstore, webshop">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Product preview</title>
+		<title>Shopping cart</title>
 		
 		<link rel="stylesheet" href="/_app/css/main.css">
 		<script type="module" src="/_app/js/main.js"></script>
@@ -66,7 +66,6 @@
 					</li>
 				</menu>
 
-				<!-- Endre navn??? -->
 				<div class="header__right">
 					<div class="menu__input--search">
 						<a class="menu__cart--desktop menu__cart--link" href="/_app/shopping-cart/index.html">
@@ -82,18 +81,68 @@
 			</nav>
 		</header>
 
-		<main class="main__container">			
+		<main class="main__container">
 			<section class="filter__search--results">
 				<!-- 'filter-search.js' renders an ul of results--> 
 			</section>
 
-			<section class="product__preview--information">
-				<!-- Content created with 'product-preview.js' -->
+			<section class="cart__section">
+				<h3 class="cart__headline">Shopping cart</h3>
+
+				<div class="cart__products--list">
+					<div class="cart__product--item">
+						<img class="cart__product--image" src="/_app/assets/products/game-consoles/gameboy-advance-SP.jpeg" alt="">
+
+						<div class="cart__product--information">
+							<div class="cart__product--title">
+								Game Boy Advance SP
+							</div>
+
+							<div class="cart__product--price">
+								600 kr
+							</div>
+
+							<button class="cart__product--remove--button">
+								Remove
+							</button>
+						</div>
+					</div>
+
+					<div class="cart__product--item">
+						<img class="cart__product--image" src="/_app/assets/products/game-consoles/gameboy-advance-SP.jpeg" alt="">
+	
+						<div class="cart__product--information">
+							<div class="cart__product--title">
+								Game Boy Advance SP
+							</div>
+	
+							<div class="cart__product--price">
+								600 kr
+							</div>
+
+							<button class="cart__product--remove--button">
+								Remove
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="cart__products--total">
+					<div class="cart__products--total--summary">
+						<div class="cart__products--total--text">
+							Total:
+						</div>
+	
+						<div class="cart__products--total--sum">
+							1800 -,
+						</div>
+					</div>
+
+					<button class="cart__products--payment--button">
+						Go to payment
+					</button>
+				</div>
 			</section>
 		</main>
-
-		<footer>
-		
-		</footer>
 	</body>
 </html>

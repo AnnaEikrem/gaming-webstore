@@ -37,11 +37,6 @@ export default function productPreview(products) {
 		const cardBottomValuePrice = document.createElement('div');
 		const cardBottomValueBrand = document.createElement('div');
 
-		const cardButtonsContainer = document.createElement('div');
-		const buttonQuantity = document.createElement('div');
-		const buttonSubtract = document.createElement('button');
-		const buttonNumber = document.createElement('div');
-		const buttonAdd = document.createElement('button');
 		const buttonAddToCart = document.createElement('button');
 		const cardDescriptionContainer = document.createElement('div');
 		const descriptionHeadline = document.createElement('h4');
@@ -70,12 +65,6 @@ export default function productPreview(products) {
 		cardBottomValuePrice.classList.add('product__detail--value');
 		cardBottomValueBrand.classList.add('product__detail--value');
 
-		cardButtonsContainer.classList.add('product__card--buttons');
-		buttonQuantity.classList.add('card__button--quantity');
-		buttonSubtract.classList.add('button__quantity--subtract');
-		buttonNumber.classList.add('button__quantity--number');
-		buttonAdd.classList.add('button__quantity--add');
-
 		buttonAddToCart.classList.add('card__button--add-to-cart');
 		cardDescriptionContainer.classList.add('product__card--description');
 		descriptionHeadline.classList.add('card__description--headline');
@@ -101,10 +90,6 @@ export default function productPreview(products) {
 			cardBottomColorsContainer.append(cardBottomDetailColors);
 			cardBottomColorsContainer.append(cardBottomValueColors);
 		})
-		
-		buttonSubtract.textContent = '-'
-		buttonNumber.textContent = '1';
-		buttonAdd.textContent = '+'
 
 		buttonAddToCart.textContent = 'Add to cart';
 		descriptionHeadline.textContent = 'Description';
@@ -138,7 +123,7 @@ export default function productPreview(products) {
 		});
 		
 		cardBottomContainer.appendChild(cardBottomContent);
-		cardBottomContainer.appendChild(cardButtonsContainer);
+		cardBottomContainer.appendChild(buttonAddToCart);
 		cardBottomContainer.appendChild(cardDescriptionContainer);
 		cardBottomContent.appendChild(cardBottomDetail);
 		cardBottomDetail.appendChild(cardBottomPriceContainer);
@@ -149,13 +134,6 @@ export default function productPreview(products) {
 		cardBottomPriceContainer.appendChild(cardBottomValuePrice);
 		cardBottomBrandContainer.appendChild(cardBottomDetailBrand);
 		cardBottomBrandContainer.appendChild(cardBottomValueBrand);
-
-		cardButtonsContainer.appendChild(buttonQuantity);
-		cardButtonsContainer.appendChild(buttonAddToCart);
-
-		buttonQuantity.appendChild(buttonSubtract);
-		buttonQuantity.appendChild(buttonNumber);
-		buttonQuantity.appendChild(buttonAdd);
 
 		cardDescriptionContainer.appendChild(descriptionHeadline);
 		cardDescriptionContainer.appendChild(descriptionText);

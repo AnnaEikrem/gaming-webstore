@@ -16,7 +16,6 @@
 	width: 8rem;
 }
 
-
 .header__navigation--buttons {
 	display: flex;
 	align-items: center;
@@ -162,7 +161,6 @@
 	}
 
 	.menu__cart--icon {
-		width: var(--icon-width);
 		margin-right: var(--margin-normal);
 	}
 
@@ -190,11 +188,4 @@
 		display: none;
 	}
 }
-
-/* @media screen and (min-width: 1066px) {
-	.header__navigation {
-		display: flex;
-		width: 100%;
-	}
-} */
 

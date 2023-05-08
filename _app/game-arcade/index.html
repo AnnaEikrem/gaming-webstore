@@ -15,12 +15,12 @@
 		<header class="header__container">
 			<div class="header__left">
 				<a class="header__home--link" href="/index.html">
-					<img class="header__company--logo" src="/_app/assets/NG-logo.png" alt="Return to home page">
+					<img class="header__company--logo" src="/_app/assets/company-logo.png" alt="Return to home page">
 				</a>
 
 				<div class="header__navigation--buttons">
 					<button class="navigation__cart--mobile--button">
-						<a class="menu__cart--link">
+						<a class="menu__cart--link" href="/_app/shopping-cart/index.html">
 							<img class="menu__cart--icon" src="/_app/assets/icons/shop-icon.png" alt="Go to shopping cart">
 						</a>
 					</button>
@@ -69,11 +69,9 @@
 				<!-- Endre navn??? -->
 				<div class="header__right">
 					<div class="menu__input--search">
-						<button class="menu__cart--desktop">
-							<a class="menu__cart--link">
-								<img class="menu__cart--icon" src="/_app/assets/icons/shop-icon.png" alt="Go to shopping cart">
-							</a>
-						</button>
+						<a class="menu__cart--desktop menu__cart--link" href="/_app/shopping-cart/index.html">
+							<img class="menu__cart--icon" src="/_app/assets/icons/shop-icon.png" alt="Go to shopping cart">
+						</a>
 
 						<input class="menu__input--field" type="text">
 						<button class="menu__input--button">
@@ -85,6 +83,10 @@
 		</header>
 
 		<main class="main__container">
+			<section class="filter__search--results">
+				<!-- 'filter-search.js' renders an ul of results--> 
+			</section>
+
 			<section class="arcade--hero__section">
 				<h1 class="arcade--hero__headline">The 'Game Arcade' is still under development</h1>
 
