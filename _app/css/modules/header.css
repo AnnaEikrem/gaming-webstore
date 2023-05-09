@@ -65,7 +65,7 @@
 }
 
 .header__menu--item--link {
-	color: var(--color-03);
+	color: var(--color-02);
 	white-space: nowrap;
 }
 
@@ -153,7 +153,7 @@
 
 	.header__menu--item:hover {
 		transition: 0.4s;
-		background: var(--color-02);
+		background: var(--color-logo);
 	}
 
 	.menu__input--field {
