@@ -9,9 +9,9 @@ export default function filterSearch(products) {
 		return {
 			name: product.name,
 			brand: product.brand.brandName,
+			slug: product.slug,
 		}
 	});
-
 	const productsDataAsString = productsData.map(data => `${data.name} - ${data.brand}`);
 	const closeFilterButton = document.createElement('button');
 
@@ -51,38 +51,46 @@ export default function filterSearch(products) {
 		let currentValue = event.currentTarget.value;
 		
 		updateFilterString(currentValue);
-		renderResultsHTML();
+		products.forEach(product => {
+			const slug = product.slug
+			renderResultsHTML(slug, product)
+		})
 	}
 
 	function updateFilterString(currentInput) {
 		filterString = currentInput;
 	}
 
-	function renderResultsHTML() {
+	function renderResultsHTML(slug,product) {
+		// console.log(slug)
+		// console.log(product)
 		searchResultsList.innerHTML = '';
-
+		
 		for (const string of productsDataAsString) {
 			const stringToCompare = caseSensitive ? string : string.toLowerCase();
 			const filterToCompare = caseSensitive ? filterString : filterString.toLowerCase();
 			const indexOfMatch = stringToCompare.indexOf(filterToCompare);
 
 			if (indexOfMatch > -1) {
-				const productItem = document.createElement('button');
 				const productPreviewLink = document.createElement('a');
 				const beforeMatch = string.slice(0, indexOfMatch);
 				const match = string.slice(indexOfMatch, indexOfMatch + filterString.length);
 				const afterMatch = string.slice(indexOfMatch + filterString.length);
 
-				productItem.classList.add('input__result--item');
-				productPreviewLink.classList.add('result__item--info');
-
+				productPreviewLink.classList.add('result__item--link');
+				
 				productPreviewLink.innerHTML = `${beforeMatch}<mark>${match}</mark>${afterMatch}`;
 
 				searchResultsContainer.appendChild(closeFilterButton);
 				searchResultsContainer.appendChild(searchResultsList);
-				searchResultsList.appendChild(productItem);
-				productItem.appendChild(productPreviewLink);
+				searchResultsList.appendChild(productPreviewLink);
 			}
+
+			// const allPreviewLinks = document.querySelectorAll('.result__item--link');
+
+			// allPreviewLinks.forEach(link => {
+			// 	link.setAttribute('href', `/_app/product-preview/index.html?product=${slug}`);
+			// })
 		}
 	}
 }
