@@ -2,23 +2,19 @@
 	padding: var(--padding-medium);
 }
 
-.result__item--info {
-	color: var(--color-02);
-	font-size: var(--font-size-small);
-	font-family: var(--font-family-text);
-}
-
 .input__results--list {
 	display: flex;
 	flex-direction: column;
 }
 
-.input__result--item {
+.result__item--link {
 	display: flex;
 	padding: var(--padding-medium);
+	color: var(--color-02);
+	font-size: var(--font-size-small);
+	font-family: var(--font-family-text);
 	border: 1px solid var(--color-02);
 }
-
 
 .filter__search--results--close {
 	display: block;
