@@ -65,7 +65,7 @@ export default function productPreview(products) {
 		cardBottomValuePrice.classList.add('product__detail--value');
 		cardBottomValueBrand.classList.add('product__detail--value');
 
-		buttonAddToCart.classList.add('card__button--add-to-cart');
+		buttonAddToCart.classList.add('card__product--add--button');
 		cardDescriptionContainer.classList.add('product__card--description');
 		descriptionHeadline.classList.add('card__description--headline');
 		descriptionText.classList.add('card__description--text');

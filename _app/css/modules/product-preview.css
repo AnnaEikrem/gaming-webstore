@@ -54,7 +54,7 @@
 	border: 1px solid var(--color-02);
 }
 
-.card__button--add-to-cart {
+.card__product--add--button {
 	display: flex;
 	justify-content: center;
 	margin: var(--margin-normal) 0;
