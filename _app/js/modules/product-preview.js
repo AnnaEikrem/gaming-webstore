@@ -8,10 +8,12 @@ export default function productPreview(products) {
 	}
 
 	function returnDOMElement(product) {
+		const productTitle = product.name;
 		const productImages = product.images;
 		const productPrice = product.price;
 		const productBrand = product.brand.brandName;
 		const productColors = product.colors;
+		const productID = product.id;
 
 		const previewCardElement = document.createElement('div');
 
@@ -70,7 +72,13 @@ export default function productPreview(products) {
 		descriptionHeadline.classList.add('card__description--headline');
 		descriptionText.classList.add('card__description--text');
 
-		cardTopHeadline.textContent = product.name;
+		// Created data-sets for shopping-cart purpose.
+		previewCardElement.setAttribute('data-id', productID);
+		previewCardElement.setAttribute('data-name', productTitle);
+		previewCardElement.setAttribute('data-price', productPrice);
+		// previewCardElement.setAttribute('data-image', productImages);
+
+		cardTopHeadline.textContent = productTitle;
 		cardButtonPreviousIcon.setAttribute('src', '/_app/assets/icons/previous-arrow.svg');
 		cardButtonNextIcon.setAttribute('src', '/_app/assets/icons/next-arrow.svg');
 		cardBottomDetailPrice.textContent = 'Price:';
