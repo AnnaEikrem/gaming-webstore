@@ -57,7 +57,7 @@
 	color: red;	
 }
 
-.cart__total--checkout--button {
+.cart__total--button {
 	margin: var(--margin-normal);
 	padding: var(--padding-button);
 	border: 1px solid var(--color-02);
