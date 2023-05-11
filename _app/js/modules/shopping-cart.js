@@ -34,6 +34,4 @@ export default function shoppingCart(products) {
 		cartItemInformation.appendChild(itemInformationPrice);
 		cartItemInformation.appendChild(itemRemoveButton);
 	}
-
-	console.log(products)
 }
