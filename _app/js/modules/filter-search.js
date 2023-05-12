@@ -31,10 +31,6 @@ export default function filterSearch(products) {
 		searchInput.addEventListener('input', handleSearchButtonInput);
 	}
 
-	// if (searchResultsAnchor) {
-	// 	searchInput.addEventListener('input', debounceSearchButtonInput);
-	// }
-
 	searchResultsList.classList.add('input__results--list');	
 	closeFilterButton.classList.add('filter__search--results--close');
 
@@ -52,8 +48,7 @@ export default function filterSearch(products) {
 		
 		updateFilterString(currentValue);
 		products.forEach(product => {
-			const slug = product.slug
-			renderResultsHTML(slug, product)
+			renderResultsHTML(product);
 		})
 	}
 
@@ -61,36 +56,32 @@ export default function filterSearch(products) {
 		filterString = currentInput;
 	}
 
-	function renderResultsHTML(slug,product) {
-		// console.log(slug)
-		// console.log(product)
+	function renderResultsHTML(product) {
 		searchResultsList.innerHTML = '';
-		
 		for (const string of productsDataAsString) {
 			const stringToCompare = caseSensitive ? string : string.toLowerCase();
 			const filterToCompare = caseSensitive ? filterString : filterString.toLowerCase();
 			const indexOfMatch = stringToCompare.indexOf(filterToCompare);
 
 			if (indexOfMatch > -1) {
+				const slug = product.slug;
 				const productPreviewLink = document.createElement('a');
 				const beforeMatch = string.slice(0, indexOfMatch);
 				const match = string.slice(indexOfMatch, indexOfMatch + filterString.length);
 				const afterMatch = string.slice(indexOfMatch + filterString.length);
 
 				productPreviewLink.classList.add('result__item--link');
-				
+
+					console.log(slug)
+					
+				productPreviewLink.setAttribute('href', `/_app/product-preview/index.html?product=${slug}`);
+
 				productPreviewLink.innerHTML = `${beforeMatch}<mark>${match}</mark>${afterMatch}`;
 
 				searchResultsContainer.appendChild(closeFilterButton);
 				searchResultsContainer.appendChild(searchResultsList);
 				searchResultsList.appendChild(productPreviewLink);
 			}
-
-			// const allPreviewLinks = document.querySelectorAll('.result__item--link');
-
-			// allPreviewLinks.forEach(link => {
-			// 	link.setAttribute('href', `/_app/product-preview/index.html?product=${slug}`);
-			// })
 		}
 	}
 }

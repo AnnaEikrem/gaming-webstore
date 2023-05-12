@@ -2,7 +2,9 @@ export default function checkoutForm() {
 	const formAnchor = document.querySelector('.cart__products--list')
 	const checkoutButton = document.querySelector('.cart__total--button');
 
-	checkoutButton.addEventListener('click', handleCheckoutButtonClick)
+	if (checkoutButton) {
+		checkoutButton.addEventListener('click', handleCheckoutButtonClick)
+	}
 
 	function handleCheckoutButtonClick() {
 		// Creates elements
