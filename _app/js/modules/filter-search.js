@@ -72,9 +72,9 @@ export default function filterSearch(products) {
 
 				productPreviewLink.classList.add('result__item--link');
 
-					console.log(slug)
+					// console.log(slug)
 					
-				productPreviewLink.setAttribute('href', `/_app/product-preview/index.html?product=${slug}`);
+				// productPreviewLink.setAttribute('href', `/_app/product-preview/index.html?product=${slug}`);
 
 				productPreviewLink.innerHTML = `${beforeMatch}<mark>${match}</mark>${afterMatch}`;
 
