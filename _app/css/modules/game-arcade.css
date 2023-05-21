@@ -40,7 +40,9 @@
 }
 
 .game__card--description {
-	font-size: var(--font-size-medium);
+	text-align: left;
+	font-family: var(--font-family-text);
+	font-size: var(--font-size-small);
 }
 
 .game__card--visual {
