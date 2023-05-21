@@ -1,3 +1,11 @@
+/**
+ * @todo Fix debounce.
+ * @todo Get the right 'product-preview' link.
+ * @todo Add 'color marking' to string match of search. 
+ */
+
+// import productPreview  from './product-preview.js';
+
 export default function filterSearch(products) {
 	let filterString = '';
 	let caseSensitive = false;
@@ -5,83 +13,85 @@ export default function filterSearch(products) {
 	const searchInput = document.querySelector('.menu__input--field');
 	const searchResultsContainer = document.querySelector('.filter__search--results');
 	const searchResultsList = document.createElement('ul'); 
-	const productsData = products.map(product => {
-		return {
-			name: product.name,
-			brand: product.brand.brandName,
-			slug: product.slug,
-		}
-	});
-	const productsDataAsString = productsData.map(data => `${data.name} - ${data.brand}`);
-	const closeFilterButton = document.createElement('button');
 
-	// function debounce(fn, delay) {
-	// 	let timerId;
-	// 	return function(...args) {
-	// 		clearTimeout(timerId);
-	// 		timerId = setTimeout(() => {
-	// 			fn.apply(this,args);
-	// 		}, delay);
-	// 	};
-	// };
-
-	// const debounceSearchButtonInput = debounce(handleSearchButtonInput, 300);
-
+	const productsData = products.map(product => (
+			{
+				name: product.name, 
+				brand: product.brand.brandName,
+				slug: product.slug}
+		)
+	);
+				console.log(products)
 	if (searchResultsContainer) {
-		searchInput.addEventListener('input', handleSearchButtonInput);
-	}
+		// const debounceSearch = debounce(handleSearchFieldInput, 300)
+		searchInput.addEventListener('input', handleSearchFieldInput);
+	};
 
-	searchResultsList.classList.add('input__results--list');	
-	closeFilterButton.classList.add('filter__search--results--close');
+	searchResultsList.classList.add('input__results--list');
+	searchResultsContainer.appendChild(searchResultsList);
 
-	closeFilterButton.textContent = 'Close';
-
-	closeFilterButton.addEventListener('click', handleCloseFilterButtonClick);
-
-	function handleCloseFilterButtonClick() {
-		searchResultsContainer.removeChild(searchResultsList);
-		closeFilterButton.remove('filter__search--results--close');
-	}
-
-	function handleSearchButtonInput(event) {
+	function handleSearchFieldInput(event) {
 		let currentValue = event.currentTarget.value;
 		
 		updateFilterString(currentValue);
-		products.forEach(product => {
-			renderResultsHTML(product);
-		})
-	}
+		renderResultsHTML();
+	};
 
 	function updateFilterString(currentInput) {
 		filterString = currentInput;
-	}
+	};
 
-	function renderResultsHTML(product) {
+	function renderResultsHTML() {
 		searchResultsList.innerHTML = '';
-		for (const string of productsDataAsString) {
-			const stringToCompare = caseSensitive ? string : string.toLowerCase();
-			const filterToCompare = caseSensitive ? filterString : filterString.toLowerCase();
-			const indexOfMatch = stringToCompare.indexOf(filterToCompare);
 
-			if (indexOfMatch > -1) {
-				const slug = product.slug;
-				const productPreviewLink = document.createElement('a');
-				const beforeMatch = string.slice(0, indexOfMatch);
-				const match = string.slice(indexOfMatch, indexOfMatch + filterString.length);
-				const afterMatch = string.slice(indexOfMatch + filterString.length);
+		const results = productsData.filter(product => {
+			return product.name
+				.toLowerCase()
+				.includes(filterString
+					.toLowerCase());
+		})
 
-				productPreviewLink.classList.add('result__item--link');
+		if (results.length > 0) {
+			const closeFilterButton = document.createElement('button');
+			closeFilterButton.classList.add('filter__search--results--close');
+			closeFilterButton.textContent = 'Close';
 
-					// console.log(slug)
-					
-				// productPreviewLink.setAttribute('href', `/_app/product-preview/index.html?product=${slug}`);
-
-				productPreviewLink.innerHTML = `${beforeMatch}<mark>${match}</mark>${afterMatch}`;
-
-				searchResultsContainer.appendChild(closeFilterButton);
-				searchResultsContainer.appendChild(searchResultsList);
-				searchResultsList.appendChild(productPreviewLink);
-			}
+			closeFilterButton.addEventListener('click', handleCloseFilterButtonClick);
+			searchResultsList .appendChild(closeFilterButton);
 		}
-	}
+
+		results.forEach(product => {
+			const listItem = document.createElement('li')
+			const resultLink = document.createElement('a');
+			
+			resultLink.classList.add('result__item--link')
+			resultLink.textContent = product.name;
+			resultLink.setAttribute('href', '/_app/product-preview/index.html?product=${product.slug}');
+			
+			searchResultsList.appendChild(listItem);
+			listItem.appendChild(resultLink);
+		});
+		while (searchResultsContainer.firstChild) {
+			searchResultsContainer.removeChild(searchResultsContainer.firstChild);
+		 }
+	
+		 searchResultsContainer.appendChild(searchResultsList);
+	};
+
+	function handleCloseFilterButtonClick() {
+		searchResultsContainer.removeChild(searchResultsList)
+	};
+
+
+	// function debounce(myFunction, delay) {
+	// 	let timerID;
+
+	// 	return function (...args) {
+	// 		clearTimeout(timerID);
+
+	// 		timerID = setTimeout(() => {
+	// 			myFunction.apply(this, args);
+	// 		}, delay)
+	// 	}
+	// }
 }
