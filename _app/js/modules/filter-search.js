@@ -4,8 +4,6 @@
  * @todo Add 'color marking' to string match of search. 
  */
 
-// import productPreview  from './product-preview.js';
-
 export default function filterSearch(products) {
 	let filterString = '';
 	let caseSensitive = false;
@@ -21,9 +19,8 @@ export default function filterSearch(products) {
 				slug: product.slug}
 		)
 	);
-				console.log(products)
+
 	if (searchResultsContainer) {
-		// const debounceSearch = debounce(handleSearchFieldInput, 300)
 		searchInput.addEventListener('input', handleSearchFieldInput);
 	};
 
@@ -83,6 +80,7 @@ export default function filterSearch(products) {
 	};
 
 
+	// const debounceSearch = debounce(handleSearchFieldInput, 300)
 	// function debounce(myFunction, delay) {
 	// 	let timerID;
 
