@@ -7,8 +7,9 @@ export default function checkoutForm() {
 	}
 
 	function handleCheckoutButtonClick() {
-		// Creates elements
 		const popupForm = document.createElement('form');
+		const formCloseButton = document.createElement('button');
+		const formCloseIcon = document.createElement('img');
 
 		// The personal information
 		const formInformationFieldset = document.createElement('fieldset');
@@ -54,10 +55,12 @@ export default function checkoutForm() {
 		const CVVLabel = document.createElement('label');
 		const CVVInput = document.createElement('input');
 
-		const checkOutButton = document.createElement('button')
+		const checkOutLink = document.createElement('a')
 
 		// Adds classes
 		popupForm.classList.add('checkout__form--popup');
+		formCloseButton.classList.add('form__close--button');
+		formCloseIcon.classList.add('form__close--icon')
 
 		formInformationFieldset.classList.add('form__fieldset--information')
 		formInformationLegend.classList.add('form__legend--information');
@@ -65,54 +68,56 @@ export default function checkoutForm() {
 		formCardFieldset.classList.add('form__fieldset--card')
 		formCardLegend.classList.add('form__legend--card');
 
-		nameDiv.classList.add('form__name--collection')
+		nameDiv.classList.add('form__collection')
 		nameLabel.classList.add('form__name--label');
-		nameInput.classList.add('form__name--input');
+		nameInput.classList.add('form__input');
 
-		emailDiv.classList.add('form__email--collection')
+		emailDiv.classList.add('form__collection')
 		emailLabel.classList.add('form__email--label');
-		emailInput.classList.add('form__email--input');
+		emailInput.classList.add('form__input');
 
-		addressDiv.classList.add('form__address--collection')
+		addressDiv.classList.add('form__collection')
 		addressLabel.classList.add('form__address--label');
-		addressInput.classList.add('form__address--input');
+		addressInput.classList.add('form__input');
 
-		cityDiv.classList.add('form__city--collection')
+		cityDiv.classList.add('form__collection')
 		cityLabel.classList.add('form__city--label');
-		cityInput.classList.add('form__city--input');
+		cityInput.classList.add('form__input');
 
-		postalCodeDiv.classList.add('form__postal-code--collection')
+		postalCodeDiv.classList.add('form__collection')
 		postalCodeLabel.classList.add('form__postal-code--label');
-		postalCodeInput.classList.add('form__postal-code--input');
+		postalCodeInput.classList.add('form__input');
 
-		birthdayDiv.classList.add('form__birthday--collection')
+		birthdayDiv.classList.add('form__collection')
 		birthdayLabel.classList.add('form__birthday--label');
-		birthdayInput.classList.add('form__birthday--input');
+		birthdayInput.classList.add('form__input');
 
-		cardNumberDiv.classList.add('form__card-number--collection')
+		cardNumberDiv.classList.add('form__collection')
 		cardNumberLabel.classList.add('form__card-number--label');
-		cardNumberInput.classList.add('form__card-number--input');
+		cardNumberInput.classList.add('form__input');
 
-		expirationDiv.classList.add('form__expiration--collection')
+		expirationDiv.classList.add('form__collection')
 		expirationLabel.classList.add('form__expiration--label');
-		expirationInput.classList.add('form__expiration--input');
+		expirationInput.classList.add('form__input');
 
-		CVVDiv.classList.add('form__CVV--collection')
+		CVVDiv.classList.add('form__collection')
 		CVVLabel.classList.add('form__CVV--label');
-		CVVInput.classList.add('form__CVV--input');
+		CVVInput.classList.add('form__input');
 
-		checkOutButton.classList.add('form__checkout--button');
+		checkOutLink.classList.add('form__checkout--button');
 
 		// Sets attributes and textcontent
 		/**
 		 * @todo Add required to form
 		 * @todo Add 'small' as from chat
 		 */
+
 		popupForm.setAttribute('id', 'checkout-form');
-		popupForm.setAttribute('action', 'submit-form');
-		// popupForm.setAttribute('action', 'submit-form.php');
-		popupForm.setAttribute('method', 'post');
+		// popupForm.setAttribute('action', 'submit-form');
+		// popupForm.setAttribute('method', 'post');
 		formInformationLegend.textContent = 'Shipping information';
+		formCloseIcon.setAttribute('src', '/_app/assets/icons/x-solid.svg');
+		formCloseIcon.setAttribute('alt', 'Close checkout form');
 
 		nameLabel.textContent = 'Name:'
 		nameLabel.setAttribute('for', 'name');
@@ -153,6 +158,7 @@ export default function checkoutForm() {
 		birthdayInput.setAttribute('placeholder', 'dd.mm.yyyy');
 		// birthdayInput.setAttribute('pattern', '(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[0-2])\.[0-9]{4}');
 
+		formCardLegend.textContent = 'Card information';
 		cardNumberLabel.textContent = 'Card Number:'
 		cardNumberLabel.setAttribute('for', 'card-number');
 		cardNumberInput.setAttribute('type', 'text');
@@ -174,10 +180,13 @@ export default function checkoutForm() {
 		CVVInput.setAttribute('name', 'card-cvv');
 		// CVVInput.setAttribute('pattern', '[0-9]{3}');
 
-		checkOutButton.textContent = 'Check out'
+		checkOutLink.textContent = 'Check out';
+		checkOutLink.setAttribute('href', '/index.html')
 
-		// Appends
+		// Appends elements
 		formAnchor.appendChild(popupForm);
+		popupForm.appendChild(formCloseButton);
+		formCloseButton.appendChild(formCloseIcon);
 		popupForm.appendChild(formInformationFieldset);
 		popupForm.appendChild(formCardFieldset);
 		
@@ -221,7 +230,6 @@ export default function checkoutForm() {
 		CVVDiv.appendChild(CVVLabel);
 		CVVDiv.appendChild(CVVInput);
 
-		popupForm.appendChild(checkOutButton);
+		popupForm.appendChild(checkOutLink);
 	}
-
 }
