@@ -20,7 +20,7 @@ The application has the following features:
 - Javascript
 - Sanity
 
-See live demo at: [Nostalgic Gaming]()
+See live demo here of [Nostalgic Gaming](https://nostalgic-gaming-webstore.netlify.app/)
 
 ### Remarks
 - todo: Implement footer with Sanity 'settings' data. 
