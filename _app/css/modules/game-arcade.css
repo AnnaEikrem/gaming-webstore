@@ -53,3 +53,17 @@
 	margin: var(--margin-small);
 	width: 35%;
 }
+
+@media screen and (min-width: 768px) {
+	.game__card {
+		display: flex;
+	}
+
+	.game__card--visual {
+		width: 50%;
+	}
+
+	.game__card--text {
+		width: 50%;
+	}
+}
