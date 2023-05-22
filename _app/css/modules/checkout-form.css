@@ -1,2 +1,66 @@
 .checkout__form--popup {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: var(--color-03);
+	border: 1px solid black;
+	padding: var(--padding-large);
+	z-index: 999;
+	width: 80%;
+}
+
+.form__fieldset--information{
+	margin: var(--margin-small);
+	padding: 1rem;
+}
+
+.form__fieldset--card {
+	margin: var(--margin-small);
+	padding: 1rem;
+}
+
+.form__collection {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 var(--padding-normal);
+}
+
+.form__input {
+	margin: var(--margin-small);
+	padding: 0.3rem;
+}
+
+.form__close--button {
+	text-align: right;
+	width: 1rem;
+}
+
+.form__checkout--button {
+	margin: var(--margin-normal);
+	padding: var(--padding-small);
+	border: 1px solid var(--color-02);
+	border-radius: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+	.checkout__form--popup {
+		display: flex;
+		width: 60%;
+	}
+
+	/* .form__fieldset--information{
+	
+	}
+
+	.form__fieldset--card {
+
+	} */
+	.form__checkout--button:hover {
+		transition: 0.4s;
+		cursor: pointer;
+		background: var(--color-button);
+	}
 }
