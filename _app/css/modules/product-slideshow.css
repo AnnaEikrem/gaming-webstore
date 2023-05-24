@@ -4,6 +4,22 @@
 	object-fit: cover;
 }
 
+.product__image--slide {
+	padding: var(--padding-small);
+	height: 20rem;
+	width: 100%;
+	overflow: hidden;
+	text-align: center;
+}
+
+.product__visual--source {
+	width: auto;
+	height: 100%;
+	max-width: 100%;
+	object-fit: contain;
+	object-position: center;
+}
+
 .product__slide--buttons {
 	display: flex;
 	justify-content: center;
