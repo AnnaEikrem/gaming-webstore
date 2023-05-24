@@ -39,7 +39,7 @@
 
 .detail__price--container, 
 .detail__brand--container, 
-.product__color--container {
+.detail__color--container {
 	display: flex;
 	align-items: center;
 }
