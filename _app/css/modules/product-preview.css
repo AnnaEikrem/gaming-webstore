@@ -10,6 +10,13 @@
 	background: var(--color-foreground);
 }
 
+.product__card--top {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
 .product__detail--name {
 	margin: var(--margin-normal);
 	font-family: var(--font-family-secondary);
@@ -90,6 +97,7 @@
 	.product__card--top {
 		margin: var(--margin-normal);
 		width: 50%;
+		text-align: center;
 	}
 
 	.product__card--bottom {

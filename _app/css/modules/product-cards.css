@@ -1,8 +1,3 @@
-		/* Focus styling  */
- 	.product__card--link:focus, .product__explore--button:focus {
-		border: 0.3rem solid var(--color-focus);
-	} 
-
 	.products__section--top {
 		display: flex;
 		align-items: center;
@@ -54,17 +49,19 @@
 	}
 
 	.product__image {
+		padding: var(--padding-small);
+		height: 18rem;
+		width: 100%;
+		overflow: hidden;
 		text-align: center;
 	}
 
 	.product__image--source {
-		max-width: 80%;
-	}
-
-	.product__image--source {
-		max-width: 60%;
+		width: auto;
 		height: 100%;
-		object-fit: cover;
+		max-width: 100%;
+		object-fit: contain;
+		object-position: center;
 	}
 
 	.product__information {
@@ -98,6 +95,11 @@
 		background: var(--color-button);
 	}
 
+		/* Focus styling  */
+		.product__card--link:focus, .product__explore--button:focus {
+			border: 0.3rem solid var(--color-focus);
+		} 
+		
 
 @media screen and (min-width: 618px) {
 	.list__products--chosen {
