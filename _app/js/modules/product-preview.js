@@ -15,12 +15,12 @@ export default function productPreview(products) {
 		const productColors = product.colors;
 		const productID = product.id;
 		const productSlug = product.slug;
-
 		const previewCardElement = document.createElement('div');
 
 		const cardTopContainer = document.createElement('div');
 		const cardTopHeadline = document.createElement('h3');
 		const cardImagesContainer = document.createElement('div');
+		
 		const cardImagesButtonsContainer = document.createElement('div');
 		const cardButtonPrevious = document.createElement('button');
 		const cardButtonNextIcon = document.createElement('img');
@@ -97,7 +97,11 @@ export default function productPreview(products) {
 		previewCardElement.appendChild(cardBottomContainer);
 		cardTopContainer.appendChild(cardTopHeadline);
 		cardTopContainer.appendChild(cardImagesContainer);
-		cardTopContainer.appendChild(cardImagesButtonsContainer)
+		
+		// ButtonsContainer is only appended if more than one product image
+		if (productImages.length > 1) {
+			cardTopContainer.appendChild(cardImagesButtonsContainer)
+		}
 
 		cardImagesButtonsContainer.appendChild(cardButtonPrevious);
 		cardButtonPrevious.appendChild(cardButtonPreviousIcon);
