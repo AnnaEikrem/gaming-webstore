@@ -1,11 +1,11 @@
-export default function imageSlides() {
+export default function productSlideshow() {
 	let currentSlideIndex = 0;
-	const slidesContainer = document.querySelector('.product__images--slides')
+	const cardImagesButtonsContainer = document.querySelector('.product__slide--buttons');
 	const slides = document.querySelectorAll('.product__image--slide');
 	const previousButton = document.querySelector('.image__slide--previous');
 	const nextButton = document.querySelector('.image__slide--next');
 
-	if (slidesContainer) {
+	if (cardImagesButtonsContainer) {
 		displaySlide(currentSlideIndex);
 		previousButton.addEventListener('click', handlePreviousButtonClick);
 		nextButton.addEventListener('click', handleNextButtonClick);
