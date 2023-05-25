@@ -1,104 +1,109 @@
-	.products__section--top {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: var(--padding-normal);
-	}
+/*
+	- Todo: Fix styling for the card images. 
+*/
 
-	.products__section--headline {
-		color: var(--color-02);
-		font-size: var(--font-size-headline);
-	}
 
-	.products__more--link {
-		margin: var(--margin-normal);
-		padding: var(--padding-small);
-		font-family: var(--font-family-secondary);
-		border: 1px solid var(--color-02);
-		background: var(--color-button);
-		color: var(--color-02);
-	}
+.products__section--top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: var(--padding-normal);
+}
 
-	.more--link {
-		display: flex;
-		justify-content: center;
-		width: var(--button-width-normal);
-		font-size: var(--font-size-x-small)
-	}
+.products__section--headline {
+	color: var(--color-02);
+	font-size: var(--font-size-headline);
+}
 
-	.list__products--chosen {
-		display: flex;
-		align-items: center;
-		flex-direction: column;
-	}
+.products__more--link {
+	margin: var(--margin-normal);
+	padding: var(--padding-small);
+	font-family: var(--font-family-secondary);
+	border: 1px solid var(--color-02);
+	background: var(--color-button);
+	color: var(--color-02);
+}
 
-	.list__products--all {
-		display: flex;
-		align-items: center;
-		flex-direction: column;
-	}
+.more--link {
+	display: flex;
+	justify-content: center;
+	width: var(--button-width-normal);
+	font-size: var(--font-size-x-small)
+}
 
-	.product__card--link {
-		margin: var(--margin-normal);
-		padding-top: var(--padding-normal);
-		height: 100%;
-		width: 90%;
-		border: 1px solid #000;
-		color: var(--color-02);
-		background: var(--color-foreground);
-	}
+.list__products--chosen {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
 
-	.product__image {
-		padding: var(--padding-small);
-		height: 18rem;
-		width: 100%;
-		overflow: hidden;
-		text-align: center;
-	}
+.list__products--all {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
 
-	.product__image--source {
-		width: auto;
-		height: 100%;
-		max-width: 100%;
-		object-fit: contain;
-		object-position: center;
-	}
+.product__card--link {
+	margin: var(--margin-normal);
+	padding-top: var(--padding-normal);
+	height: 100%;
+	width: 90%;
+	border: 1px solid #000;
+	color: var(--color-02);
+	background: var(--color-foreground);
+}
 
-	.product__information {
-		padding: var(--padding-);
-	}
+.product__image {
+	padding: var(--padding-small);
+	height: 18rem;
+	width: 100%;
+	overflow: hidden;
+	text-align: center;
+}
 
-	.product__information--brand {
-		margin: var(--margin-normal);
-		font-size: var(--font-size-medium);
-	}
+.product__image--source {
+	width: auto;
+	height: 100%;
+	max-width: 100%;
+	object-fit: contain;
+	object-position: center;
+}
 
-	.product__information--name {
-		margin: var(--margin-normal);
-		font-family: var(--font-family-secondary);
-		font-size: var(--font-size-text);
-	}
+.product__information {
+	padding: var(--padding-);
+}
 
-	.product__information--price {
-		margin: var(--margin-normal);
-		font-family: var(--font-family-text);
-		font-size: var(--font-size-small);
-	}
+.product__information--brand {
+	margin: var(--margin-normal);
+	font-size: var(--font-size-medium);
+}
 
-	.product__explore--button {
-		margin: var(--margin-normal);
-		padding: var(--padding-small);
-		width: var(--button-width-large);
-		font-family: var(--font-family-secondary);
-		border: 1px solid var(--color-02);
-		/* border-radius: 2rem; */
-		background: var(--color-button);
-	}
+.product__information--name {
+	margin: var(--margin-normal);
+	font-family: var(--font-family-secondary);
+	font-size: var(--font-size-text);
+}
 
-		/* Focus styling  */
-		.product__card--link:focus, .product__explore--button:focus {
-			border: 0.3rem solid var(--color-focus);
-		} 
+.product__information--price {
+	margin: var(--margin-normal);
+	font-family: var(--font-family-text);
+	font-size: var(--font-size-small);
+}
+
+.product__explore--button {
+	margin: var(--margin-normal);
+	padding: var(--padding-small);
+	width: var(--button-width-large);
+	font-family: var(--font-family-secondary);
+	border: 1px solid var(--color-02);
+	/* border-radius: 2rem; */
+	background: var(--color-button);
+}
+
+	/* Focus styling  */
+	.product__card--link:focus, .product__explore--button:focus {
+		border: 0.3rem solid var(--color-focus);
+	} 
 		
 
 @media screen and (min-width: 618px) {
