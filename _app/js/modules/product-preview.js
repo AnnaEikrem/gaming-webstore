@@ -88,6 +88,7 @@ export default function productPreview(products) {
 		cardBottomValuePrice.textContent = `${productPrice} $`;
 		cardBottomValueBrand.textContent = productBrand;
 
+		buttonAddToCart.dataset.name = product.name;
 		buttonAddToCart.textContent = 'Add to cart';
 		descriptionHeadline.textContent = 'Description';
 		descriptionText.textContent = product.description;
