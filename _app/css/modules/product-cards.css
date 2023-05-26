@@ -96,12 +96,12 @@
 	width: var(--button-width-large);
 	font-family: var(--font-family-secondary);
 	border: 1px solid var(--color-02);
-	/* border-radius: 2rem; */
 	background: var(--color-button);
 }
 
 	/* Focus styling  */
-	.product__card--link:focus, .product__explore--button:focus {
+	.product__card--link:focus, 
+	.product__explore--button:focus {
 		border: 0.3rem solid var(--color-focus);
 	} 
 		
