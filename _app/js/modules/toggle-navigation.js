@@ -11,7 +11,6 @@ export default function toggleNavigation() {
 	// EventListeners
 	navigationOpenButton.addEventListener('click', handleOpenButtonClick);
 	navigationCloseButton.addEventListener('click', handleCloseButtonClick);
-	
 
 	function handleOpenButtonClick() {
 		navigationContainer.classList.add('header__navigation--visible');
