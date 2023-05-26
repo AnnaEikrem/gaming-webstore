@@ -1,5 +1,5 @@
 /**
- * @todo Fix debounce.
+ * @todo Add debounce to filter-search.
  * @todo Get the right 'product-preview' link.
  * @todo Add 'color marking' to string match of search. 
  */
@@ -68,6 +68,7 @@ export default function filterSearch(products) {
 			searchResultsList.appendChild(listItem);
 			listItem.appendChild(resultLink);
 		});
+
 		while (searchResultsContainer.firstChild) {
 			searchResultsContainer.removeChild(searchResultsContainer.firstChild);
 		 }
@@ -78,18 +79,4 @@ export default function filterSearch(products) {
 	function handleCloseFilterButtonClick() {
 		searchResultsContainer.removeChild(searchResultsList)
 	};
-
-
-	// const debounceSearch = debounce(handleSearchFieldInput, 300)
-	// function debounce(myFunction, delay) {
-	// 	let timerID;
-
-	// 	return function (...args) {
-	// 		clearTimeout(timerID);
-
-	// 		timerID = setTimeout(() => {
-	// 			myFunction.apply(this, args);
-	// 		}, delay)
-	// 	}
-	// }
 }

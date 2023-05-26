@@ -38,16 +38,12 @@
 
 .header__navigation {
 	display: none;
-	height: 100vh;
+	height: 45vh;
 }
 
 .header__navigation--visible {
 	display: block;
 	border-top: none;
-}
-
-.no-scroll {
-	overflow: hidden;
 }
 
 .header__menu--headline {
