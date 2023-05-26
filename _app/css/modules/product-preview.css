@@ -69,8 +69,7 @@
 	border: 1px solid var(--color-02);
 	font-size: var(--font-size-medium);
 	font-family: var(--font-family-primary);
-	
-	background: var(--color-05);
+	background: var(--color-button);
 }
 
 .product__card--description {
@@ -108,6 +107,13 @@
 	.product__detail--text {
 		width: 18%;
 		padding: var(--padding-small);
+	}
+
+	.card__product--add--button:hover {
+		cursor: pointer;
+		transition: 0.2s;
+		transform-origin: 0.2s;
+		transform: scale(1.05);
 	}
 }
 
