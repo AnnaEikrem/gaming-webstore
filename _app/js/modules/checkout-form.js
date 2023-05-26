@@ -1,3 +1,8 @@
+/**
+ * @todo Add validation for form
+ * @todo Create proper formatting for form input fields
+ */
+
 export default function checkoutForm() {
 	const formAnchor = document.querySelector('.cart__products--list')
 	const checkoutButton = document.querySelector('.cart__total--button');
