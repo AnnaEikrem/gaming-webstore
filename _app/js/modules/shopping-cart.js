@@ -1,8 +1,7 @@
 // Shopping cart inspired from 'BendikMdelp': https://github.com/bendikmdelp/Simple-restaurant-store-with-cart
 
 /**
- * 
- * @todo
+ * @todo Make it possible to add more than one example of the product to 'shopping-cart' (increase/decrease quantity).
  */
 
 export default function shoppingCart(products) {
@@ -11,6 +10,7 @@ export default function shoppingCart(products) {
 	
 	// Queryselectors
 	const addToCartButtons = document.querySelectorAll('.card__product--add--button');
+	const shoppingCartIcon = document.querySelectorAll('.menu__cart--icon');
 	const cartListContainer = document.querySelector('.cart__products--list')
 	const emptyCartButton = document.querySelector('.cart__empty--button');
 	const cartTotalSum = document.querySelector('.cart__total--sum');
@@ -18,6 +18,8 @@ export default function shoppingCart(products) {
 	if (cartListContainer) {
 		renderCartHTML();
 	}
+
+	console.log(shoppingCartIcon)
 
 	// EventListeners
 	addToCartButtons.forEach(button => {
@@ -30,6 +32,7 @@ export default function shoppingCart(products) {
 
 	function handleEmptyCartButtonClick() {
 		localStorage.clear();
+		cartProducts = [];
 		renderCartHTML();
 	}
 
@@ -106,19 +109,17 @@ export default function shoppingCart(products) {
 		const productDiv = document.createElement('div');
 		const imageDiv = document.createElement('div');
 		const productImage = document.createElement('img');
-
 		const productInformationDiv = document.createElement('div');
 		const productTitleDiv = document.createElement('div');
 		const productPriceDiv = document.createElement('div');
-		const quantityDiv = document.createElement('div');
 		const productRemoveButton = document.createElement('button');
 
 		productDiv.classList.add('cart__item');
 		imageDiv.classList.add('cart__item--image');
 		productImage.classList.add('cart__image--source');
+		productInformationDiv.classList.add('cart__item--information')
 		productTitleDiv.classList.add('cart__item--title');
 		productPriceDiv.classList.add('cart__item--price');
-		quantityDiv.classList.add('cart__quantity');
 		productRemoveButton.classList.add('cart__remove--button');
 
 		productImage.setAttribute('src', cartProduct.productImage);
@@ -165,7 +166,10 @@ export default function shoppingCart(products) {
 	}
 
 	function renderSum(totalSum) {
-		cartTotalSum.textContent = totalSum;
+		if (cartTotalSum) {
+			const formattedSum = totalSum.toFixed(2);
+			cartTotalSum.textContent = formattedSum + '$';
+		}
 	}
 
 	function renderCartHTML() {
