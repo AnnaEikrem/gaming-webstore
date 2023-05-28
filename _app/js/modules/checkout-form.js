@@ -4,6 +4,8 @@
  */
 
 export default function checkoutForm() {
+	let formOverlay = null;
+
 	const formAnchor = document.querySelector('.cart__products--list')
 	const checkoutButton = document.querySelector('.cart__total--button');
 
@@ -236,5 +238,17 @@ export default function checkoutForm() {
 		CVVDiv.appendChild(CVVInput);
 
 		popupForm.appendChild(checkOutLink);
+
+		// The overlay
+		formOverlay = document.createElement('div');
+		formOverlay.classList.add('checkout__form--overlay');
+		document.body.appendChild(formOverlay);
+
+		formCloseButton.addEventListener('click', handleCloseButtonClick);
+	}
+
+	function handleCloseButtonClick() {
+		popupForm.remove();
+		formOverlay.remove();
 	}
 }
