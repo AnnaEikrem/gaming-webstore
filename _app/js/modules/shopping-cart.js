@@ -1,25 +1,18 @@
 // Shopping cart inspired from 'BendikMdelp': https://github.com/bendikmdelp/Simple-restaurant-store-with-cart
 
 /**
- * @todo Make it possible to add more than one example of the product to 'shopping-cart' (increase/decrease quantity).
+ * @todo Make it possible to add more than one example of the product to 'shopping-cart' (increase/decrease quantity)
  */
 
 export default function shoppingCart(products) {
+	// Variables
 	let cartProducts = getCartProductsFromLocalStorage();
 	let productObject = {};
 	
-	// Queryselectors
 	const addToCartButtons = document.querySelectorAll('.card__product--add--button');
-	const shoppingCartIcon = document.querySelectorAll('.menu__cart--icon');
 	const cartListContainer = document.querySelector('.cart__products--list')
 	const emptyCartButton = document.querySelector('.cart__empty--button');
 	const cartTotalSum = document.querySelector('.cart__total--sum');
-
-	if (cartListContainer) {
-		renderCartHTML();
-	}
-
-	console.log(shoppingCartIcon)
 
 	// EventListeners
 	addToCartButtons.forEach(button => {
@@ -30,24 +23,32 @@ export default function shoppingCart(products) {
 		emptyCartButton.addEventListener('click', handleEmptyCartButtonClick);
 	}
 
+	if (cartListContainer) {
+		renderCartHTML();
+	}
+
+	// Clears the shopping-cart and renders the HTML again
 	function handleEmptyCartButtonClick() {
 		localStorage.clear();
 		cartProducts = [];
 		renderCartHTML();
 	}
 
+	// Removes clicked product from cart
 	function handleProductRemoveButtonClick(event) {
 		removeSelectedItemFromCart(event);
 		renderCartHTML()
 		saveToLocalStorage();
 	}
 	
+	// Finds the index of the product to remove
 	function removeSelectedItemFromCart(event) {
 		const clickedItemIndex = event.currentTarget.dataset.index;
 
 		cartProducts.splice(clickedItemIndex, 1);
 	}
 
+	// Adds the clicked product to shopping cart
 	function handleAddToCartButtonClick(event) {
 		createProductObject(products, event);
 
@@ -59,10 +60,12 @@ export default function shoppingCart(products) {
 		renderCartHTML();
 	}
 
+	// Saves the cartProducts array to localStorage
 	function saveToLocalStorage() {
 		localStorage.setItem('cartProducts', JSON.stringify(cartProducts))
 	}
 
+	// Creates the product object with necessary data
 	function createProductObject(products, event) {
 		products.forEach(product => {
 			if (product.name === event.currentTarget.dataset.name) {
@@ -88,16 +91,17 @@ export default function shoppingCart(products) {
 		}
 	}
 
-	// If product exists in cart
+	// Adds the clicked product to cart
 	function addProductToCart() {
 		cartProducts.push(productObject);
 	}
 
+	// Generates the cartList
 	function generateCartListHTML(cartStorage, cartListContainer) {
 		if (cartStorage && cartListContainer) {
 			cartListContainer.innerHTML = '';
 
-			// Renders the cart list items
+			// Runs the createProductItemDOMElement per product in cart
 			cartStorage.forEach(((index, cartProduct) => {
 				const productDiv = createProductItemDOMElement(cartProduct, index);
 				cartListContainer.append(productDiv);
@@ -105,6 +109,7 @@ export default function shoppingCart(products) {
 		}
 	}
 
+	// Builds and returns the HTML structure for products in cart
 	function createProductItemDOMElement(index, cartProduct) {
 		const productDiv = document.createElement('div');
 		const imageDiv = document.createElement('div');
@@ -124,7 +129,7 @@ export default function shoppingCart(products) {
 
 		productImage.setAttribute('src', cartProduct.productImage);
 		productTitleDiv.textContent = cartProduct.productName;
-		productPriceDiv.textContent = cartProduct.productPrice + 'kr.';
+		productPriceDiv.textContent = cartProduct.productPrice + ' $';
 		productRemoveButton.textContent = 'Remove';
 		productRemoveButton.dataset.index = index;
 
@@ -149,6 +154,7 @@ export default function shoppingCart(products) {
 		return productDiv
 	}
 
+	// Gets the cartProducts from localStorage
 	function getCartProductsFromLocalStorage() {
 		if (JSON.parse(localStorage.getItem('cartProducts'))) {
 			return JSON.parse(localStorage.getItem('cartProducts'));
@@ -157,6 +163,7 @@ export default function shoppingCart(products) {
 		}
 	}
 
+	// Returns total sum of products in cart
 	function calculateSum(cartStorage) {
 		const cartList = cartStorage;
 
@@ -165,6 +172,7 @@ export default function shoppingCart(products) {
 		}, 0); 
 	}
 
+	// Returns the sum with only two decimals, and renders HTML
 	function renderSum(totalSum) {
 		if (cartTotalSum) {
 			const formattedSum = totalSum.toFixed(2);
@@ -172,6 +180,7 @@ export default function shoppingCart(products) {
 		}
 	}
 
+	// Renders the cart HTML
 	function renderCartHTML() {
 		generateCartListHTML(cartProducts, cartListContainer);
 

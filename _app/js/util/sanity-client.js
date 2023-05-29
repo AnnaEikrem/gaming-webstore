@@ -54,6 +54,14 @@
 
 		if (response.ok) {
 			return response_body.result;
+		} else if (response.status === 404) {
+			throw new Error ('Page not found');
+		} else if (response.status === 401) {
+			throw new Error ('Not authorized user');
+		} else if (response.status >= 500) {
+			throw new Error ('Server not responding');
+		} else if (response.status === 400) {
+			throw new Error ('Something went wrong...');
 		} else {
 			throw new Error(response_body.message || response_body.error.description);
 		}

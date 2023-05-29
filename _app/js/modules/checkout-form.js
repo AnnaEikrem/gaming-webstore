@@ -4,15 +4,18 @@
  */
 
 export default function checkoutForm() {
+	// Variables
 	let formOverlay = null;
 
 	const formAnchor = document.querySelector('.cart__products--list')
 	const checkoutButton = document.querySelector('.cart__total--button');
 
+	// EventListener
 	if (checkoutButton) {
 		checkoutButton.addEventListener('click', handleCheckoutButtonClick)
 	}
 
+	// The checkout form pops up when the checkoutButton from shopping-cart.js is clicked
 	function handleCheckoutButtonClick() {
 		const popupForm = document.createElement('form');
 		const formCloseButton = document.createElement('button');
@@ -116,7 +119,7 @@ export default function checkoutForm() {
 		// Sets attributes and textcontent
 		/**
 		 * @todo Add required to form
-		 * @todo Add 'small' as from chat
+		 * @todo Add proper form validation
 		 */
 
 		popupForm.setAttribute('id', 'checkout-form');
@@ -239,7 +242,7 @@ export default function checkoutForm() {
 
 		popupForm.appendChild(checkOutLink);
 
-		// The overlay
+		// Adds an overlay when checkout form appears, to darken the background. Styled in checkout-form.css
 		formOverlay = document.createElement('div');
 		formOverlay.classList.add('checkout__form--overlay');
 		document.body.appendChild(formOverlay);
@@ -247,6 +250,7 @@ export default function checkoutForm() {
 		formCloseButton.addEventListener('click', handleCloseButtonClick);
 	}
 
+	// Removes the form and dark overlay of background
 	function handleCloseButtonClick() {
 		popupForm.remove();
 		formOverlay.remove();

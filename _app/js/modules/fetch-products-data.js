@@ -1,6 +1,11 @@
 import { sanity } from '../sanity.js';
 
+/**
+ * Error.mesasge comes from Sanity.client file
+ */
+
 export default async function fetchProductsData() {
+	// Query to fetch data from Sanity
 	const query = `*[_type == 'product'] {
 		'id': _id,
 		'name': name,
@@ -30,8 +35,20 @@ export default async function fetchProductsData() {
 		'slug': slug.current
   }`;
 
-  const params = {};
-  const productsData = await sanity.fetch(query, params)
+  const fetchData = getDataFromTryCatch(query);
+  return fetchData;
 
-  return productsData;
+  // Try/Catch for handling errors when fetching
+  async function getDataFromTryCatch(query) {
+	try {
+		const productsData = await sanity.fetch(query);
+		return productsData
+	} catch (Error) {
+		const errorDivs = document.querySelectorAll('.error__div');
+
+		errorDivs.forEach(element => {
+			element.innerText = Error.message
+		})
+	}
+  }
 }

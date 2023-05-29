@@ -19,6 +19,9 @@ export default {
 					type: 'image',
 					fields: [
 						{
+							/*
+							@todo: Edit the description for alt text, and make it required. 
+							 */
 							name: 'alt',
 							type: 'string',
 							description: 'A "why" description of the image. The ALT text is read out to users by screen reader software.'
