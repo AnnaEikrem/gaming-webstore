@@ -1,5 +1,5 @@
 /**
- * @todo Design header toggling in mobile, to better accomodate the 'filter-search' function, when rendering the results
+ * @todo Design header toggling in mobile, to better accomodate the 'filter-search' function, when rendering results
  */
 
 export default function toggleNavigation() {
@@ -12,13 +12,14 @@ export default function toggleNavigation() {
 	navigationOpenButton.addEventListener('click', handleOpenButtonClick);
 	navigationCloseButton.addEventListener('click', handleCloseButtonClick);
 
-	// Handles the open/close of header navigation
+	// Handles the open header navigation
 	function handleOpenButtonClick() {
 		navigationContainer.classList.add('header__navigation--visible');
 		navigationOpenButton.style.display = 'none';
 		navigationCloseButton.style.display = 'block';
 	}
 
+	// Handles the close header navigation
 	function handleCloseButtonClick() {
 		navigationContainer.classList.remove('header__navigation--visible');
 		navigationOpenButton.style.display = 'block';
