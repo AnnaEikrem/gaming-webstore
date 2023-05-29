@@ -58,12 +58,12 @@ export default function filterSearch(products) {
 		}
 
 		results.forEach(product => {
-			const listItem = document.createElement('li')
+			const listItem = document.createElement('li');
 			const resultLink = document.createElement('a');
 			
-			resultLink.classList.add('result__item--link')
+			resultLink.classList.add('result__item--link');
 			resultLink.textContent = product.name;
-			resultLink.setAttribute('href', '/_app/product-preview/index.html?product=${product.slug}');
+			resultLink.setAttribute('href', `/_app/product-preview/index.html?product=${product.slug}`);
 			
 			searchResultsList.appendChild(listItem);
 			listItem.appendChild(resultLink);
