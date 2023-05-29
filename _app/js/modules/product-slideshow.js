@@ -27,7 +27,7 @@ export default function productSlideshow() {
 		currentSlideIndex--;
 		if (currentSlideIndex < 0) {
 			currentSlideIndex = slides.length - 1;
-		}
+		};
 
 		displaySlide(currentSlideIndex);
 	};
@@ -37,7 +37,7 @@ export default function productSlideshow() {
 		currentSlideIndex++;
 		if (currentSlideIndex >= slides.length) {
 			currentSlideIndex = 0;
-		}
+		};
 
 		displaySlide(currentSlideIndex);
 	};

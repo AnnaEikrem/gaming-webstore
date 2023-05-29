@@ -22,7 +22,7 @@ export default function toggleNavigation() {
 	// Handles the close header navigation
 	function handleCloseButtonClick() {
 		navigationContainer.classList.remove('header__navigation--visible');
-		navigationOpenButton.style.display = 'block';
 		navigationCloseButton.style.display = 'none';
+		navigationOpenButton.style.display = 'block';
 	}
 }

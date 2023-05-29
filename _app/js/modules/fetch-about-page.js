@@ -25,7 +25,7 @@ export default async function aboutPage() {
 
 			errorDivs.forEach(element => {
 			element.innerText = Error.message
-			})
+			});
 		}
-	}
+	};
 }

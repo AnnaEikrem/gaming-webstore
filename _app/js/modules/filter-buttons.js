@@ -43,7 +43,7 @@ export default function filterButtons(products) {
 
 	if (filterButtonsContainer) {
 		renderCategoryButtons();
-	}
+	};
 
 	// Identifies the clicked category button and product.
 	function handleCategoryButtonClick(event) {
@@ -68,7 +68,7 @@ export default function filterButtons(products) {
 	// Empties the Brand sub buttons container
 	function clearButtonsContainer() {
 		subButtonsContainer.textContent = '';
-	};
+	}
 
 	// Applies the active class to the category button that is clicked, styled in filter-buttons.css
 	function toggleClass(allCategoryButtons, clickedButton) {
@@ -100,11 +100,11 @@ export default function filterButtons(products) {
 			case 'Games':
 				filteredProducts = products.filter(product => product.category.name === 'Games');
 					break;
-		}
+		};
 
 		productsListContainer.innerHTML = '';
 		renderProductCards(filteredProducts);
-	};
+	}
 
 	// Fills the filteredBrandProducts array with products that match the brand button clicked
 	function filterBrandProducts(currentBrandProduct) {
@@ -130,11 +130,11 @@ export default function filterButtons(products) {
 			case 'Sony':
 				filteredBrandProducts = products.filter(product => product.brand.brandName === 'Sony');
 					break;
-		}
+		};
 
 		productsListContainer.innerHTML = '';
 		renderProductCards(filteredBrandProducts);
-	};
+	}
 
 	// Returns a button element per object in the categoryButtons array
 	function buttonDOMElement(button) {
@@ -174,6 +174,6 @@ export default function filterButtons(products) {
 		for (let i = 0; i < brandSubButtons.length; i++) {
 			const buttonElement = subButtonDOMElement(brandSubButtons[i]);
 			subButtonsContainer.appendChild(buttonElement);
-		}
+		};
 	}
-};
+}

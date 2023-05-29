@@ -34,12 +34,12 @@ export default function filterSearch(products) {
 		
 		updateFilterString(currentValue);
 		renderResultsHTML();
-	};
+	}
 
 	// Updats filterString with value from input field
 	function updateFilterString(currentInput) {
 		filterString = currentInput;
-	};
+	}
 
 	// SearchList is filled with the results that are filtered to match the currentValue written in input field
 	function renderResultsHTML() {
@@ -80,10 +80,10 @@ export default function filterSearch(products) {
 		 }
 	
 		 searchResultsContainer.appendChild(searchResultsList);
-	};
+	}
 
 	// Removes the filter-search results list when close button is clicked
 	function handleCloseFilterButtonClick() {
 		searchResultsContainer.removeChild(searchResultsList)
-	};
+	}
 }

@@ -8,13 +8,13 @@ export default function renderProductCards(products) {
 	// Renders products if containers are present
 	if (allProductsContainer) {
 		renderProductCardsHTML();
-	}
+	};
 
 	if (chosenProductsContainer) {
 		renderChosenCardsHTML();
-	}
+	};
 
-	// Returns the product card element as a link
+	// Returns the product card element as a link, where the productPreview.js renderes the content
 	function returnProductDOMElement(product) {
 		const itemName = product.name;
 		const imageUrl = product.productImage;
@@ -40,7 +40,7 @@ export default function renderProductCards(products) {
 		productPrice.classList.add('product__information--price');
 		exploreButton.classList.add('product__explore--button');
 		
-		cardLinkElement.setAttribute('href', `/_app/product-preview/index.html?product=${product.slug}`)
+		cardLinkElement.setAttribute('href', `/_app/product-preview/index.html?product=${product.slug}`);
 		imageElement.setAttribute('src', imageUrl);
 		imageElement.setAttribute('alt', imageAltText);
 		productBrand.textContent = itemBrand;
@@ -56,7 +56,7 @@ export default function renderProductCards(products) {
 		productInformation.appendChild(productPrice);
 		productInformation.appendChild(exploreButton);
 
-		return cardLinkElement
+		return cardLinkElement;
 	}
 
 	// Renders a card per product and appends to container
@@ -65,8 +65,8 @@ export default function renderProductCards(products) {
 			if (allProductsContainer) {
 				const productCardElement = returnProductDOMElement(product);
 				allProductsContainer.appendChild(productCardElement);
-			}
-		})
+			};
+		});
 	}
 
 	// Renders six random products from the products array to front page
