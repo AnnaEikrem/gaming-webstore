@@ -120,10 +120,10 @@ export default function checkoutForm() {
 
 		checkOutLink.classList.add('form__checkout--button');
 
-		// The form doesn't have any action or method
-		popupForm.setAttribute('id', 'checkout-form');
+		// The form doesn't have any action or method yet
 		// popupForm.setAttribute('action', 'submit-form');
 		// popupForm.setAttribute('method', 'post');
+		popupForm.setAttribute('id', 'checkout-form');
 		formInformationLegend.textContent = 'Shipping information';
 		formCloseIcon.setAttribute('src', '/_app/assets/icons/x-solid.svg');
 		formCloseIcon.setAttribute('alt', 'Close checkout form');
