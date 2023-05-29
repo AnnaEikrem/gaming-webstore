@@ -23,6 +23,10 @@
 	margin: var(--margin-normal);
 }
 
+.menu__cart--icon {
+		width: var(--icon-width);
+}
+
 .navigation__cart--mobile--button {
 	margin: var(--margin-normal);
 }
