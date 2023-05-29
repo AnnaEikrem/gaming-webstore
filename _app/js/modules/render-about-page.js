@@ -1,12 +1,12 @@
 export default function renderAboutPage(data) {
-	//Variable
+	//Variables
 	const aboutContainer = document.querySelector('.about__section');
 
 	if (aboutContainer) {
 		renderAboutPage(data);
-	}
+	};
 
-	// Data is imported via main.js. Function renders the aboutPage
+	// Data is imported via main.js, and renders the aboutPage
 	function renderAboutPage(data) {
 		const aboutHeadline = data[0].headline;
 		const aboutDescription = data[0].description;

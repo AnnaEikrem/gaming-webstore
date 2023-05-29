@@ -11,7 +11,7 @@ export default function productPreview(products) {
 	// Renders HTML if productContainer is present
 	if (productContainer) {
 		renderPreviewHTML(productSlug);
-	}
+	};
 
 	// Returns the productPreview info page based on what product is clicked
 	function returnDOMElement(product) {
@@ -97,8 +97,8 @@ export default function productPreview(products) {
 
 		// Changes the color to blue when clicked
 		function handleButtonAddToCartClick() {
-			  buttonAddToCart.textContent = 'Added to cart';
-			  buttonAddToCart.style.background = `var(--color-logo)`;
+			buttonAddToCart.textContent = 'Added to cart';
+			buttonAddToCart.style.background = `var(--color-logo)`;
 		}
 
 		// Appends the elements to create HTML structure
@@ -113,26 +113,17 @@ export default function productPreview(products) {
 		
 		// ButtonsContainer is only appended if more than one product image
 		if (productImages.length > 1) {
-			cardTopContainer.appendChild(
-				cardImagesButtonsContainer
-				);
+			cardTopContainer.appendChild(cardImagesButtonsContainer);
 		}
 
-		cardImagesButtonsContainer.append(
-			cardButtonPrevious
-			);
-
-		cardButtonPrevious.append(
-			cardButtonPreviousIcon
-			);
 
 		cardImagesButtonsContainer.append(
+			cardButtonPrevious,
 			cardButtonNext
-			);
-
-		cardButtonNext.append(
-			cardButtonNextIcon
-			);
+		);
+		
+		cardButtonPrevious.appendChild(cardButtonPreviousIcon);
+		cardButtonNext.appendChild(cardButtonNextIcon);
 		
 		cardBottomContainer.append(
 			cardBottomContent,
@@ -140,9 +131,7 @@ export default function productPreview(products) {
 			cardDescriptionContainer
 		);
 		
-		cardBottomContent.appendChild(
-			cardBottomDetail
-			);
+		cardBottomContent.appendChild(cardBottomDetail);
 
 		cardBottomDetail.append(
 			cardBottomPriceContainer,
@@ -158,16 +147,14 @@ export default function productPreview(products) {
 		cardBottomBrandContainer.append(
 			cardBottomDetailBrand,
 			cardBottomValueBrand
-		)
+		);
 
-		cardBottomColorsContainer.append(
-			cardBottomDetailColors
-			);
+		cardBottomColorsContainer.appendChild(cardBottomDetailColors);
 
 		cardDescriptionContainer.append(
 			descriptionHeadline,
 			descriptionText
-		)
+		);
 
 		// Per color code fetched from a product in Sanity, it creates and fills a div with the specific color
 		productColors.forEach(color => {
@@ -180,7 +167,7 @@ export default function productPreview(products) {
 			cardBottomValueColors.style.background = colorCode;
 
 			cardBottomColorsContainer.append(cardBottomValueColors);
-		})
+		});
 
 		// Returns a div/slide per image of the product from Sanity. Made into a slideshow in product-slideshow.js
 		productImages.forEach(image => {
@@ -193,15 +180,11 @@ export default function productPreview(products) {
 			imageElementSource.setAttribute('src', image);
 			imageElementSource.setAttribute('alt', product.altText);
 
-			cardImagesContainer.append(
-				cardtopImage
-				);
-			cardtopImage.append(
-				imageElementSource
-				);
+			cardImagesContainer.appendChild(cardtopImage);
+			cardtopImage.appendChild(imageElementSource);
 		});
 
-		return previewCardElement
+		return previewCardElement;
 	}
 
 	// Finds the product slug that matches the product that is clicked, and appends the DOMElement to container
@@ -209,8 +192,6 @@ export default function productPreview(products) {
 		const currentProduct = products.find(product => product.slug === slug);
 		const currentProductClicked = returnDOMElement(currentProduct);
 
-		productContainer.append(
-			currentProductClicked
-			);
-	};
+		productContainer.appendChild(currentProductClicked);
+	}
 }

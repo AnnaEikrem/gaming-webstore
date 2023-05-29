@@ -39,16 +39,16 @@ export default async function fetchProductsData() {
   return fetchData;
 
   // Try/Catch for handling errors when fetching
-  async function getDataFromTryCatch(query) {
-	try {
-		const productsData = await sanity.fetch(query);
-		return productsData
-	} catch (Error) {
-		const errorDivs = document.querySelectorAll('.error__div');
+	async function getDataFromTryCatch(query) {
+		try {
+			const productsData = await sanity.fetch(query);
+			return productsData;
+		} catch (Error) {
+			const errorDivs = document.querySelectorAll('.error__div');
 
-		errorDivs.forEach(element => {
-			element.innerText = Error.message
-		})
+			errorDivs.forEach(element => {
+				element.innerText = Error.message
+			});
+		};
 	}
-  }
 }

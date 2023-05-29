@@ -1,22 +1,26 @@
 /**
  * @todo Add validation for form
- * @todo Create proper formatting for form input fields
+ * @todo Add proper formatting for input fields (commented out in renderPopupForm function)
  */
 
 export default function checkoutForm() {
 	// Variables
 	let formOverlay = null;
 
-	const formAnchor = document.querySelector('.cart__products--list')
+	const formAnchor = document.querySelector('.cart__products--list');
 	const checkoutButton = document.querySelector('.cart__total--button');
 
 	// EventListener
 	if (checkoutButton) {
-		checkoutButton.addEventListener('click', handleCheckoutButtonClick)
+		checkoutButton.addEventListener('click', handleCheckoutButtonClick);
+	};
+
+	function handleCheckoutButtonClick() {
+		renderPopupForm();
 	}
 
 	// The checkout form pops up when the checkoutButton from shopping-cart.js is clicked
-	function handleCheckoutButtonClick() {
+	function renderPopupForm() {
 		const popupForm = document.createElement('form');
 		const formCloseButton = document.createElement('button');
 		const formCloseIcon = document.createElement('img');
@@ -65,7 +69,7 @@ export default function checkoutForm() {
 		const CVVLabel = document.createElement('label');
 		const CVVInput = document.createElement('input');
 
-		const checkOutLink = document.createElement('a')
+		const checkOutLink = document.createElement('a');
 
 		// Adds classes
 		popupForm.classList.add('checkout__form--popup');
@@ -94,73 +98,68 @@ export default function checkoutForm() {
 		cityLabel.classList.add('form__city--label');
 		cityInput.classList.add('form__input');
 
-		postalCodeDiv.classList.add('form__collection')
+		postalCodeDiv.classList.add('form__collection');
 		postalCodeLabel.classList.add('form__postal-code--label');
 		postalCodeInput.classList.add('form__input');
 
-		birthdayDiv.classList.add('form__collection')
+		birthdayDiv.classList.add('form__collection');
 		birthdayLabel.classList.add('form__birthday--label');
 		birthdayInput.classList.add('form__input');
 
-		cardNumberDiv.classList.add('form__collection')
+		cardNumberDiv.classList.add('form__collection');
 		cardNumberLabel.classList.add('form__card-number--label');
 		cardNumberInput.classList.add('form__input');
 
-		expirationDiv.classList.add('form__collection')
+		expirationDiv.classList.add('form__collection');
 		expirationLabel.classList.add('form__expiration--label');
 		expirationInput.classList.add('form__input');
 
-		CVVDiv.classList.add('form__collection')
+		CVVDiv.classList.add('form__collection');
 		CVVLabel.classList.add('form__CVV--label');
 		CVVInput.classList.add('form__input');
 
 		checkOutLink.classList.add('form__checkout--button');
 
-		// Sets attributes and textcontent
-		/**
-		 * @todo Add required to form
-		 * @todo Add proper form validation
-		 */
-
-		popupForm.setAttribute('id', 'checkout-form');
+		// The form doesn't have any action or method yet
 		// popupForm.setAttribute('action', 'submit-form');
 		// popupForm.setAttribute('method', 'post');
+		popupForm.setAttribute('id', 'checkout-form');
 		formInformationLegend.textContent = 'Shipping information';
 		formCloseIcon.setAttribute('src', '/_app/assets/icons/x-solid.svg');
 		formCloseIcon.setAttribute('alt', 'Close checkout form');
 
-		nameLabel.textContent = 'Name:'
+		nameLabel.textContent = 'Name:';
 		nameLabel.setAttribute('for', 'name');
 		nameInput.setAttribute('type', 'text');
 		nameInput.setAttribute('id', 'name');
 		nameInput.setAttribute('name', 'name');
 
-		emailLabel.textContent = 'Email:'
+		emailLabel.textContent = 'Email:';
 		emailLabel.setAttribute('for', 'email');
 		emailInput.setAttribute('type', 'email');
 		emailInput.setAttribute('id', 'email');
 		emailInput.setAttribute('name', 'email');
 
-		addressLabel.textContent = 'Address:'
+		addressLabel.textContent = 'Address:';
 		addressLabel.setAttribute('for', 'address');
 		addressInput.setAttribute('type', 'text');
 		addressInput.setAttribute('id', 'address');
 		addressInput.setAttribute('name', 'address');
 
-		cityLabel.textContent = 'City:'
+		cityLabel.textContent = 'City:';
 		cityLabel.setAttribute('for', 'city');
 		cityInput.setAttribute('type', 'text');
 		cityInput.setAttribute('id', 'city');
 		cityInput.setAttribute('name', 'city');
 
-		postalCodeLabel.textContent = 'Postal Code:'
+		postalCodeLabel.textContent = 'Postal Code:';
 		postalCodeLabel.setAttribute('for', 'zip');
 		postalCodeInput.setAttribute('type', 'text');
 		postalCodeInput.setAttribute('id', 'zip');
 		postalCodeInput.setAttribute('name', 'zip');
 		postalCodeInput.setAttribute('pattern', '[0-9]{4}');
 
-		birthdayLabel.textContent = 'Birthdate:'
+		birthdayLabel.textContent = 'Birthdate:';
 		birthdayLabel.setAttribute('for', 'birthdate');
 		birthdayInput.setAttribute('type', 'text');
 		birthdayInput.setAttribute('id', 'birthdate');
@@ -169,21 +168,21 @@ export default function checkoutForm() {
 		// birthdayInput.setAttribute('pattern', '(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[0-2])\.[0-9]{4}');
 
 		formCardLegend.textContent = 'Card information';
-		cardNumberLabel.textContent = 'Card Number:'
+		cardNumberLabel.textContent = 'Card Number:';
 		cardNumberLabel.setAttribute('for', 'card-number');
 		cardNumberInput.setAttribute('type', 'text');
 		cardNumberInput.setAttribute('id', 'card-number');
 		cardNumberInput.setAttribute('name', 'card-number');
 		// cardNumberInput.setAttribute('pattern', '[0-9]{16}');
 
-		expirationLabel.textContent = 'Expiration Date:'
+		expirationLabel.textContent = 'Expiration Date:';
 		expirationLabel.setAttribute('for', 'expiration-date');
 		expirationInput.setAttribute('type', 'text');
 		expirationInput.setAttribute('id', 'expiration-date');
 		expirationInput.setAttribute('name', 'expiration-date');
 		// expirationInput.setAttribute('pattern', '(0[1-9]|1[0-2])\/[0-9]{2}');
 
-		CVVLabel.textContent = 'CVV:'
+		CVVLabel.textContent = 'CVV:';
 		CVVLabel.setAttribute('for', 'card-cvv');
 		CVVInput.setAttribute('type', 'text');
 		CVVInput.setAttribute('id', 'card-cvv');
@@ -191,58 +190,80 @@ export default function checkoutForm() {
 		// CVVInput.setAttribute('pattern', '[0-9]{3}');
 
 		checkOutLink.textContent = 'Check out';
-		checkOutLink.setAttribute('href', '/index.html')
+
+		// The user is sent back to main page
+		checkOutLink.setAttribute('href', '/index.html');
 
 		// Appends elements
 		formAnchor.appendChild(popupForm);
 		popupForm.appendChild(formCloseButton);
 		formCloseButton.appendChild(formCloseIcon);
-		popupForm.appendChild(formInformationFieldset);
-		popupForm.appendChild(formCardFieldset);
-		
+		popupForm.append(
+			formInformationFieldset,
+			formCardFieldset
+		);
+
 		formInformationFieldset.appendChild(formInformationLegend);
 
 		formInformationFieldset.appendChild(nameDiv);
-		nameDiv.appendChild(nameLabel);
-		nameDiv.appendChild(nameInput);
+		nameDiv.append(
+			nameLabel,
+			nameInput
+		);
 
 		formInformationFieldset.appendChild(emailDiv);
-		emailDiv.appendChild(emailLabel);
-		emailDiv.appendChild(emailInput);
+		emailDiv.append(
+			emailLabel,
+			emailInput
+		);
 
 		formInformationFieldset.appendChild(addressDiv);
-		addressDiv.appendChild(addressLabel);
-		addressDiv.appendChild(addressInput);
+		addressDiv.append(
+			addressLabel,
+			addressInput
+		);
 
 		formInformationFieldset.appendChild(cityDiv);
-		cityDiv.appendChild(cityLabel);
-		cityDiv.appendChild(cityInput);
+		cityDiv.append(
+			cityLabel,
+			cityInput
+		);
 
 		formInformationFieldset.appendChild(postalCodeDiv);
-		postalCodeDiv.appendChild(postalCodeLabel);
-		postalCodeDiv.appendChild(postalCodeInput);
+		postalCodeDiv.append(
+			postalCodeLabel,
+			postalCodeInput
+		);
 
 		formInformationFieldset.appendChild(birthdayDiv);
-		birthdayDiv.appendChild(birthdayLabel);
-		birthdayDiv.appendChild(birthdayInput);
+		birthdayDiv.append(
+			birthdayLabel,
+			birthdayInput
+		);
 
 		formCardFieldset.appendChild(formCardLegend);
 
 		formCardFieldset.appendChild(cardNumberDiv);
-		cardNumberDiv.appendChild(cardNumberLabel);
-		cardNumberDiv.appendChild(cardNumberInput);
+		cardNumberDiv.append(
+			cardNumberLabel,
+			cardNumberInput
+		);
 
 		formCardFieldset.appendChild(expirationDiv);
-		expirationDiv.appendChild(expirationLabel);
-		expirationDiv.appendChild(expirationInput);
+		expirationDiv.append(
+			expirationLabel,
+			expirationInput
+		);
 
 		formCardFieldset.appendChild(CVVDiv);
-		CVVDiv.appendChild(CVVLabel);
-		CVVDiv.appendChild(CVVInput);
+		CVVDiv.append(
+			CVVLabel,
+			CVVInput
+		);
 
 		popupForm.appendChild(checkOutLink);
 
-		// Adds an overlay when checkout form appears, to darken the background. Styled in checkout-form.css
+		// Adds an overlay to darken background when checkout form appears
 		formOverlay = document.createElement('div');
 		formOverlay.classList.add('checkout__form--overlay');
 		document.body.appendChild(formOverlay);

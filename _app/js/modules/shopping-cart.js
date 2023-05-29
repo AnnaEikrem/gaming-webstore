@@ -21,11 +21,11 @@ export default function shoppingCart(products) {
 
 	if (emptyCartButton) {
 		emptyCartButton.addEventListener('click', handleEmptyCartButtonClick);
-	}
+	};
 
 	if (cartListContainer) {
 		renderCartHTML();
-	}
+	};
 
 	// Clears the shopping-cart and renders the HTML again
 	function handleEmptyCartButtonClick() {
@@ -37,7 +37,7 @@ export default function shoppingCart(products) {
 	// Removes clicked product from cart
 	function handleProductRemoveButtonClick(event) {
 		removeSelectedItemFromCart(event);
-		renderCartHTML()
+		renderCartHTML();
 		saveToLocalStorage();
 	}
 	
@@ -53,16 +53,18 @@ export default function shoppingCart(products) {
 		createProductObject(products, event);
 
 		const productInCart = verifyProductInCart();
+
 		if (!productInCart) {
 			addProductToCart();
-		} 
+		};
+
 		saveToLocalStorage();
 		renderCartHTML();
 	}
 
 	// Saves the cartProducts array to localStorage
 	function saveToLocalStorage() {
-		localStorage.setItem('cartProducts', JSON.stringify(cartProducts))
+		localStorage.setItem('cartProducts', JSON.stringify(cartProducts));
 	}
 
 	// Creates the product object with necessary data
@@ -76,7 +78,7 @@ export default function shoppingCart(products) {
 					productQuantity: 1,
 				}
 			};
-		})
+		});
 	}
 	
 	// Checks if product exists in cart
@@ -85,10 +87,10 @@ export default function shoppingCart(products) {
 			let checkIfProductExists = cartProducts.some(product => {
 				return product.productName === productObject.productName;
 			})
-			return checkIfProductExists;
-		} else {
-			return false;
-		}
+				return checkIfProductExists;
+			} else {
+				return false;
+		};
 	}
 
 	// Adds the clicked product to cart
@@ -105,8 +107,8 @@ export default function shoppingCart(products) {
 			cartStorage.forEach(((index, cartProduct) => {
 				const productDiv = createProductItemDOMElement(cartProduct, index);
 				cartListContainer.append(productDiv);
-			}))
-		}
+			}));
+		};
 	}
 
 	// Builds and returns the HTML structure for products in cart
@@ -136,7 +138,7 @@ export default function shoppingCart(products) {
 
 		if (productRemoveButton) {
 			productRemoveButton.addEventListener('click', handleProductRemoveButtonClick)
-		}
+		};
 
 		productDiv.append(
 			imageDiv,
@@ -151,7 +153,7 @@ export default function shoppingCart(products) {
 			productRemoveButton
 		);
 
-		return productDiv
+		return productDiv;
 	}
 
 	// Gets the cartProducts from localStorage
@@ -160,7 +162,7 @@ export default function shoppingCart(products) {
 			return JSON.parse(localStorage.getItem('cartProducts'));
 		} else {
 			return [];
-		}
+		};
 	}
 
 	// Returns total sum of products in cart
@@ -177,7 +179,7 @@ export default function shoppingCart(products) {
 		if (cartTotalSum) {
 			const formattedSum = totalSum.toFixed(2);
 			cartTotalSum.textContent = formattedSum + '$';
-		}
+		};
 	}
 
 	// Renders the cart HTML

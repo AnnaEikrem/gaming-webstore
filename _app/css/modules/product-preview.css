@@ -28,12 +28,10 @@
 }
 
 .product__detail {
-	display: flex;
-	flex-direction: column;
+	width: 100%;
 }
 
 .product__detail--text {
-	width: 15%;
 	padding: var(--padding-small);
 }
 
@@ -89,7 +87,6 @@
 	.product__preview--card {
 		display: flex;
 		justify-content: center;
-
 		padding: var(--padding-x-large);
 	}
 

@@ -42,7 +42,7 @@
 
 .header__navigation {
 	display: none;
-	height: 45vh;
+	height: 50%;
 }
 
 .header__navigation--visible {
@@ -110,13 +110,6 @@
 }
 
 @media screen and (min-width: 940px){
-	/* header > button:hover {
-		transition: 0.2s;
-		transform: scale(1.05);
-		cursor: pointer;
-		transform-origin: 0.2s;
-	} */
-
 	.header__container {
 		display: flex;
 		justify-content: center;
