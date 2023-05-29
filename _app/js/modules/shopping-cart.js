@@ -19,8 +19,6 @@ export default function shoppingCart(products) {
 		renderCartHTML();
 	}
 
-	console.log(shoppingCartIcon)
-
 	// EventListeners
 	addToCartButtons.forEach(button => {
 		button.addEventListener('click', handleAddToCartButtonClick);
