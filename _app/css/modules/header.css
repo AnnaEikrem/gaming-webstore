@@ -42,7 +42,7 @@
 
 .header__navigation {
 	display: none;
-	height: 45vh;
+	height: 50%;
 }
 
 .header__navigation--visible {
