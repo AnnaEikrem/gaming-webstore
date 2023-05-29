@@ -12,6 +12,7 @@ export default function toggleNavigation() {
 	navigationOpenButton.addEventListener('click', handleOpenButtonClick);
 	navigationCloseButton.addEventListener('click', handleCloseButtonClick);
 
+	// Handles the open/close of header navigation
 	function handleOpenButtonClick() {
 		navigationContainer.classList.add('header__navigation--visible');
 		navigationOpenButton.style.display = 'none';
