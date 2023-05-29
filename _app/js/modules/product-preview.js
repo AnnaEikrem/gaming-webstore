@@ -3,14 +3,17 @@
  */
 
 export default function productPreview(products) {
+	// Variables
 	const productContainer = document.querySelector('.product__preview--information');
 	const currentSearchParams = new URLSearchParams(window.location.search);
 	const productSlug = currentSearchParams.get('product');
 
+	// Renders HTML if productContainer is present
 	if (productContainer) {
 		renderPreviewHTML(productSlug);
 	}
 
+	// Returns the productPreview info page based on what product is clicked
 	function returnDOMElement(product) {
 		const productTitle = product.name;
 		const productImages = product.images;
@@ -90,9 +93,9 @@ export default function productPreview(products) {
 		descriptionText.textContent = product.description;
 		
 		// Changes the background color and textcontent on click
-
 		buttonAddToCart.addEventListener('click', handleButtonAddToCartClick);
 
+		// Changes the color to blue when clicked
 		function handleButtonAddToCartClick() {
 			  buttonAddToCart.textContent = 'Added to cart';
 			  buttonAddToCart.style.background = `var(--color-logo)`;
@@ -166,6 +169,7 @@ export default function productPreview(products) {
 			descriptionText
 		)
 
+		// Per color code fetched from a product in Sanity, it creates and fills a div with the specific color
 		productColors.forEach(color => {
 			const cardBottomValueColors = document.createElement('div');
 			const colorCode = color.colorCode;
@@ -178,6 +182,7 @@ export default function productPreview(products) {
 			cardBottomColorsContainer.append(cardBottomValueColors);
 		})
 
+		// Returns a div/slide per image of the product from Sanity. Made into a slideshow in product-slideshow.js
 		productImages.forEach(image => {
 			const cardtopImage = document.createElement('div');
 			const imageElementSource = document.createElement('img');
@@ -187,6 +192,7 @@ export default function productPreview(products) {
 
 			imageElementSource.setAttribute('src', image);
 			imageElementSource.setAttribute('alt', product.altText);
+
 			cardImagesContainer.append(
 				cardtopImage
 				);
@@ -198,6 +204,7 @@ export default function productPreview(products) {
 		return previewCardElement
 	}
 
+	// Finds the product slug that matches the product that is clicked, and appends the DOMElement to container
 	function renderPreviewHTML(slug) {
 		const currentProduct = products.find(product => product.slug === slug);
 		const currentProductClicked = returnDOMElement(currentProduct);

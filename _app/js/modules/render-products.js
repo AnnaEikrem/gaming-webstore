@@ -1,9 +1,11 @@
 export default function renderProductCards(products) {
+	// Variables
 	const allProductsContainer = document.querySelector('.list__products--all');
 	const chosenProductsContainer = document.querySelector('.list__products--chosen');
 	const allProductsArray = products;
 	let randomProductsArray = [];
 
+	// Renders products if containers are present
 	if (allProductsContainer) {
 		renderProductCardsHTML();
 	}
@@ -12,6 +14,7 @@ export default function renderProductCards(products) {
 		renderChosenCardsHTML();
 	}
 
+	// Returns the product card element as a link
 	function returnProductDOMElement(product) {
 		const itemName = product.name;
 		const imageUrl = product.productImage;
@@ -56,6 +59,7 @@ export default function renderProductCards(products) {
 		return cardLinkElement
 	}
 
+	// Renders a card per product and appends to container
 	function renderProductCardsHTML() {
 		products.forEach(product => {
 			if (allProductsContainer) {
@@ -65,6 +69,7 @@ export default function renderProductCards(products) {
 		})
 	}
 
+	// Renders six random products from the products array to front page
 	function renderChosenCardsHTML() {
 		allProductsArray.sort(() => Math.random() - 0.5);
 		randomProductsArray = allProductsArray.slice(0, 6);

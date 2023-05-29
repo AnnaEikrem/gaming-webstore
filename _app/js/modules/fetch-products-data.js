@@ -5,6 +5,7 @@ import { sanity } from '../sanity.js';
  */
 
 export default async function fetchProductsData() {
+	// Query to fetch data from Sanity
 	const query = `*[_type == 'product'] {
 		'id': _id,
 		'name': name,
@@ -37,6 +38,7 @@ export default async function fetchProductsData() {
   const fetchData = getDataFromTryCatch(query);
   return fetchData;
 
+  // Try/Catch for handling errors when fetching
   async function getDataFromTryCatch(query) {
 	try {
 		const productsData = await sanity.fetch(query);

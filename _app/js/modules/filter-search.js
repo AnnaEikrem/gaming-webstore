@@ -1,10 +1,10 @@
 /**
- * @todo Add debounce to filter-search.
- * @todo Get the right 'product-preview' link.
- * @todo Add 'color marking' to string match of search. 
+ * @todo Add debounce to filter-search
+ * @todo Add 'color marking' to string match of search 
  */
 
 export default function filterSearch(products) {
+	// Variables
 	let filterString = '';
 	let caseSensitive = false;
 
@@ -20,6 +20,7 @@ export default function filterSearch(products) {
 		)
 	);
 
+	// EventListeners
 	if (searchResultsContainer) {
 		searchInput.addEventListener('input', handleSearchFieldInput);
 	};
@@ -27,6 +28,7 @@ export default function filterSearch(products) {
 	searchResultsList.classList.add('input__results--list');
 	searchResultsContainer.appendChild(searchResultsList);
 
+	// Sends currentValue from input field into updateFilterString, and renders HTML  
 	function handleSearchFieldInput(event) {
 		let currentValue = event.currentTarget.value;
 		
@@ -34,10 +36,12 @@ export default function filterSearch(products) {
 		renderResultsHTML();
 	};
 
+	// Updats filterString with value from input field
 	function updateFilterString(currentInput) {
 		filterString = currentInput;
 	};
 
+	// SearchList is filled with the results that are filtered to match the currentValue written in input field
 	function renderResultsHTML() {
 		searchResultsList.innerHTML = '';
 
@@ -48,6 +52,7 @@ export default function filterSearch(products) {
 					.toLowerCase());
 		})
 
+		// Appends a close button to the filter-results list
 		if (results.length > 0) {
 			const closeFilterButton = document.createElement('button');
 			closeFilterButton.classList.add('filter__search--results--close');
@@ -57,6 +62,7 @@ export default function filterSearch(products) {
 			searchResultsList .appendChild(closeFilterButton);
 		}
 
+		// Renders a list item per filter-search result, and adds the href of the product, that leads to the product-preview
 		results.forEach(product => {
 			const listItem = document.createElement('li');
 			const resultLink = document.createElement('a');
@@ -76,6 +82,7 @@ export default function filterSearch(products) {
 		 searchResultsContainer.appendChild(searchResultsList);
 	};
 
+	// Removes the filter-search results list when close button is clicked
 	function handleCloseFilterButtonClick() {
 		searchResultsContainer.removeChild(searchResultsList)
 	};

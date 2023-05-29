@@ -109,7 +109,7 @@ export default function shoppingCart(products) {
 		}
 	}
 
-	// Builds the cartProducts HTML structure
+	// Builds and returns the HTML structure for products in cart
 	function createProductItemDOMElement(index, cartProduct) {
 		const productDiv = document.createElement('div');
 		const imageDiv = document.createElement('div');
@@ -163,7 +163,7 @@ export default function shoppingCart(products) {
 		}
 	}
 
-	// Calculates the total sum of products in cart
+	// Returns total sum of products in cart
 	function calculateSum(cartStorage) {
 		const cartList = cartStorage;
 

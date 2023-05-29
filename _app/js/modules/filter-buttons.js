@@ -1,11 +1,12 @@
 import renderProductCards from "./render-products.js";
 
 export default function filterButtons(products) {
+	// Variables
 	const productsListContainer = document.querySelector('.list__products--all');
 	const filterButtonsContainer = document.querySelector('.products__filter--buttons');
 	const subButtonsContainer = document.querySelector('.products__filter--sub--buttons');
 
-
+	// Array of the main category buttons
 	const categoryButtons = [
 		{
 			category: 'All'
@@ -21,6 +22,7 @@ export default function filterButtons(products) {
 		}
 	];
 
+	// Array of the brand sub buttons
 	const brandSubButtons = [
 		{
 			brand: 'Atari'
@@ -43,6 +45,7 @@ export default function filterButtons(products) {
 		renderCategoryButtons();
 	}
 
+	// Identifies the clicked category button and product.
 	function handleCategoryButtonClick(event) {
 		let currentProduct = event.target.innerText;
 		const clickedButton = event.target;
@@ -62,10 +65,12 @@ export default function filterButtons(products) {
 		filterBrandProducts(currentProduct)
 	}
 
+	// Empties the Brand sub buttons container
 	function clearButtonsContainer() {
 		subButtonsContainer.textContent = '';
 	};
 
+	// Applies the active class to the category button that is clicked, styled in filter-buttons.css
 	function toggleClass(allCategoryButtons, clickedButton) {
 		allCategoryButtons.forEach(button => {
 			button.classList.remove('filtered__products--active');
@@ -74,6 +79,7 @@ export default function filterButtons(products) {
 		clickedButton.classList.add('filtered__products--active');
 	}
 
+	// Fills the filteredProducts array with products that match the category clicked
 	function filterProducts(currentProduct) {
 		let filteredProducts = [];
 
@@ -82,6 +88,7 @@ export default function filterButtons(products) {
 				filteredProducts = products;
 					break;
 
+			// When clicked, this category button renders sub buttons
 			case 'Brand':
 				renderBrandSubButtons();
 					break;
@@ -99,6 +106,7 @@ export default function filterButtons(products) {
 		renderProductCards(filteredProducts);
 	};
 
+	// Fills the filteredBrandProducts array with products that match the brand button clicked
 	function filterBrandProducts(currentBrandProduct) {
 		let filteredBrandProducts = [];
 
@@ -128,6 +136,7 @@ export default function filterButtons(products) {
 		renderProductCards(filteredBrandProducts);
 	};
 
+	// Returns a button element per object in the categoryButtons array
 	function buttonDOMElement(button) {
 		const categoryButton = document.createElement('button');
 		categoryButton.classList.add('category__button');
@@ -139,6 +148,7 @@ export default function filterButtons(products) {
 		return categoryButton;
 	}
 
+	// Returns a button element per object in the brandSubButtons array
 	function subButtonDOMElement(button) {
 		const subBrandButton = document.createElement('button');
 		subBrandButton.classList.add('category__button');
@@ -150,6 +160,7 @@ export default function filterButtons(products) {
 		return subBrandButton;
 	}
 
+	// Renders a category button based on length of the categoryButtons array
 	function renderCategoryButtons() {
 		for (let i = 0; i < categoryButtons.length; i++) {
 			const buttonElement = buttonDOMElement(categoryButtons[i]);
@@ -158,6 +169,7 @@ export default function filterButtons(products) {
 		}
 	}
     
+	// Renders a category button based on length of the brandSubButtons array
 	function renderBrandSubButtons() {
 		for (let i = 0; i < brandSubButtons.length; i++) {
 			const buttonElement = subButtonDOMElement(brandSubButtons[i]);
