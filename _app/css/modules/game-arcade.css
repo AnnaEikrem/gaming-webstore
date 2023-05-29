@@ -15,7 +15,6 @@
 	font-size: var(--font-size-medium);
 }
 
-/* The Arcade Games section */
 .arcade__games--section {
 	display: flex;
 	flex-direction: column;

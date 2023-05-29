@@ -40,6 +40,7 @@
 .cart__image--source {
 	width: 60%;
 }
+
 .cart__item--title {
 	margin: var(--margin-small);
 	font-family: var(--font-family-text);
@@ -66,10 +67,6 @@
 .cart__products--total {
 	display: flex;
 	justify-content: space-around;
-}
-
-.cart__total--sum {
-	color: red;	
 }
 
 .cart__total--button {
@@ -113,10 +110,6 @@
 	.cart__products--summary {
 		font-size: var(--font-size-large);
 	}
-
-	/* .cart__product--remove--button:hover {
-		background: var(--hover-background);
-	} */
 
 	.cart__total--button:hover {
 		transition: 0.4s;

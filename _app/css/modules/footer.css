@@ -19,7 +19,6 @@ footer {
 	color: var(--color-02);
 }
 
-
 .footer__media--icon {
 	margin: 0.3rem;
 	width: 2.3rem;
@@ -54,7 +53,6 @@ footer {
 		transition: 0.4s;
 		cursor: pointer;
 	}
-	
 }
 
 

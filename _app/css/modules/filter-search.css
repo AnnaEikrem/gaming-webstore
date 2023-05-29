@@ -26,7 +26,8 @@
 	background: var(--color-03);
 }
 
-.result__item--link:focus, .filter__search--results--close:focus {
+.result__item--link:focus, 
+.filter__search--results--close:focus {
 	border: 0.3rem solid var(--color-focus);
 }
 
