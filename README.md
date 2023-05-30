@@ -22,6 +22,6 @@ The application has the following features:
 
 See live demo here of [Nostalgic Gaming](https://nostalgic-gaming-webstore.netlify.app/)
 
-### Remarks
-- todo: Implement footer with Sanity 'settings' data. 
-<!-- - todo: Add more functionalities (date, time, edit task).   -->
+### Access
+From: http://localhost:5500 or http://localhost:3000
+
