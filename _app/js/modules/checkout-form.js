@@ -1,4 +1,5 @@
 /**
+ * @todo Make form more accessible
  * @todo Add validation for form
  * @todo Add proper formatting for input fields (commented out in renderPopupForm function)
  */
