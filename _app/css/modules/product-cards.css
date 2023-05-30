@@ -100,7 +100,6 @@
 	border: 0.3rem solid var(--color-focus);
 } 
 		
-
 @media screen and (min-width: 618px) {
 	.list__products--chosen {
 		display: grid;
