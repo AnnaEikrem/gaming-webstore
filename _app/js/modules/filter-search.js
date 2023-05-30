@@ -69,7 +69,7 @@ export default function filterSearch(products) {
 			
 			resultLink.classList.add('result__item--link');
 			resultLink.textContent = product.name;
-			resultLink.setAttribute('href', `/_app/product-preview/index.html?product=${product.slug}`);
+			resultLink.setAttribute('href', `/product-preview/index.html?product=${product.slug}`);
 			
 			searchResultsList.appendChild(listItem);
 			listItem.appendChild(resultLink);
