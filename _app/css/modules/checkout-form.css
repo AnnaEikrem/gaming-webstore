@@ -7,10 +7,12 @@
 	transform: translate(-50%, -50%);
 	background: var(--color-03);
 	border: 1px solid black;
-	padding: var(--padding-large);
+	padding: var(--padding-small) var(--padding-large);
 	z-index: 999;
 	width: 80%;
-	font-size: var(--font-size-small);
+	overflow-y: scroll;
+	overflow-x: hidden;
+	max-height: 95vh;
 }
 
 .checkout__form--overlay {
@@ -21,22 +23,21 @@
 	height: 100%;
 	background: rgba(0, 0, 0, 0.5);
 	z-index: 998;
- }
-
-.form__fieldset--information{
-	margin: var(--margin-small);
-	padding: 1rem;
 }
 
-.form__fieldset--card {
-	margin: var(--margin-small);
-	padding: 1rem;
+.form__legend--information {
+	font-size: var(--font-size-small);
+}
+
+.form__legend--card {
+	font-size: var(--font-size-small);
 }
 
 .form__collection {
 	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
-	padding: 0 var(--padding-normal);
+	margin-bottom: 0.3rem;
 }
 
 .form__input {
@@ -44,8 +45,16 @@
 	padding: 0.3rem;
 }
 
+.form__fieldset--information {
+	padding: 0 3rem;
+	margin-bottom: var(--margin-small);
+}
+
+.form__fieldset--card {
+	padding: 1rem 3rem;
+}
+
 .form__close--button {
-	text-align: right;
 	width: 1rem;
 }
 
@@ -54,17 +63,38 @@
 	padding: var(--padding-small);
 	border: 1px solid var(--color-02);
 	border-radius: 2rem;
+	color: var(--color-02);
 }
+
 
 @media screen and (min-width: 768px) {
 	.checkout__form--popup {
-		display: flex;
 		width: 60%;
+	}
+
+	.form__collection {
+		flex-direction: row;
+	}
+		
+	.form__fieldset--information {
+		margin: var(--margin-small);
+		padding: 1rem;
+	}
+
+	.form__fieldset--card {
+		margin: var(--margin-small);
+		padding: 1rem;
 	}
 
 	.form__checkout--button:hover {
 		transition: 0.4s;
 		cursor: pointer;
 		background: var(--color-button);
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.checkout__form--popup {
+		width: 40%;
 	}
 }
