@@ -1,18 +1,22 @@
 # Nostalgic Gaming Webstore
-The website of 'Nostalgic Gaming'. Where you can browse through various pages to explore different Retro Gaming consoles and games. 
+The website for 'Nostalgic Gaming', a retro webstore that sells a various of nostalgic consoles and games. Browse through for a blast from the past. 
 
 ### Website content
-The application has the following features: 
-- A 'chosen' section that previews 6 random products from the products list. 
-- The 'Shop' site where you can browse all the products from the webstore. 
+The web application contains a front page displaying six chosen products. From the main page you can navigate to: 
+	- A shop page.
+	- The Game Arcade.
+	- The about page.
+	- Search to filter products.
+	- Shopping cart to preview products you have chosen.
 
 ## Features
-- Preview all products. 
-<!-- - Add product to shopping cart. 
-- Checkout form.  -->
+- Preview a products catalogue. 
 - Filter products (by Consoles, Games, Brand).
-- Click product to render 'product-preview' details. 
-
+- Search products in a search-input field. 
+- Click a product card or a search result to the preview Product-information. 
+- Add product to shopping cart.  
+- Remove or empty shopping cart. 
+- Checkout with a simple checkout-form.
 
 ## Technologies used
 - HTML
@@ -20,8 +24,6 @@ The application has the following features:
 - Javascript
 - Sanity
 
+## Demo
 See live demo here of [Nostalgic Gaming](https://nostalgic-gaming-webstore.netlify.app/)
 
-### Remarks
-- todo: Implement footer with Sanity 'settings' data. 
-<!-- - todo: Add more functionalities (date, time, edit task).   -->
